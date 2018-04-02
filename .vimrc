@@ -46,6 +46,7 @@ autocmd InsertEnter,InsertLeave * set cursorline!
 
 " Plugins config
 let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeShowHidden = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
