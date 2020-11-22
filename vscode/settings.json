@@ -1,0 +1,23 @@
+{
+    "editor.scrollBeyondLastLine": false,
+    "editor.smoothScrolling": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "line",
+    "editor.renderWhitespace": "boundary",
+    "editor.multiCursorPaste": "full",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "files.insertFinalNewline": true,
+    "explorer.sortOrder": "type",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.highlightModifiedTabs": true,
+    "terminal.integrated.shell.osx": "zsh",
+    "extensions.autoCheckUpdates": true,
+    "extensions.autoUpdate": true,
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+}
