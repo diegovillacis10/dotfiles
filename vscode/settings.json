@@ -1,23 +1,48 @@
 {
-    "editor.scrollBeyondLastLine": false,
-    "editor.smoothScrolling": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.fontLigatures": true,
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorStyle": "line",
-    "editor.renderWhitespace": "boundary",
-    "editor.multiCursorPaste": "full",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000,
-    "files.insertFinalNewline": true,
-    "explorer.sortOrder": "type",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.editor.highlightModifiedTabs": true,
-    "terminal.integrated.shell.osx": "zsh",
-    "extensions.autoCheckUpdates": true,
-    "extensions.autoUpdate": true,
-    "[ruby]": {
-        "editor.tabSize": 2
-    },
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 12,
+  "editor.fontLigatures": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "line",
+  "editor.renderWhitespace": "boundary",
+  "editor.renderControlCharacters": true,
+  "editor.multiCursorPaste": "full",
+  "explorer.sortOrder": "type",
+  "extensions.autoCheckUpdates": true,
+  "extensions.autoUpdate": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.insertFinalNewline": true,
+  "terminal.integrated.shell.osx": "zsh",
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.highlightModifiedTabs": true,
+  "[ruby]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.statusBar.enabled": true,
+  "todo-tree.tree.showScanModeButton": false
 }
