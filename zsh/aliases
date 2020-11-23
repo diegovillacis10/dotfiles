@@ -25,5 +25,5 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias hg='history | grep'
 alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull -r \;'
-alias calc='/Applications/Calculator.app/Contents/MacOS/Calculator &'
+alias calc='open -n -a calculator'
 alias json=" jq -C '.' | less -R"

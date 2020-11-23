@@ -17,7 +17,14 @@ pkglist=(
   esbenp.prettier-vscode
   kisstkondoros.vscode-gutter-preview
   vscodevim.vim
-  shd101wyy.markdown-preview-enhanced
+  chakrounanas.turbo-console-log
+  yzhang.markdown-all-in-one
+  dsznajder.es7-react-js-snippets
+  christian-kohler.path-intellisense
+  christian-kohler.npm-intellisense
+  pflannery.vscode-versionlens
+  bengreenier.vscode-node-readme
+  wix.vscode-import-cost
 )
 
 for i in ${pkglist[@]}; do
