@@ -2,9 +2,7 @@
 
 tap "homebrew/bundle"
 tap "homebrew/core"
-
-# Homebrew
-# https://github.com/Homebrew/brew/
+tap "hoembrew/cask-fonts"
 
 brew "bat"
 brew "cloc"
@@ -16,6 +14,7 @@ brew "gmp" # Vim dependency
 brew "httpie"
 brew "jq"
 brew "less"
+brew "mas"
 brew "node"
 brew "python"
 brew "pygments"
@@ -28,3 +27,15 @@ brew "tmux"
 brew "tree"
 brew "z"
 brew "zsh"
+
+cask "font-fira-code"
+cask "visual-studio-code"
+cask "spotify"
+cask "spectacle"
+
+mas "Enpass", id: 732710998
+mas "Sip", id: 507257563
+mas "Lightshot Screenshot", id: 526298438
+mas "CopyClip", id: 595191960
+mas "NordVPN IKE", id: 1116599239
+mas "Yubico Authenticator", id: 1497506650
