@@ -17,7 +17,6 @@ pkglist=(
   esbenp.prettier-vscode
   kisstkondoros.vscode-gutter-preview
   vscodevim.vim
-  gruntfuggly.todo-tree
   shd101wyy.markdown-preview-enhanced
 )
 
