@@ -48,5 +48,3 @@ autocmd InsertEnter,InsertLeave * set cursorline!
 " Plugins config
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowHidden = 1
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-set runtimepath^=~/.vim/bundle/ctrlp.vim

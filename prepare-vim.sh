@@ -16,7 +16,27 @@ if [[ ! -d "${HOME}/.vim/bundle/nerdtree" ]]; then
     git clone https://github.com/preservim/nerdtree.git ~/.vim/bundle/nerdtree
 fi
 
-# ctrlp.vim
-if [[ ! -d "${HOME}/.vim/bundle/ctrlp.vim" ]]; then
-    git clone https://github.com/kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
+# vim-fugitive
+if [[ ! -d "${HOME}/.vim/bundle/vim-fugitive" ]]; then
+    git clone https://github.com/tpope/vim-fugitive ~/.vim/bundle/vim-fugitive
+fi
+
+# vim-buftabline
+if [[ ! -d "${HOME}/.vim/bundle/vim-buftabline" ]]; then
+    git clone https://github.com/ap/vim-buftabline ~/.vim/bundle/vim-buftabline
+fi
+
+# vim-gitgutter
+if [[ ! -d "${HOME}/.vim/bundle/vim-gitgutter" ]]; then
+    git clone https://github.com/airblade/vim-gitgutter ~/.vim/bundle/vim-gitgutter
+fi
+
+# vim-surround
+if [[ ! -d "${HOME}/.vim/bundle/vim-surround" ]]; then
+    git clone https://github.com/tpope/vim-surround ~/.vim/bundle/vim-surround
+fi
+
+# fzf
+if [[ ! -d "${HOME}/.vim/bundle/fzf" ]]; then
+    git clone https://github.com/junegunn/fzf ~/.vim/bundle/fzf
 fi
