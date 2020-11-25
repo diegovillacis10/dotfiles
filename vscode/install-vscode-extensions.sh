@@ -13,7 +13,7 @@ pkglist=(
   coenraads.bracket-pair-colorizer
   techer.open-in-browser
   pranaygp.vscode-css-peek
-  # dbaeumer.vscode-eslint
+  dbaeumer.vscode-eslint
   esbenp.prettier-vscode
   kisstkondoros.vscode-gutter-preview
   vscodevim.vim
