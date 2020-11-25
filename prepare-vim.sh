@@ -36,7 +36,7 @@ if [[ ! -d "${HOME}/.vim/bundle/vim-surround" ]]; then
     git clone https://github.com/tpope/vim-surround ~/.vim/bundle/vim-surround
 fi
 
-# fzf
-if [[ ! -d "${HOME}/.vim/bundle/fzf" ]]; then
-    git clone https://github.com/junegunn/fzf ~/.vim/bundle/fzf
+# fzf.vim
+if [[ ! -d "${HOME}/.vim/bundle/fzf.vim" ]]; then
+    git clone https://github.com/junegunn/fzf.vim ~/.vim/bundle/fzf.vim
 fi

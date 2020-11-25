@@ -29,10 +29,15 @@ colorscheme gruvbox
 
 " Key mapping
 let mapleader = ","
+" NERDTree
 map <C-n> :NERDTreeToggle<CR>
+" Buftabline
 nmap <C-l> :bnext<CR>
 nmap <C-h> :bprev<CR>
 nmap <leader>w :bd<CR>
+" FZF
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
 
 " Pasting code
 " http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
@@ -46,5 +51,6 @@ autocmd CursorHold * checktime
 autocmd InsertEnter,InsertLeave * set cursorline!
 
 " Plugins config
+set rtp+=/usr/local/opt/fzf
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowHidden = 1

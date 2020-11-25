@@ -3,6 +3,8 @@ export LC_ALL='en_US.UTF-8'
 export LESS='-FXR'
 export LESSOPEN='| pygmentize -f terminal -O style=monokai -g %s'
 export MANPAGER='less -+X -is'
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_OPTS='-m --height 50% --border'
 export MANPATH="/usr/local/man:$MANPATH"
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home'
 export ANDROID_HOME="${HOME}/Library/Android/sdk"

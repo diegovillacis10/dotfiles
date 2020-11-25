@@ -2,7 +2,7 @@
 
 tap "homebrew/bundle"
 tap "homebrew/core"
-tap "hoembrew/cask-fonts"
+tap "homebrew/cask-fonts"
 
 brew "bat"
 brew "cloc"
@@ -29,10 +29,12 @@ brew "tree"
 brew "z"
 brew "zsh"
 
+cask "android-studio"
 cask "font-fira-code"
-cask "visual-studio-code"
 cask "spotify"
 cask "spectacle"
+cask "visual-studio-code"
+cask "zoomus"
 
 mas "Enpass", id: 732710998
 mas "Sip", id: 507257563

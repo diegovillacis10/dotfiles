@@ -43,6 +43,5 @@
   },
 
   "gitlens.defaultDateStyle": "absolute",
-  "gitlens.statusBar.enabled": true,
-  "todo-tree.tree.showScanModeButton": false
+  "gitlens.statusBar.enabled": true
 }
