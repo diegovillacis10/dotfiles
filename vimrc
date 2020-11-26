@@ -99,3 +99,4 @@ autocmd CursorHold * checktime
 
 " Disable cursorline on insert mode
 autocmd InsertEnter,InsertLeave * set cursorline!
+
