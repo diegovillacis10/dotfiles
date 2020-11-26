@@ -1,0 +1,14 @@
+[user]
+	name = Diego Villacis
+	email = diegovillacis101@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[alias]
+	st = status
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+
