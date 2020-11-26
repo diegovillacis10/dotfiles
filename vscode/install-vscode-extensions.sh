@@ -1,7 +1,13 @@
 #!/bin/bash
 
-if [[ ! "$(command -v code)" ]]; then
-  echo "[ERROR] 'code' command does not exists!"
+normal_fg=$(tput sgr0)
+error_fg=$(tput setaf 197)
+
+if [[ ! "$(command -v codeads)" ]]; then
+  echo ''
+  echo "${error_fg}[ERROR] 'code' command does not exists!${normal_fg}"
+  echo "${error_fg}[ERROR] Please visit:${normal_fg} https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line"
+  echo ''
   exit 1;
 fi
 
