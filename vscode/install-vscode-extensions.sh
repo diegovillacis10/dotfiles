@@ -25,6 +25,7 @@ pkglist=(
   pflannery.vscode-versionlens
   bengreenier.vscode-node-readme
   wix.vscode-import-cost
+  xadillax.viml
 )
 
 for i in ${pkglist[@]}; do
