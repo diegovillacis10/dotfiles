@@ -1,4 +1,4 @@
-# Visual Studio Code :: Package list
+#!/bin/bash
 
 if [[ ! "$(command -v code)" ]]; then
   echo "[ERROR] 'code' command does not exists!"
@@ -28,6 +28,6 @@ pkglist=(
   xadillax.viml
 )
 
-for i in ${pkglist[@]}; do
-  code --install-extension $i
+for i in "${pkglist[@]}"; do
+  code --install-extension "${i}"
 done
