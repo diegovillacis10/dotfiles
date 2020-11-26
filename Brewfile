@@ -30,6 +30,7 @@ brew "z"
 brew "zsh"
 
 cask "android-studio"
+cask "discord"
 cask "font-fira-code"
 cask "spotify"
 cask "spectacle"
