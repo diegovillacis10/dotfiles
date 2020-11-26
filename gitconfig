@@ -12,3 +12,5 @@
 [mergetool]
 	prompt = false
 
+[apply]
+	whitespace = nowarn
