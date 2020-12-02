@@ -34,6 +34,7 @@ cask "discord"
 cask "font-fira-code"
 cask "spotify"
 cask "spectacle"
+cask "postgres"
 cask "visual-studio-code"
 cask "zoomus"
 
