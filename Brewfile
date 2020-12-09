@@ -36,6 +36,7 @@ cask "spotify"
 cask "spectacle"
 cask "postgres"
 cask "visual-studio-code"
+cask "whatsapp"
 cask "zoomus"
 
 mas "Enpass", id: 732710998

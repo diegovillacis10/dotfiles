@@ -1,7 +1,7 @@
 [
-    {
-        "key": "shift+cmd+t",
-        "command": "workbench.action.tasks.test",
-        "when": "editorTextFocus"
-    }
+  {
+    "key": "shift+alt+t",
+    "command": "workbench.action.tasks.test",
+    "when": "editorTextFocus"
+  }
 ]
