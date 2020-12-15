@@ -31,6 +31,8 @@ pkglist=(
   pflannery.vscode-versionlens
   bengreenier.vscode-node-readme
   wix.vscode-import-cost
+  wmaurer.change-case
+  oderwat.indent-rainbow
   xadillax.viml
 )
 
