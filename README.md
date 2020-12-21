@@ -39,6 +39,7 @@ $ ln -sv <dotfiles_dir>/secrets/* ~/.secrets/
 $ ln -sv <dotfiles_dir>/zsh/* ~/.zsh/
 ```
 ## Git
+NOTE: Make sure to update the gitconfig file since it has my identity 😉
 ```shell
 $ ln -sv <dotfiles_dir>/gitconfig ~/.gitconfig
 $ ln -sv <dotfiles_dir>/gitconfig_global ~/.gitconfig_global
