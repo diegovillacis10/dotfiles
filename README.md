@@ -38,6 +38,12 @@ $ mkdir -p ~/.secrets ~/.zsh
 $ ln -sv <dotfiles_dir>/secrets/* ~/.secrets/
 $ ln -sv <dotfiles_dir>/zsh/* ~/.zsh/
 ```
+### Little advice
+I have updated the index on the secrets so git doesn't track and I don't commit them accidentally.
+
+```shell
+$ git update-index --assume-unchanged secrets/*
+```
 ## Git
 NOTE: Make sure to update the gitconfig file since it has my identity 😉
 ```shell
