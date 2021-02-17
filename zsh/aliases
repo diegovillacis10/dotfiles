@@ -34,4 +34,3 @@ alias sp='spotify'
 # Functions
 mkcd() { mkdir -p "$@" && cd "$@"; }
 jd() { diff <(jq -S . "$1") <(jq -S . "$2"); }
-
