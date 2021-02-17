@@ -93,10 +93,9 @@ endif
 " http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
- 
+
 " Auto reload files
 autocmd CursorHold * checktime
 
 " Disable cursorline on insert mode
 autocmd InsertEnter,InsertLeave * set cursorline!
-

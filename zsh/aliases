@@ -11,19 +11,27 @@ alias dr='docker run --rm -it'
 
 # Other
 alias o='open'
+alias mkdir='mkdir -pv'
 alias cp='cp -iv'
+alias mv='mv -iv'
 alias df='df -h'
 alias du='du -h'
 alias duf='du -sh *'
 alias dus='du -d 1 -h | sort -h'
-alias mkdir='mkdir -pv'
-alias mv='mv -iv'
 alias tree='tree -FC'
 alias src='. ~/.zshrc'
-alias df='df -h'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias hg='history | grep'
 alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull -r \;'
 alias calc='open -n -a calculator'
 alias json=" jq -C '.' | less -R"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ipl="ipconfig getifaddr en0"
+alias www='python -m SimpleHTTPServer 8000'
+alias sp='spotify'
+
+# Functions
+mkcd() { mkdir -p "$@" && cd "$@"; }
+jd() { diff <(jq -S . "$1") <(jq -S . "$2"); }
+
