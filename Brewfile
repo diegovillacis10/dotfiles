@@ -38,7 +38,7 @@ cask "spectacle"
 cask "postgres"
 cask "visual-studio-code"
 cask "whatsapp"
-cask "zoomus"
+cask "zoom"
 
 mas "Enpass", id: 732710998
 mas "Sip", id: 507257563

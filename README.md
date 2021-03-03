@@ -27,7 +27,7 @@ $ ln -sv <dotfiles_dir>/vimrc ~/.vimrc
 To install plugins enter vim and execute `:PlugInstall`
 
 or just run this on your terminal:
-```shel
+```shell
 vim +PlugInstall +qall > /dev/null 2>&1
 ```
 ## Zsh

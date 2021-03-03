@@ -34,3 +34,7 @@ alias sp='spotify'
 # Functions
 mkcd() { mkdir -p "$@" && cd "$@"; }
 jd() { diff <(jq -S . "$1") <(jq -S . "$2"); }
+t() {
+  # Defaults to 3 levels deep, do more with `t 5` or `t 1`
+  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
+}

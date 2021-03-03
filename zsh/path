@@ -1,3 +1,6 @@
 export PATH="${HOME}/bin:/usr/local/bin:${PATH}"
+# Android.
 export PATH="/Users/diego/Library/Android/sdk/tools:${PATH}"
 export PATH="/Users/diego/Library/Android/sdk/platform-tools:${PATH}"
+# RVM. Make sure this is the last PATH variable change.
+export PATH="${PATH}:${HOME}/.rvm/bin"

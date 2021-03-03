@@ -14,6 +14,7 @@ fi
 pkglist=(
   aaron-bond.better-comments
   ms-azuretools.vscode-docker
+  naumovs.color-highlight
   eamodio.gitlens
   pkief.material-icon-theme
   coenraads.bracket-pair-colorizer
