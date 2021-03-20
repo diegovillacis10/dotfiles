@@ -8,10 +8,17 @@ $ brew bundle
 ```
 ## VSCode
 1. Setup settings
+For MacOS:
 ```shell
 $ ln -sv <dotfiles_dir>/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 $ ln -sv <dotfiles_dir>/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+```
+For Linux:
+```shell
+$ ln -sv <dotfiles_dir>/vscode/settings.json ~/.config/Code/User/settings.json
+
+$ ln -sv <dotfiles_dir>/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 ```
 2. Setup extensions
 
