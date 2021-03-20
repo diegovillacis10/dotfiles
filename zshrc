@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/diego/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -65,19 +65,21 @@ ZSH_THEME="muse"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z osx)
+[[ "${OSTYPE}" == "linux"* ]]  && plugins=(git z)
+[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git z osx)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 source ~/.zsh/aliases
 source ~/.zsh/path
 source ~/.zsh/var
 source ~/.secrets/zsh
 
 # Z
-. /usr/local/etc/profile.d/z.sh
+if [[ "${OSTYPE}" == "darwin"* ]]; then
+  . /usr/local/etc/profile.d/z.sh
+fi
 
 # Theme
 setopt promptsubst
@@ -93,6 +95,9 @@ GIT_PROMPT_INFO=$FG[012]
 ZSH_THEME_CLOUD_PREFIX=%(?:%{$fg_bold[white]%}☁️ :%{$fg_bold[red]%}☁️ )
 PROMPT='$ZSH_THEME_CLOUD_PREFIX $PROMPT_SUCCESS_COLOR%}%c%{$reset_color%}%{$GIT_PROMPT_INFO%}$(git_prompt_info)$(virtualenv_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}%{$PROMPT_PROMPT%}ᐅ%{$reset_color%} '
 
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -102,4 +107,3 @@ PROMPT='$ZSH_THEME_CLOUD_PREFIX $PROMPT_SUCCESS_COLOR%}%c%{$reset_color%}%{$GIT_
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-

@@ -11,7 +11,10 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-  autocmd VimEnter * ++nested colorscheme gruvbox
+  if has('macunix')
+      autocmd VimEnter * ++nested colorscheme gruvbox
+  endif
+  set bg=dark
 
 Plug 'preservim/nerdtree'
   map <C-n> :NERDTreeToggle<CR>
@@ -35,11 +38,13 @@ Plug 'tpope/vim-commentary'
 
 Plug 'airblade/vim-gitgutter'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-  nnoremap <silent> <C-f> :Files<CR>
-  nnoremap <silent> <Leader>f :Rg<CR>
-  set rtp+=/usr/local/opt/fzf
+if has('macunix')
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+    nnoremap <silent> <C-f> :Files<CR>
+    nnoremap <silent> <Leader>f :Rg<CR>
+    set rtp+=/usr/local/opt/fzf
+endif
 
 Plug 'tpope/vim-fugitive'
 
@@ -58,7 +63,6 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 " Basic Configuration
-
 set number
 set relativenumber
 set showmatch
@@ -96,6 +100,7 @@ set pastetoggle=<F2>
 
 " Auto reload files
 autocmd CursorHold * checktime
+autocmd VimEnter * colorscheme gruvbox
 
 " Disable cursorline on insert mode
 autocmd InsertEnter,InsertLeave * set cursorline!
