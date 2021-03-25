@@ -30,6 +30,7 @@ $ ./<dotfiles_dir>/vscode/install-vscode-extenstions.sh
 I'm using [Vim Plug](https://github.com/junegunn/vim-plug) as my plugin manager.
 ```shell
 $ ln -sv <dotfiles_dir>/vimrc ~/.vimrc
+$ ln -sv <dotfiles_dir>/coc-settings.json ~/.vim/coc-settings.json
 ```
 To install plugins enter vim and execute `:PlugInstall`
 
