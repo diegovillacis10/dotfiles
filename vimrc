@@ -48,17 +48,33 @@ endif
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'tpope/vim-surround'
+
 Plug 'pangloss/vim-javascript'
 
-Plug 'yuezk/vim-js'
+Plug 'leafgarland/typescript-vim'
 
-Plug 'maxmellon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
-Plug 'tpope/vim-surround'
+Plug 'jparise/vim-graphql'
+
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  nnoremap <silent> K :call CocAction('doHover')<CR>
+  let g:coc_global_extensions = [
+    \ 'coc-tsserver',
+    \ 'coc-css',
+    \ 'coc-html',
+    \ 'coc-json'
+    \ ]
+  if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+    let g:coc_global_extensions += ['coc-prettier']
+  endif
+
+  if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+    let g:coc_global_extensions += ['coc-eslint']
+  endif
 
 call plug#end()
 
@@ -101,6 +117,12 @@ set pastetoggle=<F2>
 " Auto reload files
 autocmd CursorHold * checktime
 autocmd VimEnter * colorscheme gruvbox
+
+" Highlighting for large files
+" https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim#highlighting-for-large-files
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
 
 " Disable cursorline on insert mode
 autocmd InsertEnter,InsertLeave * set cursorline!
