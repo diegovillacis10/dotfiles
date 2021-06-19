@@ -19,7 +19,10 @@ sudo apt install \
     apt-transport-https \
     ca-certificates \
     gnupg2 \
-    software-properties-common
+    software-properties-common \
+    nmap \
+    transmission \
+    net-tools
 
 ## INSTALL GUIs
 

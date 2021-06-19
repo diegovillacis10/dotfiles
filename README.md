@@ -83,3 +83,8 @@ ln -sv ~/dotfiles/Xresources ~/.Xresources
 ```shell
 sudo ln -sv ~/dotfiles/keyboard /etc/default/keyboard
 ```
+
+## EditorConfig
+```shell
+ln -sv ~/dotfiles/editorconfig ~/.editorconfig
+```
