@@ -1,0 +1,44 @@
+! Linux colors from https://wiki.gentoo.org/wiki/Rxvt-unicode
+! Font to Fira Code Retina, 12px
+URxvt.font: xft:Fira Code Retina:style=Retina:pixelsize=12
+
+! Set Bold Font to Fira Code Bold, 12px
+URxvt.boldFont: xft:Fira Code:style=Bold:pixelsize:12
+
+! Set Italics Font to Fira Code Light, 12px
+URxvt.italicFont: xft:Fira Code:style=Light:pixelsize:12
+
+URxvt*scrollBar: false
+URxvt*scrollTtyOutput: false
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: /usr/bin/google-chrome
+URxvt.matcher.button: 1
+URxvt*iconFile: /usr/share/icons/gnome/32x32/apps/utilities-terminal.png
+
+! Restore Ctrl+Shift+(c|v)
+! https://www.tomica.net/blog/2019/01/fixing-urxvt-copy-paste/
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt*background: #000000
+URxvt*foreground: #B2B2B2
+URxvt*color0: #000000
+URxvt*color1: #B21818
+URxvt*color2: #18B218
+URxvt*color3: #B26818
+URxvt*color4: #1818B2
+URxvt*color5: #B218B2
+URxvt*color6: #18B2B2
+URxvt*color7: #B2B2B2
+URxvt*color8: #686868
+URxvt*color9: #FF5454
+URxvt*color10: #54FF54
+URxvt*color11: #FFFF54
+URxvt*color12: #5454FF
+URxvt*color13: #FF54FF
+URxvt*color14: #54FFFF
+URxvt*color15: #FFFFFF
+
+Xft*dpi: 220

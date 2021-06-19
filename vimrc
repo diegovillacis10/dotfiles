@@ -1,12 +1,6 @@
 let mapleader = ' '
 let g:mapleader = ' '
 
-" Install vim-plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-endif
-
 " Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -38,13 +32,16 @@ Plug 'tpope/vim-commentary'
 
 Plug 'airblade/vim-gitgutter'
 
-if has('macunix')
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-    nnoremap <silent> <C-f> :Files<CR>
-    nnoremap <silent> <Leader>f :Rg<CR>
-    set rtp+=/usr/local/opt/fzf
-endif
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+  nnoremap <silent> <C-f> :Files<CR>
+  nnoremap <silent> <Leader>f :Rg<CR>
+  set rtp+=/usr/local/opt/fzf
+  " https://www.erickpatrick.net/blog/adding-syntax-highlighting-to-fzf.vim-preview-window
+  let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'batcat --color=always --style=header,grid --line-range :300 {}'"
+  let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
+  command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 Plug 'tpope/vim-fugitive'
 
@@ -62,6 +59,7 @@ Plug 'jparise/vim-graphql'
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   nnoremap <silent> K :call CocAction('doHover')<CR>
+  let g:coc_disable_startup_warning = 1
   let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-css',
