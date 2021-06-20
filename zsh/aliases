@@ -10,26 +10,59 @@ alias drmi='docker rmi $(docker images -q)'
 alias dr='docker run --rm -it'
 
 # Other
-alias o='open'
 alias mkdir='mkdir -pv'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias df='df -h'
-alias du='du -h'
-alias duf='du -sh *'
-alias dus='du -d 1 -h | sort -h'
-alias tree='tree -FC'
-alias src='. ~/.zshrc'
+alias ln='ln -i'
+alias rm='rm -I --preserve-root'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
+alias tree='tree -FC'
+alias xclipc='xclip -sel clip'
+alias src='. ~/.zshrc'
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowdate='date +"%d-%m-%Y"'
+alias vi=vim
+alias svi='sudo vi'
+alias edit='vim'
 alias hg='history | grep'
 alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull -r \;'
-alias calc='open -n -a calculator'
 alias json=" jq -C '.' | less -R"
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias ipl="ipconfig getifaddr en0"
 alias www='python -m SimpleHTTPServer 8000'
+
+# GUIs
+alias o='xdg-open'
 alias sp='spotify'
+alias calc='gnome-calculator'
+
+# Sys Admin
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+alias top='atop'
+alias df='df -h'
+alias du='du -ch'
+alias duf='du -csh *'
+alias dus='du -d 1 -h | sort -h'
+alias meminfo='free -mlth'
+alias cpuinfo='lscpu'
+## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+## get top process eating cpu
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+# Networking
+alias ports='netstat -tulanp'
+alias ping='ping -c 5'
+alias fastping='ping -c 100 -s 1'
+alias ip_address='hostname -I'
 
 # Functions
 mkcd() { mkdir -p "$@" && cd "$@"; }
@@ -37,5 +70,13 @@ jd() { diff <(jq -S . "$1") <(jq -S . "$2"); }
 killport() { kill -9 $(lsof -t -i :"$1"); }
 t() {
   # Defaults to 3 levels deep, do more with `t 5` or `t 1`
-  tree -I '.git|node_modules|bower_components|.DS_Store' --dirsfirst --filelimit 15 -L ${1:-3} -aC $2
+  tree -I '.git|node_modules|.DS_Store' --dirsfirst -L ${1:-3} -aC $2
 }
+
+### Aliases for MacOS ###
+if [[ "$(uname)" = "Darwin" ]] then
+  alias o='open'
+  alias calc='open -n -a calculator'
+  alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+  alias ipl="ipconfig getifaddr en0"
+fi

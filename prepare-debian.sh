@@ -22,7 +22,8 @@ sudo apt install \
     software-properties-common \
     nmap \
     transmission \
-    net-tools
+    net-tools \
+    atop
 
 ## INSTALL GUIs
 
@@ -77,4 +78,3 @@ echo "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -c
 sudo apt update
 sudo apt install docker-ce
 sudo usermod -aG docker "${USER}"
-

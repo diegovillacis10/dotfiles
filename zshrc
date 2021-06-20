@@ -95,9 +95,6 @@ GIT_PROMPT_INFO=$FG[012]
 ZSH_THEME_CLOUD_PREFIX=%(?:%{$fg_bold[white]%}☁️ :%{$fg_bold[red]%}☁️ )
 PROMPT='$ZSH_THEME_CLOUD_PREFIX $PROMPT_SUCCESS_COLOR%}%c%{$reset_color%}%{$GIT_PROMPT_INFO%}$(git_prompt_info)$(virtualenv_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}%{$PROMPT_PROMPT%}ᐅ%{$reset_color%} '
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -107,3 +104,6 @@ PROMPT='$ZSH_THEME_CLOUD_PREFIX $PROMPT_SUCCESS_COLOR%}%c%{$reset_color%}%{$GIT_
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+# Load rbenv automatically.
+eval "$(rbenv init -)"

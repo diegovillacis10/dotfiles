@@ -79,7 +79,7 @@ ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -sv ~/dotfiles/Xresources ~/.Xresources
 ```
 
-## Keyoard
+## Keyboard
 ```shell
 sudo ln -sv ~/dotfiles/keyboard /etc/default/keyboard
 ```
@@ -87,4 +87,9 @@ sudo ln -sv ~/dotfiles/keyboard /etc/default/keyboard
 ## EditorConfig
 ```shell
 ln -sv ~/dotfiles/editorconfig ~/.editorconfig
+```
+
+## Gem
+```shell
+ln -sv ~/dotfiles/gemrc ~/.gemrc
 ```
