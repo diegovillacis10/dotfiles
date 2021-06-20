@@ -1,6 +1,7 @@
 # npm
 alias ni='npm install'
 alias ns='npm run start'
+alias nsdev='npm run start:dev'
 alias nb='npm run build'
 alias nt='npm test'
 
@@ -68,6 +69,7 @@ alias ip_address='hostname -I'
 mkcd() { mkdir -p "$@" && cd "$@"; }
 jd() { diff <(jq -S . "$1") <(jq -S . "$2"); }
 killport() { kill -9 $(lsof -t -i :"$1"); }
+rbsme() { git checkout "$1" && git pull --rebase && git checkout - && git rebase "$1"; }
 t() {
   # Defaults to 3 levels deep, do more with `t 5` or `t 1`
   tree -I '.git|node_modules|.DS_Store' --dirsfirst -L ${1:-3} -aC $2
