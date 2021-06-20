@@ -1,0 +1,108 @@
+set main-view = id:yes date:custom,format=%Y-%m-%d author:full commit-title,graph=yes,refs=yes
+set git-colors = no
+set refresh-mode = auto
+
+# Keybindings for easy rebase
+bind generic g move-first-line
+bind generic G move-last-line
+bind generic <Ctrl-g> view-grep
+bind main i !@sh -c "echo $(git rev-parse --short %(commit)) | pbcopy"
+bind main I !@sh -c "echo %(commit) | pbcopy"
+
+color header		    121	default	bold
+color section			45	default	bold
+color search-result		black	86	bold
+
+# diff view
+color diff-header		45	default	bold
+color diff-index		86	default	bold
+color diff-oldmode		81	default	bold
+color diff-newmode		81	default	bold
+color "rename from "		81	default	bold
+color "rename to "		81	default	bold
+color "similarity "		81	default	bold
+color "dissimilarity "		81	default	bold
+color diff-stat			222	default	bold
+color diff-chunk		165	default	bold
+color diff-add			154	default	bold
+color diff-add-highlight	232	154	bold
+color diff-del			196	default	bold
+color diff-del-highlight	232	196	bold
+color " +"			154	default
+color " -"			196	default
+color "--- "			45	default	bold
+color "+++ "			45	default	bold
+color "Merge: "			222	default	bold
+color "Refs: "			198	default	bold
+color "commit "			214	default	bold
+color "Commit: "		45	default	bold
+color "CommitDate: "		128	default	bold
+color "Author: "		45	default	bold
+color "AuthorDate: "		128	default	bold
+color "Tagger: "		222	default	bold
+color "TaggerDate: "		222	default	bold
+color "---"			165	default	bold
+
+# log view, mostly
+color "Date: "			82	default	bold
+color "    Signed-off-by"	222	default	bold
+color "    Acked-by"		222	default	bold
+color "    Tested-by"		222	default	bold
+color "    Reviewed-by"		222	default	bold
+
+# main view
+color author			45	default	bold
+color date			82	default	bold
+color graph-commit		222	default bold
+color id			214	default	bold
+color main-remote		198 default	bold
+color main-tracked		198 default	bold
+color main-tag			166	default	bold
+color main-local-tag		166	default	bold
+color main-head			86	default	bold
+color main-ref			121	default	bold
+color overflow			196	default
+
+# window dressing
+color title-blur		45	default	bold
+color title-focus		45	232	bold reverse
+color cursor			232	222	bold
+color status			82	default
+
+# tree view
+color mode			121	default
+color directory			121	default	bold
+color file			255	default
+
+# status view
+color stat-none			82	default
+color stat-staged		154	default	bold
+color stat-unstaged		166	default	bold
+color stat-untracked		81	default	bold
+
+# lines in digraph
+color palette-0			165	default bold
+color palette-1			45	default bold
+color palette-2			222	default bold
+color palette-3			166	default bold
+color palette-4			121	default bold
+color palette-5			82	default bold
+color palette-6			196	default bold
+color palette-7			238	default bold
+# repeat
+color palette-8			165	default
+color palette-9			45	default
+color palette-10		222	default
+color palette-11		166	default
+color palette-12		121	default
+color palette-13		82	default
+
+# grep view
+color grep.file			45	default	bold
+color grep.line-number		165	default	bold
+color grep.delimiter		82	default	bold # no effect?
+color delimiter			82	default	bold # no effect?
+
+# help view
+color help-group		165	default	bold
+color help-action		222	default	bold
