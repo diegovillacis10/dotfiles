@@ -79,6 +79,11 @@ ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -sv ~/dotfiles/p10k.zsh ~/.p10k.zsh
 ```
 
+## Tig
+```shell
+ln -sv ~/dotfiles/tigrc ~/.tigrc
+```
+
 ## Urxvt
 ```shell
 ln -sv ~/dotfiles/Xresources ~/.Xresources
