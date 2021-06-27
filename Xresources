@@ -1,12 +1,10 @@
-! Linux colors from https://wiki.gentoo.org/wiki/Rxvt-unicode
-! Font to Fira Code Retina, 12px
-URxvt.font: xft:Fira Code Retina:style=Retina:pixelsize=12
+URxvt.font: xft:MesloLGS NF:style=Regular:pixelsize=12
 
-! Set Bold Font to Fira Code Bold, 12px
-URxvt.boldFont: xft:Fira Code:style=Bold:pixelsize:12
+! Set Bold Font
+URxvt.boldFont: xft:MesloLGS NF:styleBold:pixelsize:12
 
-! Set Italics Font to Fira Code Light, 12px
-URxvt.italicFont: xft:Fira Code:style=Light:pixelsize:12
+! Set Italics Font
+URxvt.italicFont: xft:MesloLGS NF:style=Italic:pixelsize:12
 
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
@@ -22,6 +20,7 @@ URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
+! Linux colors from https://wiki.gentoo.org/wiki/Rxvt-unicode
 URxvt*background: #000000
 URxvt*foreground: #B2B2B2
 URxvt*color0: #000000

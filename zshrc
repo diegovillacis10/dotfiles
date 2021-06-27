@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -5,7 +12,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="muse"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,29 +78,15 @@ ZSH_THEME="muse"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-source ~/.zsh/aliases
 source ~/.zsh/path
 source ~/.zsh/var
+source ~/.zsh/aliases
 source ~/.secrets/zsh
 
 # Z
 if [[ "${OSTYPE}" == "darwin"* ]]; then
   . /usr/local/etc/profile.d/z.sh
 fi
-
-# Theme
-setopt promptsubst
-autoload -U add-zsh-hook
-
-PROMPT_SUCCESS_COLOR=$FG[117]
-PROMPT_FAILURE_COLOR=$FG[124]
-PROMPT_VCS_INFO_COLOR=$FG[242]
-PROMPT_PROMPT=$FG[077]
-GIT_DIRTY_COLOR=$FG[133]
-GIT_CLEAN_COLOR=$FG[118]
-GIT_PROMPT_INFO=$FG[012]
-ZSH_THEME_CLOUD_PREFIX=%(?:%{$fg_bold[white]%}☁️ :%{$fg_bold[red]%}☁️ )
-PROMPT='$ZSH_THEME_CLOUD_PREFIX $PROMPT_SUCCESS_COLOR%}%c%{$reset_color%}%{$GIT_PROMPT_INFO%}$(git_prompt_info)$(virtualenv_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}%{$PROMPT_PROMPT%}ᐅ%{$reset_color%} '
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -107,3 +100,6 @@ PROMPT='$ZSH_THEME_CLOUD_PREFIX $PROMPT_SUCCESS_COLOR%}%c%{$reset_color%}%{$GIT_
 
 # Load rbenv automatically.
 eval "$(rbenv init -)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

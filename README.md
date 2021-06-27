@@ -74,6 +74,11 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
+## Powerlevel10k
+```shell
+ln -sv ~/dotfiles/p10k.zsh ~/.p10k.zsh
+```
+
 ## Urxvt
 ```shell
 ln -sv ~/dotfiles/Xresources ~/.Xresources
@@ -92,4 +97,9 @@ ln -sv ~/dotfiles/editorconfig ~/.editorconfig
 ## Gem
 ```shell
 ln -sv ~/dotfiles/gemrc ~/.gemrc
+```
+
+## NPM
+```shell
+ln -sv ~/dotfiles/npmrc ~/.npmrc
 ```

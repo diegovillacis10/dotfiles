@@ -23,7 +23,11 @@ sudo apt install \
     nmap \
     transmission \
     net-tools \
-    atop
+    htop \
+    firmware-iwlwifi \
+    cmatrix \
+    most \
+    tlp \
 
 ## INSTALL GUIs
 
@@ -34,7 +38,7 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 
 # VScode
 # https://code.visualstudio.com/download
-wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 vscode_installer.deb
+wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" vscode_installer.deb
 sudo apt install ./vscode_installer.deb
 
 # Spotify
@@ -58,6 +62,12 @@ mkdir -p ~/.local/share/fonts
 for type in Bold Light Medium Regular Retina; do
   wget -O ~/.local/share/fonts/FiraCode-$type.ttf "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-$type.ttf?raw=true";
 done
+
+# Meslo fonts
+wget -O ~/.local/share/fonts/MesloLGS-NF-Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+wget -O ~/.local/share/fonts/MesloLGS-NF-Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+wget -O ~/.local/share/fonts/MesloLGS-NF-Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+wget -O ~/.local/share/fonts/MesloLGS-NF-Bold-Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 fc-cache -f
 
 # Node LTS
@@ -78,3 +88,10 @@ echo "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -c
 sudo apt update
 sudo apt install docker-ce
 sudo usermod -aG docker "${USER}"
+
+# Configure firewall
+sudo apt install ufw
+sudo ufw enable
+
+# Install powerlevel10k ZSH theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
