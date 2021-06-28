@@ -6,8 +6,10 @@ set refresh-mode = auto
 bind generic g move-first-line
 bind generic G move-last-line
 bind generic <Ctrl-g> view-grep
-bind main i !@sh -c "echo $(git rev-parse --short %(commit)) | pbcopy"
-bind main I !@sh -c "echo %(commit) | pbcopy"
+bind main i !@sh -c "echo -n $(git rev-parse --short %(commit)) | xclip -sel c"
+# bind main i !@sh -c "echo -n $(git rev-parse --short %(commit)) | pbcopy"
+bind main I !@sh -c "echo -n %(commit) | xclip -sel c"
+# bind main I !@sh -c "echo -n %(commit) | pbcopy"
 
 color header		    121	default	bold
 color section			45	default	bold
