@@ -80,7 +80,6 @@ fi
 
 ### Aliases for MacOS ###
 if [[ "$(uname)" = "Darwin" ]] then
-  alias rm='rm -iv'
   alias o='open'
   alias calc='open -n -a calculator'
   alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
