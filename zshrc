@@ -99,7 +99,12 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # Load rbenv automatically.
-eval "$(rbenv init -)"
+if type "rbenv" > /dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
+
+# Load rvm automatically.
+[[ -s "${HOME}/.rvm/scripts/rvm" ]] && . "${HOME}/.rvm/scripts/rvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

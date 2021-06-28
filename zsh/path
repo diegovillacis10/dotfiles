@@ -3,5 +3,11 @@ export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 # NPM
 export PATH="${HOME}/.npm-global/bin:${PATH}"
 
+### PATH for MacOS ###
+if [[ "$(uname)" = "Darwin" ]] then
+  # RVM. Make sure this is the last PATH variable change.
+  export PATH="${PATH}:${HOME}/.rvm/bin"
+fi
+
 # https://www.linuxjournal.com/content/removing-duplicate-path-entries
 export PATH=$(echo -n $PATH | awk -v RS=: '!($0 in a) {a[$0]; printf("%s%s", length(a) > 1 ? ":" : "", $0)}')
