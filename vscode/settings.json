@@ -18,6 +18,7 @@
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
   "files.insertFinalNewline": true,
+  "screencastMode.onlyKeyboardShortcuts": true,
   "terminal.integrated.shell.osx": "zsh",
   "window.zoomLevel": 0,
   "workbench.iconTheme": "material-icon-theme",
@@ -51,3 +52,4 @@
   "gitlens.defaultDateStyle": "absolute",
   "gitlens.statusBar.enabled": true
 }
+
