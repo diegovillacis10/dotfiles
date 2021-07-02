@@ -1,7 +1,7 @@
 URxvt.font: xft:MesloLGS NF:style=Regular:pixelsize=12
 
 ! Set Bold Font
-URxvt.boldFont: xft:MesloLGS NF:styleBold:pixelsize:12
+URxvt.boldFont: xft:MesloLGS NF:style=Bold:pixelsize:12
 
 ! Set Italics Font
 URxvt.italicFont: xft:MesloLGS NF:style=Italic:pixelsize:12
