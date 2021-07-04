@@ -16,14 +16,12 @@ brew bundle
 For MacOS:
 ```shell
 ln -sv ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-
-ln -sv ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -sv ~/dotfiles/vscode/keybindings.$(uname).json ~/Library/Application\ Support/Code/User/keybindings.json
 ```
 For Linux:
 ```shell
 ln -sv ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
-
-ln -sv ~/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
+ln -sv ~/dotfiles/vscode/keybindings.$(uname).json ~/.config/Code/User/keybindings.json
 ```
 2. Setup extensions
 
@@ -92,6 +90,7 @@ ln -sv ~/dotfiles/Xresources ~/.Xresources
 
 ## Keyboard
 ```shell
+sudo mv /etc/default/keyboard /etc/default/keyboard.backup
 sudo ln -sv ~/dotfiles/keyboard /etc/default/keyboard
 ```
 

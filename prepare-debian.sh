@@ -1,33 +1,32 @@
-#! /bin/bash
+#!/bin/bash
 
 ## INSTALL PACKAGES
 sudo apt install \
-    zsh \
+    software-properties-common \
+    apt-transport-https \
+    firmware-iwlwifi \
+    ca-certificates \
+    xrvt-unicode \
+    transmission \
+    shellcheck \
+    net-tools \
+    ripgrep \
+    cmatrix \
+    gnupg2 \
     xclip \
     tmux \
     curl \
-    xrvt-unicode \
     tldr \
+    nmap \
+    htop \
+    most \
+    zsh \
     fzf \
     git \
     bat \
     tig \
-    ripgrep \
-    jq \
-    python-yubico-tools
-    shellcheck
-    apt-transport-https \
-    ca-certificates \
-    gnupg2 \
-    software-properties-common \
-    nmap \
-    transmission \
-    net-tools \
-    htop \
-    firmware-iwlwifi \
-    cmatrix \
-    most \
     tlp \
+    jq
 
 ## INSTALL GUIs
 
@@ -81,6 +80,10 @@ fc-cache -f
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 sudo apt install -y nodejs
 
+# Install rbenv
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+
 # NordVPN
 # https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-Raspberry-Pi-Elementary-OS-and-Linux-Mint.htm
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
@@ -94,6 +97,9 @@ echo "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -c
 sudo apt update
 sudo apt install docker-ce
 sudo usermod -aG docker "${USER}"
+
+#Install Z
+git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM}/plugins/zsh-z
 
 # Configure firewall
 sudo apt install ufw
