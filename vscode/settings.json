@@ -18,6 +18,12 @@
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
   "files.insertFinalNewline": true,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/venv/*/**": true
+  },
   "screencastMode.onlyKeyboardShortcuts": true,
   "terminal.integrated.shell.osx": "zsh",
   "window.zoomLevel": 0,
@@ -48,8 +54,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "gitlens.defaultDateStyle": "absolute",
-  "gitlens.statusBar.enabled": true
+  "gitlens.statusBar.enabled": true,
+  "vim.disableExtension": true
 }
-

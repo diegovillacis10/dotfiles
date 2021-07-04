@@ -98,6 +98,11 @@ sudo apt update
 sudo apt install docker-ce
 sudo usermod -aG docker "${USER}"
 
+# Install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+cd ~/.asdf
+git checkout "$(git describe --abbrev=0 --tags)"
+
 #Install Z
 git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM}/plugins/zsh-z
 

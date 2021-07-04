@@ -3,9 +3,5 @@
     "key": "shift+alt+t",
     "command": "workbench.action.tasks.test",
     "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+v",
-    "command": "toggleVim"
   }
 ]
