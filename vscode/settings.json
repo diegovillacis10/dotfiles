@@ -56,5 +56,6 @@
   },
   "gitlens.defaultDateStyle": "absolute",
   "gitlens.statusBar.enabled": true,
-  "vim.disableExtension": true
+  "vim.disableExtension": true,
+  "eslint.alwaysShowStatus": true
 }

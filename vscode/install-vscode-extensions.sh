@@ -13,32 +13,35 @@ fi
 
 pkglist=(
   aaron-bond.better-comments
-  ms-azuretools.vscode-docker
-  naumovs.color-highlight
-  eamodio.gitlens
-  pkief.material-icon-theme
-  coenraads.bracket-pair-colorizer
-  techer.open-in-browser
-  pranaygp.vscode-css-peek
+  bengreenier.vscode-node-readme
+  carbonid1.emmet-jss
+  ChakrounAnas.turbo-console-log
+  christian-kohler.npm-intellisense
+  christian-kohler.path-intellisense
+  CoenraadS.bracket-pair-colorizer
   dbaeumer.vscode-eslint
+  dsznajder.es7-react-js-snippets
+  eamodio.gitlens
   esbenp.prettier-vscode
   kisstkondoros.vscode-gutter-preview
-  vscodevim.vim
   mechatroner.rainbow-csv
-  chakrounanas.turbo-console-log
-  yzhang.markdown-all-in-one
-  dsznajder.es7-react-js-snippets
-  christian-kohler.path-intellisense
-  christian-kohler.npm-intellisense
-  pflannery.vscode-versionlens
-  bengreenier.vscode-node-readme
-  wix.vscode-import-cost
-  carbonid1.emmet-jss
-  wmaurer.change-case
+  ms-azuretools.vscode-docker
+  ms-vscode-remote.remote-containers
+  naumovs.color-highlight
   oderwat.indent-rainbow
-  xadillax.viml
+  patbenatar.advanced-new-file
+  pflannery.vscode-versionlens
+  PKief.material-icon-theme
+  pranaygp.vscode-css-peek
+  sleistner.vscode-fileutils
+  techer.open-in-browser
+  vscodevim.vim
+  wix.vscode-import-cost
+  wmaurer.change-case
+  XadillaX.viml
+  yzhang.markdown-all-in-one
 )
 
-for i in "${pkglist[@]}"; do
-  code --install-extension "${i}"
+for pkg in "${pkglist[@]}"; do
+  code --install-extension "${pkg}"
 done

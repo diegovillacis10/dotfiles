@@ -64,10 +64,9 @@ NOTE: Make sure to update the gitconfig file since it has my identity 😉
 ln -sv ~/dotfiles/gitconfig ~/.gitconfig
 ln -sv ~/dotfiles/gitconfig_global ~/.gitconfig_global
 ```
-## Tmux
+## Config Tmux
 ```shell
 mkdir -p ~/.tmux/plugins/
-git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
 ```

@@ -1,17 +1,15 @@
-URxvt.font: xft:MesloLGS NF:style=Regular:pixelsize=12
-
-! Set Bold Font
-URxvt.boldFont: xft:MesloLGS NF:style=Bold:pixelsize:12
-
-! Set Italics Font
-URxvt.italicFont: xft:MesloLGS NF:style=Italic:pixelsize:12
+URxvt*font: xft:MesloLGS NF:style=Regular:pixelsize=12
+URxvt*boldFont: xft:MesloLGS NF:style=Bold:pixelsize:12
+URxvt*italicFont: xft:MesloLGS NF:style=Italic:pixelsize:12
+URxvt*boldItalicFont: xft:MesloLGS NF:style=Bold Italic:pixelsize:12
 
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: /usr/bin/google-chrome
 URxvt.matcher.button: 1
-URxvt*iconFile: /usr/share/icons/gnome/32x32/apps/utilities-terminal.png
+URxvt*saveLines: 12000
+URxvt*secondaryScroll: true # Enable Shift-PageUp/Down in screen
 
 ! Restore Ctrl+Shift+(c|v)
 ! https://www.tomica.net/blog/2019/01/fixing-urxvt-copy-paste/
@@ -40,4 +38,3 @@ URxvt*color13: #FF54FF
 URxvt*color14: #54FFFF
 URxvt*color15: #FFFFFF
 
-Xft*dpi: 220
