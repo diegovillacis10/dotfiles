@@ -121,6 +121,6 @@ autocmd VimEnter * colorscheme gruvbox
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
-
 " Disable cursorline on insert mode
 autocmd InsertEnter,InsertLeave * set cursorline!
+
