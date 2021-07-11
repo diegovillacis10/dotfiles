@@ -81,7 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 [[ "${OSTYPE}" == "linux"* ]]  && plugins=(git zsh-z asdf)
-[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git z osx)
+[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git zsh-z osx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,11 +90,6 @@ source ~/.zsh/path
 source ~/.zsh/var
 source ~/.zsh/aliases
 source ~/.secrets/zsh
-
-# Z
-if [[ "${OSTYPE}" == "darwin"* ]]; then
-  . /usr/local/etc/profile.d/z.sh
-fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
