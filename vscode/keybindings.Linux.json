@@ -4,7 +4,12 @@
     "command": "toggleVim"
   },
   {
-    "key": "ctrl+d",
+    "key": "shift+alt+down",
+    "command": "-editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+shift+down",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus"
   },
@@ -36,6 +41,36 @@
   {
     "key": "alt+left",
     "command": "cursorHome",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "-editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+end",
+    "command": "-cursorEndSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "cursorEndSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "-editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "cursorHomeSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+home",
+    "command": "-cursorHomeSelect",
     "when": "textInputFocus"
   }
 ]
