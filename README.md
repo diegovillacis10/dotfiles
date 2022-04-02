@@ -107,3 +107,8 @@ ln -sv ~/dotfiles/gemrc ~/.gemrc
 ```shell
 ln -sv ~/dotfiles/npmrc ~/.npmrc
 ```
+
+## ASDF
+```shell
+ln -sv ~/dotfiles/asdfrc ~/.asdfrc
+```

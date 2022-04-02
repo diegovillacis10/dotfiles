@@ -1,7 +1,8 @@
-# Load rbenv automatically.
-if type "rbenv" > /dev/null 2>&1; then
-  eval "$(rbenv init -)"
-fi
+# User configuration
+source ~/.zsh/path
+source ~/.zsh/var
+source ~/.zsh/aliases
+source ~/.secrets/zsh
 
 # Load rvm automatically.
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && . "${HOME}/.rvm/scripts/rvm"
