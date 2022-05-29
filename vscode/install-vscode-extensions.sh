@@ -13,27 +13,37 @@ fi
 
 pkglist=(
   aaron-bond.better-comments
+  arcticicestudio.nord-visual-studio-code
   bengreenier.vscode-node-readme
   carbonid1.emmet-jss
+  castwide.solargraph
   ChakrounAnas.turbo-console-log
   christian-kohler.npm-intellisense
   christian-kohler.path-intellisense
-  CoenraadS.bracket-pair-colorizer
   dbaeumer.vscode-eslint
   dsznajder.es7-react-js-snippets
   eamodio.gitlens
+  EditorConfig.EditorConfig
+  equinusocio.vsc-material-theme-icons
   esbenp.prettier-vscode
+  formulahendry.auto-rename-tag
+  johnpapa.vscode-peacock
+  jpoissonnier.vscode-styled-components
   kisstkondoros.vscode-gutter-preview
   mechatroner.rainbow-csv
+  mikestead.dotenv
   ms-azuretools.vscode-docker
-  ms-vscode-remote.remote-containers
+  ms-vsliveshare.vsliveshare
+  ms-vsliveshare.vsliveshare-audio
+  ms-vsliveshare.vsliveshare-pack
   naumovs.color-highlight
   oderwat.indent-rainbow
   patbenatar.advanced-new-file
   pflannery.vscode-versionlens
   PKief.material-icon-theme
+  pnp.polacode
   pranaygp.vscode-css-peek
-  sleistner.vscode-fileutils
+  ritwickdey.LiveServer
   techer.open-in-browser
   vscodevim.vim
   wix.vscode-import-cost

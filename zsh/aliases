@@ -10,6 +10,9 @@ alias drm='docker rm $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias drmi='docker rmi $(docker images -q)'
 alias dr='docker run --rm -it'
 
+# Git
+alias glr='git pull --rebase'
+
 # Other
 alias mkdir='mkdir -pv'
 alias cp='cp -iv'
@@ -30,6 +33,8 @@ alias svi='sudo vi'
 alias edit='vim'
 alias hg='history | grep'
 alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull -r \;'
+alias json="jq -C '.' | less -R"
+alias ugh='fuck'
 alias www='python -m SimpleHTTPServer 8000'
 
 # GUIs
@@ -85,4 +90,10 @@ if [[ "$(uname)" = "Darwin" ]] then
   alias json=" jq -C '.' | less -R"
   alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
   alias ipl="ipconfig getifaddr en0"
+
+  function copyfile {
+    [[ "$#" != 1 ]] && return 1
+    local file_to_copy=$1
+    cat $file_to_copy | pbcopy
+  }
 fi

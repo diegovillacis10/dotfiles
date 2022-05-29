@@ -4,11 +4,7 @@ let g:mapleader = ' '
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
-  if has('macunix')
-      autocmd VimEnter * ++nested colorscheme gruvbox
-  endif
-  set bg=dark
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'preservim/nerdtree'
   map <C-n> :NERDTreeToggle<CR>
@@ -97,6 +93,7 @@ set undolevels=1000
 set backspace=indent,eol,start
 set nobackup
 set noswapfile
+set novisualbell
 
 " Git conflicts resolution
 " https://gist.github.com/karenyyng/f19ff75c60f18b4b8149/e6ae1d38fb83e05c4378d8e19b014fd8975abb39
@@ -114,7 +111,9 @@ set pastetoggle=<F2>
 
 " Auto reload files
 autocmd CursorHold * checktime
-autocmd VimEnter * colorscheme gruvbox
+" autocmd VimEnter * colorscheme gruvbox
+
+colorscheme nord
 
 " Highlighting for large files
 " https://thoughtbot.com/blog/modern-typescript-and-react-development-in-vim#highlighting-for-large-files
