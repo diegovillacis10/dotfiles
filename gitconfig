@@ -13,3 +13,5 @@
     prompt = false
 [apply]
     whitespace = nowarn
+[init]
+    defaultBranch = main

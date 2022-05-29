@@ -1,21 +1,36 @@
 {
   "editor.scrollBeyondLastLine": false,
   "editor.smoothScrolling": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Source Code Pro",
   "editor.fontLigatures": true,
-  "editor.fontSize": 12,
+  "editor.fontSize": 13,
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
   "editor.renderWhitespace": "boundary",
   "editor.renderControlCharacters": true,
   "editor.rulers": [80, 100],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
   "editor.multiCursorPaste": "full",
+  "editor.tabSize": 2,
   "explorer.sortOrder": "type",
   "extensions.autoCheckUpdates": true,
   "extensions.autoUpdate": true,
-  "files.autoSave": "afterDelay",
+  "terminal.integrated.fontFamily": "Source Code Pro",
+  "workbench.colorTheme": "Nord",
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.wrapTabs": true,
+  "workbench.settings.openDefaultKeybindings": true,
+  "eslint.alwaysShowStatus": true,
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.statusBar.enabled": true,
+  "vim.disableExtension": true,
+  "screencastMode.onlyKeyboardShortcuts": true,
   "files.autoSaveDelay": 1000,
   "files.insertFinalNewline": true,
   "files.watcherExclude": {
@@ -24,13 +39,6 @@
     "**/node_modules/*/**": true,
     "**/venv/*/**": true
   },
-  "screencastMode.onlyKeyboardShortcuts": true,
-  "terminal.integrated.shell.osx": "zsh",
-  "window.zoomLevel": 0,
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.settings.openDefaultKeybindings": true,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
@@ -42,7 +50,7 @@
   },
   "[javascript]": {
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[html]": {
@@ -53,9 +61,5 @@
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "gitlens.defaultDateStyle": "absolute",
-  "gitlens.statusBar.enabled": true,
-  "vim.disableExtension": true,
-  "eslint.alwaysShowStatus": true
+  }
 }
