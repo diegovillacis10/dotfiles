@@ -1,7 +1,7 @@
-URxvt*font: xft:MesloLGS NF:style=Regular:pixelsize=12
-URxvt*boldFont: xft:MesloLGS NF:style=Bold:pixelsize:12
-URxvt*italicFont: xft:MesloLGS NF:style=Italic:pixelsize:12
-URxvt*boldItalicFont: xft:MesloLGS NF:style=Bold Italic:pixelsize:12
+URxvt*font: xft:Source Code Pro NF:style=Regular:pixelsize=13
+URxvt*boldFont: xft:Source Code Pro NF:style=Bold:pixelsize:13
+URxvt*italicFont: xft:Source Code Pro NF:style=Italic:pixelsize:13
+URxvt*boldItalicFont: xft:Source Code Pro NF:style=Bold Italic:pixelsize:13
 
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
@@ -18,22 +18,44 @@ URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-! Linux colors from https://wiki.gentoo.org/wiki/Rxvt-unicode
-URxvt*background: #000000
-URxvt*foreground: #B2B2B2
-URxvt*color0: #000000
-URxvt*color1: #B21818
-URxvt*color2: #18B218
-URxvt*color3: #B26818
-URxvt*color4: #1818B2
-URxvt*color5: #B218B2
-URxvt*color6: #18B2B2
-URxvt*color7: #B2B2B2
-URxvt*color8: #686868
-URxvt*color9: #FF5454
-URxvt*color10: #54FF54
-URxvt*color11: #FFFF54
-URxvt*color12: #5454FF
-URxvt*color13: #FF54FF
-URxvt*color14: #54FFFF
-URxvt*color15: #FFFFFF
+! Nord Theme
+! https://github.com/arcticicestudio/nord-xresources
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
+
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6

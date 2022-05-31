@@ -75,15 +75,6 @@ wget -O ~/.local/share/fonts/MesloLGS-NF-Italic.ttf https://github.com/romkatv/p
 wget -O ~/.local/share/fonts/MesloLGS-NF-Bold-Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 fc-cache -f
 
-# Node LTS
-# https://github.com/nodesource/distributions/blob/master/README.md#debinstall
-curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
-sudo apt install -y nodejs
-
-# Install rbenv
-mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
-
 # NordVPN
 # https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-Raspberry-Pi-Elementary-OS-and-Linux-Mint.htm
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
@@ -98,13 +89,16 @@ sudo apt update
 sudo apt install docker-ce
 sudo usermod -aG docker "${USER}"
 
+# Install Starship
+curl -sS https://starship.rs/install.sh | sh
+
 # Install asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-cd ~/.asdf
+cd ~/.asdf || exit
 git checkout "$(git describe --abbrev=0 --tags)"
 
 #Install Z
-git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM}/plugins/zsh-z
+git clone "https://github.com/agkozak/zsh-z" "${ZSH_CUSTOM}"/plugins/zsh-z
 
 # Configure firewall
 sudo apt install ufw
