@@ -27,11 +27,16 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.wrapTabs": true,
   "workbench.settings.openDefaultKeybindings": true,
+  "advancedNewFile.exclude": {
+    "node_modules": true
+  },
+  "advancedNewFile.showInformationMessages": true,
+  "advancedNewFile.convenienceOptions": ["last", "current", "root"],
   "eslint.alwaysShowStatus": true,
   "gitlens.defaultDateStyle": "absolute",
   "gitlens.statusBar.enabled": true,
-  "vim.disableExtension": true,
   "screencastMode.onlyKeyboardShortcuts": true,
+  "vim.disableExtension": true,
   "files.autoSaveDelay": 1000,
   "files.insertFinalNewline": true,
   "files.watcherExclude": {
@@ -60,7 +65,7 @@
 
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
