@@ -1,0 +1,45 @@
+[username]
+style_user = "bold dimmed blue"
+show_always = true
+format = "[$user]($style)"
+
+# [hostname]
+# ssh_only = false
+# format = "@(bold blue)[$hostname](bold red) "
+
+[localip]
+ssh_only = false
+format = "@[$localipv4](bold red) "
+disabled = false
+
+[status]
+disabled = false
+
+[sudo]
+disabled = false
+
+[directory]
+truncation_length = 5
+truncation_symbol = "…/"
+
+[git_commit]
+commit_hash_length = 8
+# only_detached = false
+
+[git_metrics]
+disabled = false
+
+[ruby]
+detect_variables = []
+
+# [memory_usage]
+# disabled = false
+# threshold = -1
+# style = "bold dimmed green"
+
+[time]
+disabled = false
+format = '🕙 [\[ $time \]]($style) '
+time_format = "%T"
+utc_time_offset = "-5"
+time_range = "22:00:00-01:00:00"
