@@ -1,7 +1,7 @@
-URxvt*font: xft:Source Code Pro NF:style=Regular:pixelsize=13
-URxvt*boldFont: xft:Source Code Pro NF:style=Bold:pixelsize:13
-URxvt*italicFont: xft:Source Code Pro NF:style=Italic:pixelsize:13
-URxvt*boldItalicFont: xft:Source Code Pro NF:style=Bold Italic:pixelsize:13
+URxvt*font: xft:SauceCodePro NF:style=Regular:pixelsize=13
+URxvt*boldFont: xft:SauceCodePro NF:style=Bold:pixelsize:13
+URxvt*italicFont: xft:SauceCodePro NF:style=Italic:pixelsize:13
+URxvt*boldItalicFont: xft:SauceCodePro NF:style=Bold Italic:pixelsize:13
 
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false

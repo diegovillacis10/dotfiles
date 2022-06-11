@@ -37,7 +37,7 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 
 # Brave Browser
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt install brave-browser
 
@@ -48,32 +48,22 @@ sudo apt install ./vscode_installer.deb
 
 # Spotify
 # https://www.spotify.com/us/download/linux/
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
+curl -fsSL https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt update && sudo apt install spotify-client
 
 # Enpass
 # https://www.enpass.io/support/kb/general/how-to-install-enpass-on-linux/
-sudo -i
-echo "deb https://apt.enpass.io/ stable main" > \
-  /etc/apt/sources.list.d/enpass.list
-wget -O - https://apt.enpass.io/keys/enpass-linux.key | apt-key add -
+echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
+wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
 apt update && apt install enpass
-exit
 
-# Fira Code fonts
-# https://gist.github.com/nikhita/95f1314f14cf613e78106eb9b89059e1
-mkdir -p ~/.local/share/fonts
-for type in Bold Light Medium Regular Retina; do
-  wget -O ~/.local/share/fonts/FiraCode-$type.ttf "https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-$type.ttf?raw=true";
+# FONTS
+git clone https://github.com/ryanoasis/nerd-fonts.git ~/nerd-fonts
+cd ~/nerd-fonts
+for font in SourceCodePro FiraCode Meslo; do
+  ./install.sh $fonr
 done
-
-# Meslo fonts
-wget -O ~/.local/share/fonts/MesloLGS-NF-Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-wget -O ~/.local/share/fonts/MesloLGS-NF-Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
-wget -O ~/.local/share/fonts/MesloLGS-NF-Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
-wget -O ~/.local/share/fonts/MesloLGS-NF-Bold-Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
-fc-cache -f
 
 # NordVPN
 # https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-Raspberry-Pi-Elementary-OS-and-Linux-Mint.htm
@@ -83,10 +73,12 @@ nordvpn login
 
 # Docker
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-debian-10
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-echo "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt update
-sudo apt install docker-ce
+sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo usermod -aG docker "${USER}"
 
 # Install Starship
