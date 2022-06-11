@@ -41,17 +41,6 @@ sudo service minidlna force-reload
 # https://pimylifeup.com/raspberry-pi-transmission/
 sudo systemctl stop transmission-daemon
 sudo mkdir -p /mnt/usb0/transmission/{torrent-inprogress,torrent-complete}
-# sudo chown -R pi:pi /mnt/usb0/transmission/torrent-inprogress
-# sudo chown -R pi:pi /mnt/usb0/transmission/torrent-complete
-# sudo sed -i.backup 's/USER=debian-transmission/USER=pi/g' /etc/init.d/transmission-daemon
-# sudo sed -i.backup 's/User=debian-transmission/User=pi/g' /etc/systemd/system/multi-user.target.wants/transmission-daemon.service
-# sudo systemctl daemon-reload
-# sudo chown -R pi:pi /etc/transmission-daemon
-# sudo mkdir -p ${HOME}/.config/transmission-daemon/
-# sudo chown -R pi:pi /home/pi/.config/transmission-daemon/
-sudo mv /etc/transmission-daemon/settings.json /etc/transmission-daemon/settings.json.backup
-sudo ln -sv ~/dotfiles/rpi/transmission.settings.json /etc/transmission-daemon/settings.json
+sudo mv /var/lib/transmission-daemon/info/settings.json /var/lib/transmission-daemon/info/settings.json.backup
+sudo ln -sv ~/dotfiles/rpi/transmission.settings.json /var/lib/transmission-daemon/info/settings.json
 sudo systemctl start transmission-daemon
-
-# NGINX
-sudo systemctl start nginx
