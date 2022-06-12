@@ -96,13 +96,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
 
-## Powerlevel10k
-
-```shell
-git clone --depth=1 "https://github.com/romkatv/powerlevel10k.git${ZSH_CUSTOM:-$HOME}/.oh-my-zsh/custom/themes/powerlevel10k"
-ln -sv ~/dotfiles/p10k.zsh ~/.p10k.zsh
-```
-
 ## Starship
 
 ```shell
@@ -148,6 +141,7 @@ ln -sv ~/dotfiles/npmrc ~/.npmrc
 ```
 
 ## ASDF
+
 ```shell
 ln -sv ~/dotfiles/asdfrc ~/.asdfrc
 ```
