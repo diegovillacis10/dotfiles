@@ -10,6 +10,8 @@ source ~/.secrets/zsh
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
+source $ZSH/oh-my-zsh.sh
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -77,17 +79,10 @@ ZSH_THEME="robbyrussell"
 [[ "${OSTYPE}" == "linux"* ]]  && plugins=(git zsh-z asdf)
 [[ "${OSTYPE}" == "darwin"* ]] && plugins=(git zsh-z macos thefuck direnv)
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-source ~/.zsh/path
-source ~/.zsh/var
-source ~/.zsh/aliases
-source ~/.secrets/zsh
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-eval $(thefuck --alias)
-eval "$(direnv hook $SHELL)"
-eval "$(starship init zsh)"
+# Evals
+[[ "$(command -v thefuck)" ]] && eval $(thefuck --alias)
+[[ "$(command -v direnv)" ]] && eval "$(direnv hook $SHELL)"
+[[ "$(command -v starship)" ]] && eval "$(starship init zsh)"
