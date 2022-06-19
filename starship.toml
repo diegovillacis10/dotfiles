@@ -1,3 +1,16 @@
+# Move the directory to the second line
+format = "$custom$all"
+
+[custom.debian]
+symbol = ' '
+os = "linux"
+when = true
+
+[custom.macos]
+symbol = ' '
+os = "macos"
+when = true
+
 # First Line
 [directory]
 read_only = " "
