@@ -2,14 +2,16 @@
 format = "$custom$all"
 
 [custom.debian]
-symbol = ' '
+symbol = ' '
 os = "linux"
 when = true
+style = 'red'
 
 [custom.macos]
 symbol = ' '
 os = "macos"
 when = true
+style = "dimmed white"
 
 # First Line
 [directory]
