@@ -3,15 +3,5 @@ export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 # NPM
 export PATH="${HOME}/.npm-global/bin:${PATH}"
 
-### PATH for rvm ###
-if [[ $(command -v "rvm") ]] then
-  export PATH="${PATH}:${HOME}/.rvm/bin"
-fi
-
-### PATH for rbenv ###
-if [[ $(command -v "rbenv") ]] then
-  export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/shims:${PATH}"
-fi
-
 # https://www.linuxjournal.com/content/removing-duplicate-path-entries
 export PATH=$(echo -n $PATH | awk -v RS=: '!($0 in a) {a[$0]; printf("%s%s", length(a) > 1 ? ":" : "", $0)}')

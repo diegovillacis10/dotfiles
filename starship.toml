@@ -30,7 +30,7 @@ commit_hash_length = 8
 disabled = false
 
 [ruby]
-detect_variables = []
+disabled = true
 
 # [memory_usage]
 # disabled = false

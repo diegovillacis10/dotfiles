@@ -59,10 +59,11 @@ wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/truste
 apt update && apt install enpass
 
 # FONTS
-git clone https://github.com/ryanoasis/nerd-fonts.git ~/nerd-fonts
-cd ~/nerd-fonts
+mkdir -p ~/.nerd-fonts
+git clone https://github.com/ryanoasis/nerd-fonts.git ~/.nerd-fonts
+cd ~/.nerd-fonts || exit
 for font in SourceCodePro FiraCode Meslo; do
-  ./install.sh $fonr
+  ./install.sh $font
 done
 
 # NordVPN
@@ -86,8 +87,6 @@ curl -sS https://starship.rs/install.sh | sh
 
 # Install asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-cd ~/.asdf || exit
-git checkout "$(git describe --abbrev=0 --tags)"
 
 #Install Z
 git clone "https://github.com/agkozak/zsh-z" "${ZSH_CUSTOM}"/plugins/zsh-z

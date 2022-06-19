@@ -4,19 +4,11 @@ source ~/.zsh/var
 source ~/.zsh/aliases
 source ~/.secrets/zsh
 
-# Load rvm automatically.
-[[ -s "${HOME}/.rvm/scripts/rvm" ]] && . "${HOME}/.rvm/scripts/rvm"
-
-# Path to your oh-my-zsh installation.
-export ZSH="${HOME}/.oh-my-zsh"
-
-source $ZSH/oh-my-zsh.sh
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,10 +69,14 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 [[ "${OSTYPE}" == "linux"* ]]  && plugins=(git zsh-z asdf)
-[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git zsh-z macos thefuck direnv)
+[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git z macos thefuck direnv asdf)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+
+# Path to your oh-my-zsh installation.
+export ZSH="${HOME}/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
 # Evals
 [[ "$(command -v thefuck)" ]] && eval $(thefuck --alias)
