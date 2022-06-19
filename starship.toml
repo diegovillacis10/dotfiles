@@ -1,6 +1,6 @@
-# Move the directory to the second line
 format = "$custom$all"
 
+# First Line
 [custom.debian]
 symbol = ' '
 os = "linux"
@@ -13,7 +13,6 @@ os = "macos"
 when = true
 style = "dimmed white"
 
-# First Line
 [directory]
 read_only = " "
 truncation_length = 5
