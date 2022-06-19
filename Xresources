@@ -1,11 +1,11 @@
-URxvt*font: xft:SauceCodePro NF:style=Regular:pixelsize=13
-URxvt*boldFont: xft:SauceCodePro NF:style=Bold:pixelsize:13
-URxvt*italicFont: xft:SauceCodePro NF:style=Italic:pixelsize:13
-URxvt*boldItalicFont: xft:SauceCodePro NF:style=Bold Italic:pixelsize:13
+URxvt*font: xft:Hack Nerd Font Mono:style=Regular:pixelsize=18
+URxvt*boldFont: xft:Hack Nerd Font Mono:style=Bold:pixelsize=18
+URxvt*italicFont: xft:Hack Nerd Font Mono:style=Italic:pixelsize=18
+URxvt*boldItalicFont: xft:Hack Nerd Font Mono:style=Bold Italic:pixelsize=18
 
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,matcher,resize-font,-confirm-paste
 URxvt.urlLauncher: /usr/bin/google-chrome
 URxvt.matcher.button: 1
 URxvt*saveLines: 12000
