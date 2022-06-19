@@ -6,6 +6,7 @@ export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 export PAGER='less -isM'
 export MANPAGER='most'
+export RUST_WITHOUT='rust-docs'
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 export FZF_DEFAULT_OPTS='-m --height 50% --border'
 export BAT_THEME="Monokai Extended Bright"

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## INSTALL PACKAGES
+sudo apt update
 sudo apt install \
     software-properties-common \
     apt-transport-https \
@@ -27,6 +28,15 @@ sudo apt install \
     tig \
     tlp \
     jq
+
+# FONTS
+mkdir -p ~/.nerd-fonts
+git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git ~/.nerd-fonts
+cd ~/.nerd-fonts || exit
+for font in SourceCodePro FiraCode Meslo Hack; do
+  git sparse-checkout add patched-fonts/$font
+  ./install.sh $font
+done
 
 ## INSTALL GUIs
 
@@ -57,14 +67,6 @@ sudo apt update && sudo apt install spotify-client
 echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
 wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo tee /etc/apt/trusted.gpg.d/enpass.asc
 apt update && apt install enpass
-
-# FONTS
-mkdir -p ~/.nerd-fonts
-git clone https://github.com/ryanoasis/nerd-fonts.git ~/.nerd-fonts
-cd ~/.nerd-fonts || exit
-for font in SourceCodePro FiraCode Meslo; do
-  ./install.sh $font
-done
 
 # NordVPN
 # https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-Raspberry-Pi-Elementary-OS-and-Linux-Mint.htm

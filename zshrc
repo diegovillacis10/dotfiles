@@ -65,8 +65,8 @@ source ${HOME}/.zshaliases
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-[[ "${OSTYPE}" == "linux"* ]]  && plugins=(git zsh-z asdf)
-[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git z macos thefuck direnv asdf)
+[[ "${OSTYPE}" == "linux"* ]]  && plugins=(git z asdf)
+[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git z asdf direnv macos thefuck)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

@@ -74,7 +74,6 @@ fi
 
 ### Linux-only aliases ###
 if [[ "$(uname)" = "Linux" ]]; then
-  alias rm='rm -Iv'
   alias o='xdg-open'
   alias json=" jq -C '.' | batcat"
   alias calc='gnome-calculator'
