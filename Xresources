@@ -1,7 +1,7 @@
-URxvt*font: xft:Hack Nerd Font Mono:style=Regular:pixelsize=18
-URxvt*boldFont: xft:Hack Nerd Font Mono:style=Bold:pixelsize=18
-URxvt*italicFont: xft:Hack Nerd Font Mono:style=Italic:pixelsize=18
-URxvt*boldItalicFont: xft:Hack Nerd Font Mono:style=Bold Italic:pixelsize=18
+URxvt*font: xft:Hack Nerd Font Mono:style=Regular:size=13
+URxvt*boldFont: xft:Hack Nerd Font Mono:style=Bold:size=13
+URxvt*italicFont: xft:Hack Nerd Font Mono:style=Italic:size=13
+URxvt*boldItalicFont: xft:Hack Nerd Font Mono:style=Bold Italic:size=13
 
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
