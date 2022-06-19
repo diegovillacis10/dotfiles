@@ -1,7 +1,0 @@
-export PATH="${HOME}/bin:/usr/bin:/usr/sbin:${PATH}"
-export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
-# NPM
-export PATH="${HOME}/.npm-global/bin:${PATH}"
-
-# https://www.linuxjournal.com/content/removing-duplicate-path-entries
-export PATH=$(echo -n $PATH | awk -v RS=: '!($0 in a) {a[$0]; printf("%s%s", length(a) > 1 ? ":" : "", $0)}')

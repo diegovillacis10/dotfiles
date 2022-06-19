@@ -62,21 +62,10 @@ vim +PlugInstall +qall > /dev/null 2>&1
 
 ## Zsh
 
-There is a file in `secrets/zsh` where you can add you secrets.
-
 ```shell
-mkdir -p ~/.secrets ~/.zsh
-ln -sv ~/dotfiles/secrets/* ~/.secrets/
-ln -sv ~/dotfiles/zsh/* ~/.zsh/
+ln -sv ~/dotfiles/zshenv ~/.zshenv
+ln -sv ~/dotfiles/zshaliases ~/.zshaliases
 ln -sv ~/dotfiles/zshrc ~/.zshrc
-```
-
-### Little advice
-
-I have updated the index on the secrets so git doesn't track and I don't commit them accidentally.
-
-```shell
-git update-index --assume-unchanged secrets/*
 ```
 
 ## Git
