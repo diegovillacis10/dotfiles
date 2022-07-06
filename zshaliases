@@ -35,7 +35,7 @@ alias hg='history | grep'
 alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull -r \;'
 alias json="jq -C '.' | less -R"
 alias ugh='fuck'
-alias www='python -m SimpleHTTPServer 8000'
+alias www='python3 -m http.server 7575'
 
 # GUIs
 alias sp='spotify'

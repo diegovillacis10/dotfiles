@@ -66,7 +66,7 @@ source ${HOME}/.zshaliases
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 [[ "${OSTYPE}" == "linux"* ]]  && plugins=(git z asdf)
-[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git z asdf direnv macos thefuck)
+[[ "${OSTYPE}" == "darwin"* ]] && plugins=(git z asdf direnv thefuck)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
