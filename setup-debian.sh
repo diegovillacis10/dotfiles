@@ -30,13 +30,19 @@ sudo apt install \
     jq
 
 # FONTS
-mkdir -p ~/.nerd-fonts
-git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git ~/.nerd-fonts
-cd ~/.nerd-fonts || exit
+mkdir -p "${HOME}"/.nerd-fonts
+git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git "${HOME}"/.nerd-fonts
+cd "${HOME}"/.nerd-fonts || exit
 for font in SourceCodePro FiraCode Meslo Hack; do
   git sparse-checkout add patched-fonts/$font
   ./install.sh $font
 done
+
+# Install Starship
+curl -sS https://starship.rs/install.sh | sh
+
+# Install asdf
+git clone https://github.com/asdf-vm/asdf.git "${HOME}"/.asdf
 
 ## INSTALL GUIs
 
@@ -83,15 +89,6 @@ echo \
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo usermod -aG docker "${USER}"
-
-# Install Starship
-curl -sS https://starship.rs/install.sh | sh
-
-# Install asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-
-#Install Z
-git clone "https://github.com/agkozak/zsh-z" "${ZSH_CUSTOM}"/plugins/zsh-z
 
 # Configure firewall
 sudo apt install ufw
