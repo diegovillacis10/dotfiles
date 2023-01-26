@@ -83,6 +83,7 @@ ln -sv ~/dotfiles/gitconfig_global ~/.gitconfig_global
 mkdir -p ~/.tmux/plugins/
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
+Press prefix + I (capital i, as in Install) to fetch the plugins.
 ```
 
 ## Starship
