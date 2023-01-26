@@ -1,45 +1,44 @@
 {
-  "editor.scrollBeyondLastLine": false,
-  "editor.smoothScrolling": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "editor.fontFamily": "Source Code Pro",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 14,
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorStyle": "line",
-  "editor.renderWhitespace": "boundary",
-  "editor.renderControlCharacters": true,
-  "editor.rulers": [80, 100],
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "editor.multiCursorPaste": "full",
-  "editor.tabSize": 2,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
+  "[erb]": {
+    "editor.defaultFormatter": "aliariff.vscode-erb-beautify"
   },
-  "explorer.sortOrder": "type",
-  "explorer.compactFolders": false,
-  "extensions.autoCheckUpdates": true,
-  "extensions.autoUpdate": true,
-  "terminal.integrated.fontFamily": "Source Code Pro",
-  "workbench.colorTheme": "Nord",
-  "workbench.iconTheme": "eq-material-theme-icons",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.settings.openDefaultKeybindings": true,
-  "workbench.sideBar.location": "right",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "advancedNewFile.convenienceOptions": ["last", "current", "root"],
   "advancedNewFile.exclude": {
     "node_modules": true
   },
   "advancedNewFile.showInformationMessages": true,
-  "advancedNewFile.convenienceOptions": ["last", "current", "root"],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": false
+  },
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "line",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "Source Code Pro",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.multiCursorPaste": "full",
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80, 100],
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
   "eslint.alwaysShowStatus": true,
-  "gitlens.defaultDateStyle": "absolute",
-  "gitlens.statusBar.enabled": true,
-  "screencastMode.onlyKeyboardShortcuts": true,
-  "vim.disableExtension": true,
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "type",
+  "extensions.autoCheckUpdates": true,
+  "extensions.autoUpdate": true,
   "files.insertFinalNewline": true,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -47,27 +46,16 @@
     "**/node_modules/*/**": true,
     "**/venv/*/**": true
   },
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  },
-  "[typescript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-
+  "gitlens.defaultDateStyle": "absolute",
+  "gitlens.statusBar.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "screencastMode.onlyKeyboardShortcuts": true,
+  "terminal.integrated.fontFamily": "Source Code Pro",
+  "vim.disableExtension": true,
+  "workbench.colorTheme": "JetBrains Darcula Theme",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.settings.openDefaultKeybindings": true,
+  "workbench.sideBar.location": "right"
 }

@@ -1,6 +1,8 @@
 set main-view = id:yes date:custom,format=%Y-%m-%d author:full commit-title,graph=yes,refs=yes
 set git-colors = no
 set refresh-mode = auto
+set log-options = --show-signature
+set diff-options = --show-signature
 
 # Keybindings for easy rebase
 bind generic g move-first-line
