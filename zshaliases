@@ -89,6 +89,7 @@ if [[ "$(uname)" = "Linux" ]]; then
   ## get top process eating cpu
   alias pscpu='ps auxf | sort -nr -k 3'
   alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+  alias batt='cat /sys/class/power_supply/BAT0/uevent'
 fi
 
 ### MacOS-only aliases ###
