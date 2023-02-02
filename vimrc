@@ -44,7 +44,8 @@ set splitbelow
 set splitright
 
 " colorscheme nord
-autocmd VimEnter * colorscheme gruvbox
+autocmd vimenter * ++nested colorscheme gruvbox
+set background=dark
 
 " PLUGINS ---------------------------------------------------------------- {{{
 call plug#begin('~/.vim/plugged')
