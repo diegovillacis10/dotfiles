@@ -1,44 +1,37 @@
 set encoding=utf-8
 
 let mapleader = ' '
-let g:mapleader = ' '
 
 set number
 set relativenumber
-" Use one space, not two, after punctuation.
-set nojoinspaces
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+set nojoinspaces " Use one space, not two, after punctuation.
+set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
+set backspace=indent,eol,start
+set nobackup
+set noswapfile
+set ruler " show the cursor position all the time
+set incsearch " do incremental searching
+set autowrite " Automatically :write before running commands
+set hlsearch
+set smartcase
+set ignorecase
+set signcolumn=yes
+set visualbell
+set showmatch
+set smartindent
+set smarttab
+set autoindent
+set undolevels=1000
+
+" Make it obvious where 100 characters is
+set textwidth=100
+set colorcolumn=+1
 
 " Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
-
-set backspace=indent,eol,start
-set nobackup
-set noswapfile
-set ruler " show the cursor position all the time
-set incsearch  " do incremental searching
-set autowrite     " Automatically :write before running commands
-
-
-"  set history=50 ???
-set undolevels=1000
-
-set showmatch
-set visualbell
-set hlsearch
-set smartcase
-set ignorecase
-set autoindent
-set smartindent
-set smarttab
-set softtabstop=2
-set signcolumn=yes
-set colorcolumn=100
-set novisualbell
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -73,11 +66,9 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 call plug#end()
-
 " }}}
 
 " PLUGINS CONFIG/MAPPINGS ------------------------------------------------ {{{
-
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowHidden = 1
 
@@ -125,11 +116,9 @@ let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --ma
 let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
 " }}}
 
 " MAPPINGS ---------------------------------------------------------------- {{{
-
 " preservim/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -195,7 +184,6 @@ nnoremap <silent> K :call CocAction('doHover')<CR>
 " }}}
 
 " VIMSCRIPT ---------------------------------------------------------------- {{{
-
 " Auto reload files
 autocmd CursorHold * checktime
 
@@ -206,7 +194,6 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " Disable cursorline on insert mode
 autocmd InsertEnter,InsertLeave * set cursorline!
-
 " }}}
 
 " Local config
