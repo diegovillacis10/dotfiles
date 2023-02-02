@@ -46,6 +46,7 @@ NOTE: Make sure to have `code` [binary installed](https://code.visualstudio.com/
 I'm using [Vim Plug](https://github.com/junegunn/vim-plug) as my plugin manager.
 
 ```shell
+mkdir -p ~/.vim ~/.vim/autoload ~/.vim/backup ~/.vim/colors ~/.vim/plugged
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -sv ~/dotfiles/vimrc ~/.vimrc

@@ -46,6 +46,7 @@ style = "bold dimmed green"
 # Second Line
 [status]
 disabled = false
+symbol = ''
 
 [time]
 disabled = false
