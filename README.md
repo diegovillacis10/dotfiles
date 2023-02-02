@@ -60,6 +60,8 @@ or just run this on your terminal:
 vim +PlugInstall +qall > /dev/null 2>&1
 ```
 
+NOTE: if colors are not displaying correctly, take a look at this [article](https://weibeld.net/terminals-and-shells/italics.html).
+
 ## Zsh
 
 ```shell
@@ -135,4 +137,3 @@ ln -sv ~/dotfiles/npmrc ~/.npmrc
 ```shell
 ln -sv ~/dotfiles/asdfrc ~/.asdfrc
 ```
-

@@ -14,6 +14,7 @@ alias dr='docker run --rm -it'
 alias glr='git pull --rebase'
 
 # Other
+alias e="$EDITOR"
 alias mkdir='mkdir -pv'
 alias cp='cp -iv'
 alias mv='mv -iv'
@@ -25,7 +26,7 @@ alias fd='find . -type d -iname'
 alias ff='find . -type f -iname'
 alias tree='tree -FC'
 alias src='. ~/.zshrc'
-alias path='echo -e ${PATH//:/\\n}'
+alias path='echo $PATH | tr -s ":" "\n"'
 alias now='date +"%T"'
 alias nowdate='date +"%d-%m-%Y"'
 alias vi=vim
@@ -107,4 +108,9 @@ fi
 
 if [[ "$(uname -a)" =~ "WSL2" ]]; then
   alias gohome='cd /mnt/c/Users/diego'
+fi
+
+# Local aliases
+if [[ -f ~/.zshaliases.local ]]; then
+  source ~/.zshaliases.local
 fi
