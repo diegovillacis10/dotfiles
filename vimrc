@@ -1,9 +1,8 @@
 set encoding=utf-8
 
-let mapleader = ' '
+let mapleader = ','
 
 set number
-set relativenumber
 set nojoinspaces " Use one space, not two, after punctuation.
 set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 set backspace=indent,eol,start
@@ -13,6 +12,7 @@ set ruler " show the cursor position all the time
 set incsearch " do incremental searching
 set autowrite " Automatically :write before running commands
 set hlsearch
+set updatetime=100
 set smartcase
 set ignorecase
 set signcolumn=yes
@@ -22,6 +22,10 @@ set smartindent
 set smarttab
 set autoindent
 set undolevels=1000
+
+filetype on
+filetype plugin on
+filetype indent on
 
 " Make it obvious where 100 characters is
 set textwidth=100
@@ -58,6 +62,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'pangloss/vim-javascript'
@@ -75,6 +80,10 @@ let g:NERDTreeShowHidden = 1
 
 " airblade/vim-gitgutter
 let g:gitgutter_show_msg_on_hunk_jumping = 0
+command! Gqf GitGutterQuickFix | copen
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghp <Plug>(GitGutterPreviewHunk)
 
 " vim-airline/vim-airline-themes
 let g:airline_theme='gruvbox'
@@ -109,7 +118,7 @@ endif
 
 " junegunn/fzf.vim
 nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <Leader>r :Rg<CR>
 
 " junegunn/fzf.vim
 " https://www.erickpatrick.net/blog/adding-syntax-highlighting-to-fzf.vim-preview-window
@@ -126,6 +135,20 @@ map <C-n> :NERDTreeToggle<CR>
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
+map <leader>y "+y
+
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>q :q<CR>
+nmap <leader>d :GitGutterFold<CR>
+
+" easier moving of code blocks
+vnoremap < <gv
+vnoremap > >gv
+
+" Type jj to exit insert mode quickly.
+inoremap jk <Esc>
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -136,7 +159,6 @@ nnoremap <C-l> <C-w>l
 nnoremap n nzz
 nnoremap N Nzz
 
-" Pressing the letter o will open a new line below the current one.
 " Exit insert mode after creating a new line above or below the current line.
 nnoremap o o<esc>
 nnoremap O O<esc>
@@ -176,6 +198,7 @@ inoremap <C-t> <Esc>:tabnew<CR>
 noremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
+" command hint
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
 nnoremap <F10> :b <C-Z>
