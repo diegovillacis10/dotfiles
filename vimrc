@@ -77,6 +77,7 @@ call plug#end()
 " PLUGINS CONFIG/MAPPINGS ------------------------------------------------ {{{
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeWinPos = "right"
 
 " airblade/vim-gitgutter
 let g:gitgutter_show_msg_on_hunk_jumping = 0

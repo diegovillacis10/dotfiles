@@ -3,6 +3,7 @@ set git-colors = no
 set refresh-mode = auto
 set log-options = --show-signature
 set diff-options = --show-signature
+set status-show-untracked-files = yes
 
 # Keybindings for easy rebase
 bind generic g move-first-line
@@ -13,100 +14,99 @@ bind main i !@sh -c "echo -n $(git rev-parse --short %(commit)) | xclip -sel c"
 bind main I !@sh -c "echo -n %(commit) | xclip -sel c"
 # bind main I !@sh -c "echo -n %(commit) | pbcopy"
 
-color header		    121	default	bold
-color section			45	default	bold
-color search-result		black	86	bold
+# General colors
+color default                       246         235
+color cursor                        223         236
+color status                        default     default
+color title-focus                   default     default
+color title-blur                    default     default
+color delimiter                     245         default
+color header                        66          default         bold
+color section                       172         default
+color line-number                   241         default
+color id                            124         default
+color date                          172         default
+color author                        109         default
+color mode                          166         default
+color overflow                      241         default
+color directory                     106         default         bold
+color file                          223         default
+color file-size                     default     default
+color grep.file                     166         default
 
-# diff view
-color diff-header		45	default	bold
-color diff-index		86	default	bold
-color diff-oldmode		81	default	bold
-color diff-newmode		81	default	bold
-color "rename from "		81	default	bold
-color "rename to "		81	default	bold
-color "similarity "		81	default	bold
-color "dissimilarity "		81	default	bold
-color diff-stat			222	default	bold
-color diff-chunk		165	default	bold
-color diff-add			154	default	bold
-color diff-add-highlight	232	154	bold
-color diff-del			196	default	bold
-color diff-del-highlight	232	196	bold
-color " +"			154	default
-color " -"			196	default
-color "--- "			45	default	bold
-color "+++ "			45	default	bold
-color "Merge: "			222	default	bold
-color "Refs: "			198	default	bold
-color "commit "			214	default	bold
-color "Commit: "		45	default	bold
-color "CommitDate: "		128	default	bold
-color "Author: "		45	default	bold
-color "AuthorDate: "		128	default	bold
-color "Tagger: "		222	default	bold
-color "TaggerDate: "		222	default	bold
-color "---"			165	default	bold
+# Main view colors
+color main.cursor                   223         236
+color graph-commit                  166         default
+color main-head                     166         default         bold
+color main-remote                   172         default
+color main-tracked                  132         default
+color main-tag                      223         default
+color main-local-tag                106         default
+color main-ref                      72          default
 
-# log view, mostly
-color "Date: "			82	default	bold
-color "    Signed-off-by"	222	default	bold
-color "    Acked-by"		222	default	bold
-color "    Tested-by"		222	default	bold
-color "    Reviewed-by"		222	default	bold
+# Status view colors
+color status.header                 172         236             bold
+color status.section                214         default
+color stat-staged                   106         default
+color stat-unstaged                 124         default
+color stat-untracked                166         default
+color stat-none                     default     default
 
-# main view
-color author			45	default	bold
-color date			82	default	bold
-color graph-commit		222	default bold
-color id			214	default	bold
-color main-remote		198 default	bold
-color main-tracked		198 default	bold
-color main-tag			166	default	bold
-color main-local-tag		166	default	bold
-color main-head			86	default	bold
-color main-ref			121	default	bold
-color overflow			196	default
+# Help view colors
+color help.header                   241         default         bold
+color help.section                  166         default
+color help.cursor                   72          236
+color help-group                    166         default
+color help-action                   166         default
 
-# window dressing
-color title-blur		45	default	bold
-color title-focus		45	232	bold reverse
-color cursor			232	222	bold
-color status			82	default
+# Diff view colors
+color "commit "                     default     default
+color "Refs: "                      default     default
+color "Author: "                    default     default
+color "AuthorDate: "                default     default
+color "Commit: "                    106         default
+color "CommitDate: "                66          default
+color "Merge: "                     default     default
+color "---"                         167         default
+color "+++ "                        142         default
+color "--- "                        167         default
+color diff-index                    default     default
+color diff-stat                     223         default
+color diff-add                      142         default
+color diff-add-highlight            106         default
+color diff-del                      167         default
+color diff-del-highlight            223         default
+color diff-header                   132         default
+color diff-chunk                    109         default
+color "diff-tree "                  214         default
+color "TaggerDate: "                default     default
 
-# tree view
-color mode			121	default
-color directory			121	default	bold
-color file			255	default
+# Log view colors
+color "Date: "                      72          default
 
-# status view
-color stat-none			82	default
-color stat-staged		154	default	bold
-color stat-unstaged		166	default	bold
-color stat-untracked		81	default	bold
-
-# lines in digraph
-color palette-0			165	default bold
-color palette-1			45	default bold
-color palette-2			222	default bold
-color palette-3			166	default bold
-color palette-4			121	default bold
-color palette-5			82	default bold
-color palette-6			196	default bold
-color palette-7			238	default bold
-# repeat
-color palette-8			165	default
-color palette-9			45	default
-color palette-10		222	default
-color palette-11		166	default
-color palette-12		121	default
-color palette-13		82	default
+# Signature colors
+color "gpg: "                       72          default
+color "Primary key fingerprint: "   72          default
 
 # grep view
-color grep.file			45	default	bold
-color grep.line-number		165	default	bold
-color grep.delimiter		82	default	bold # no effect?
-color delimiter			82	default	bold # no effect?
+color grep.file                   208          default         bold
+color grep.line-number            241          default         bold
+color grep.delimiter              241          default         bold
+color delimiter                   142          default         bold
 
-# help view
-color help-group		165	default	bold
-color help-action		222	default	bold
+# lines in digraph
+color palette-0                  166           default         bold
+color palette-1                  66            default         bold
+color palette-2                  172           default         bold
+color palette-3                  132           default         bold
+color palette-4                  72            default         bold
+color palette-5                  106           default         bold
+color palette-6                  124           default         bold
+color palette-7                  250           default         bold
+# repeat
+color palette-8                  166           default
+color palette-9                  66            default
+color palette-10                172            default
+color palette-11                132            default
+color palette-12                72             default
+color palette-13                106            default
