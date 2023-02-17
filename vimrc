@@ -1,8 +1,9 @@
 set encoding=utf-8
 
-let mapleader = ','
+let mapleader = ' '
 
 set number
+set relativenumber
 set nojoinspaces " Use one space, not two, after punctuation.
 set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 set backspace=indent,eol,start
@@ -104,11 +105,11 @@ inoremap <silent><expr> <c-@> coc#refresh()
 " neoclide/coc.nvim
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = [
-  \ 'coc-tsserver',
-  \ 'coc-css',
-  \ 'coc-html',
-  \ 'coc-json'
-  \ ]
+      \ 'coc-tsserver',
+      \ 'coc-css',
+      \ 'coc-html',
+      \ 'coc-json'
+      \ ]
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
 endif
@@ -126,7 +127,7 @@ nnoremap <silent> <Leader>r :Rg<CR>
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'batcat --color=always --style=header,grid --line-range :300 {}'"
 let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 " }}}
 
 " MAPPINGS ---------------------------------------------------------------- {{{
@@ -136,18 +137,22 @@ map <C-n> :NERDTreeToggle<CR>
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
+" Yank into the system clipboard register
 map <leader>y "+y
 
 nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>f :bn<CR>
-nnoremap <Leader>q :q<CR>
 nmap <leader>d :GitGutterFold<CR>
+
+" Reindent the whole file
+" http://vim.wikia.com/wiki/Fix_indentation
+nmap <F7> mzgg=G`z<CR>
 
 " easier moving of code blocks
 vnoremap < <gv
 vnoremap > >gv
 
-" Type jj to exit insert mode quickly.
+" Type jk to exit insert mode quickly.
 inoremap jk <Esc>
 
 " Quicker window movement
@@ -159,10 +164,6 @@ nnoremap <C-l> <C-w>l
 " enter the cursor vertically when moving to the next word during a search.
 nnoremap n nzz
 nnoremap N Nzz
-
-" Exit insert mode after creating a new line above or below the current line.
-nnoremap o o<esc>
-nnoremap O O<esc>
 
 " Git conflicts resolution
 " https://gist.github.com/karenyyng/f19ff75c60f18b4b8149/e6ae1d38fb83e05c4378d8e19b014fd8975abb39
@@ -189,10 +190,6 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
-nnoremap <Leader>l :ls<CR>
-nnoremap <Leader>p :bp<CR>
-nnoremap <Leader>n :bn<CR>
-nnoremap <Leader>g :e#<CR>
 
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>

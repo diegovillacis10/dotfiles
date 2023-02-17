@@ -61,6 +61,12 @@ or just run this on your terminal:
 vim +PlugInstall +qall > /dev/null 2>&1
 ```
 
+If using ideavim:
+
+```shell
+ln -sv ~/dotfiles/ideavimrc ~/.ideavimrc
+```
+
 NOTE: if colors are not displaying correctly, take a look at this [article](https://weibeld.net/terminals-and-shells/italics.html).
 
 ## Zsh
