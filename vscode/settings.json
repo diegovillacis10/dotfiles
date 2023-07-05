@@ -52,11 +52,33 @@
   "screencastMode.onlyKeyboardShortcuts": true,
   "terminal.integrated.fontFamily": "Source Code Pro",
   "vim.disableExtension": true,
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "Gruvbox Dark Soft",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "eq-material-theme-icons",
   "workbench.settings.openDefaultKeybindings": true,
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "playwright.reuseBrowser": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "editor.linkedEditing": true,
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "yapf",
+  "python.formatting.yapfArgs": [
+      "--style",
+      "{based_on_style: google, column_limit: 80, indent_width: 4}"
+  ],
+  "[python]": {
+      "editor.formatOnType": true
+  }
 }
 

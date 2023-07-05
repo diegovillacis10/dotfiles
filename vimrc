@@ -48,7 +48,7 @@ endif
 set splitbelow
 set splitright
 
-" colorscheme nord
+" colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
 
@@ -66,7 +66,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mattn/emmet-vim'
+Plug 'alvan/vim-closetag'
+Plug 'andrewradev/tagalong.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'andrewradev/tagalong.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -76,6 +80,8 @@ call plug#end()
 " }}}
 
 " PLUGINS CONFIG/MAPPINGS ------------------------------------------------ {{{
+" preservim/nerdtree
+map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeWinPos = "right"
@@ -83,6 +89,7 @@ let g:NERDTreeWinPos = "right"
 " airblade/vim-gitgutter
 let g:gitgutter_show_msg_on_hunk_jumping = 0
 command! Gqf GitGutterQuickFix | copen
+" nmap <leader>d :GitGutterFold<CR>
 nmap ghs <Plug>(GitGutterStageHunk)
 nmap ghu <Plug>(GitGutterUndoHunk)
 nmap ghp <Plug>(GitGutterPreviewHunk)
@@ -93,11 +100,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " https://github.com/neoclide/coc.nvim#example-vim-configuration
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 inoremap <silent><expr> <c-@> coc#refresh()
@@ -118,11 +120,24 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
+nnoremap <silent> K :call CocAction('doHover')<CR>
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
 " junegunn/fzf.vim
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <Leader>r :Rg<CR>
 
-" junegunn/fzf.vim
+" Plug 'mattn/emmet-vim'
+let g:user_emmet_install_global = 0 " Enable just for html/css
+autocmd FileType html,css,typescriptreact EmmetInstall
+let g:user_emmet_leader_key='<C-f>' " Redefine trigger key
+
 " https://www.erickpatrick.net/blog/adding-syntax-highlighting-to-fzf.vim-preview-window
 let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'batcat --color=always --style=header,grid --line-range :300 {}'"
 let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
@@ -131,26 +146,30 @@ command! -bang -nargs=? -complete=dir Files
 " }}}
 
 " MAPPINGS ---------------------------------------------------------------- {{{
-" preservim/nerdtree
-map <C-n> :NERDTreeToggle<CR>
-
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
 " Yank into the system clipboard register
 map <leader>y "+y
+map <leader>p "+p
 
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
-nmap <leader>d :GitGutterFold<CR>
+nnoremap <Leader>b :bprevious<CR>
+nnoremap <Leader>f :bnext<CR>
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <Esc>:tabnew<CR>
+noremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <Esc>:w<CR>
 
 " Reindent the whole file
 " http://vim.wikia.com/wiki/Fix_indentation
-nmap <F7> mzgg=G`z<CR>
+map <F7> gg=G<C-o><C-o>
 
 " easier moving of code blocks
 vnoremap < <gv
 vnoremap > >gv
+
+" Toggle highlights
+nnoremap <C-h> :set hlsearch!<CR>
 
 " Type jk to exit insert mode quickly.
 inoremap jk <Esc>
@@ -178,6 +197,7 @@ endif
 " http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
+set showmode
 
 " http://vimcasts.org/episodes/tidying-whitespace/
 function! <SID>StripTrailingWhitespaces()
@@ -190,19 +210,10 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
-
-nnoremap <C-t> :tabnew<CR>
-inoremap <C-t> <Esc>:tabnew<CR>
-noremap <C-s> <Esc>:w<CR>
-inoremap <C-s> <Esc>:w<CR>
-
 " command hint
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
 nnoremap <F10> :b <C-Z>
-
-" neoclide/coc.nvim
-nnoremap <silent> K :call CocAction('doHover')<CR>
 " }}}
 
 " VIMSCRIPT ---------------------------------------------------------------- {{{

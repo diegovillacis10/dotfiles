@@ -1,4 +1,4 @@
-let mapleader=","
+let mapleader=" "
 
 " <C-n> seems to me as a better solution than <M-n>,
 " but we should finally support vim-visual-multi because vim-multiple-cursors is deprecated now
@@ -6,6 +6,7 @@ map <C-n> <Plug>NextWholeOccurrence
 
 """ Common settings -------------------------
 set showmode
+set relativenumber
 set so=5
 set incsearch
 set nu
@@ -22,6 +23,12 @@ map <leader>z <Action>(ToggleDistractionFreeMode)
 
 map <leader>s <Action>(SelectInProjectView)
 map <leader>a <Action>(Annotate)
+
+" 0 -> first non-blank character
+map 0 ^
+
+" Vim search is simply outclassed here
+map / <Action>(Find)
 
 """ IdeaVim actions
 nmap [[ <Action>(MethodUp)

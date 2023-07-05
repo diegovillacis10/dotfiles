@@ -46,3 +46,4 @@ mas "Lightshot Screenshot", id: 526298438
 mas "CopyClip", id: 595191960
 mas "NordVPN IKE", id: 1116599239
 mas "Yubico Authenticator", id: 1497506650
+
