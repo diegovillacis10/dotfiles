@@ -51,11 +51,11 @@ set splitright
 " colorscheme gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
+let g:gruvbox_italic=1
 
 " PLUGINS ---------------------------------------------------------------- {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -79,7 +79,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
 " }}}
 
-" PLUGINS CONFIG/MAPPINGS ------------------------------------------------ {{{
 " preservim/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
@@ -89,7 +88,7 @@ let g:NERDTreeWinPos = "right"
 " airblade/vim-gitgutter
 let g:gitgutter_show_msg_on_hunk_jumping = 0
 command! Gqf GitGutterQuickFix | copen
-" nmap <leader>d :GitGutterFold<CR>
+nmap ghd :GitGutterFold<CR>
 nmap ghs <Plug>(GitGutterStageHunk)
 nmap ghu <Plug>(GitGutterUndoHunk)
 nmap ghp <Plug>(GitGutterPreviewHunk)
@@ -99,12 +98,17 @@ let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" neoclide/coc.nvim
 " https://github.com/neoclide/coc.nvim#example-vim-configuration
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Use <c-space> to trigger completion
 inoremap <silent><expr> <c-@> coc#refresh()
 
-" neoclide/coc.nvim
 let g:coc_disable_startup_warning = 1
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
@@ -120,9 +124,19 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
-nnoremap <silent> K :call CocAction('doHover')<CR>
-nmap <leader>do <Plug>(coc-codeaction)
-nmap <leader>rn <Plug>(coc-rename)
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+nmap <leader> do <Plug>(coc-codeaction)
+nmap <leader> rn <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
@@ -131,6 +145,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " junegunn/fzf.vim
 nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-b> :Buffers<CR>
 nnoremap <silent> <Leader>r :Rg<CR>
 
 " Plug 'mattn/emmet-vim'
@@ -155,6 +170,7 @@ map <leader>p "+p
 
 nnoremap <Leader>b :bprevious<CR>
 nnoremap <Leader>f :bnext<CR>
+nnoremap <Leader>w :bd<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 noremap <C-s> <Esc>:w<CR>
@@ -169,7 +185,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Toggle highlights
-nnoremap <C-h> :set hlsearch!<CR>
+noremap <F4> :set hlsearch! hlsearch?<CR>
 
 " Type jk to exit insert mode quickly.
 inoremap jk <Esc>

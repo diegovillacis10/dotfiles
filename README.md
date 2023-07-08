@@ -108,6 +108,12 @@ ln -sv ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -sv ~/dotfiles/tigrc ~/.tigrc
 ```
 
+## Alacritty
+
+```shell
+ln -sv ~/dotfiles/alacritty.toml ~/.alacritty.toml
+```
+
 ## Urxvt
 
 ```shell
