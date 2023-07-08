@@ -8,7 +8,7 @@ export PAGER='less -isM'
 export MANPAGER='most'
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 export FZF_DEFAULT_OPTS='-m --height 50% --border'
-export BAT_THEME="Monokai Extended Bright"
+export BAT_THEME=gruvbox-dark
 
 # https://github.com/halcyon/asdf-java#java_home
 [[ -f ~/.asdf/plugins/java/set-java-home.zsh ]] && source ~/.asdf/plugins/java/set-java-home.zsh

@@ -79,6 +79,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
 " }}}
 
+" PLUGINS CONFIG ---------------------------------------------------------------- {{{
 " preservim/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
@@ -143,21 +144,37 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" junegunn/fzf.vim
-nnoremap <silent> <C-p> :Files<CR>
-nnoremap <silent> <C-b> :Buffers<CR>
-nnoremap <silent> <Leader>r :Rg<CR>
-
 " Plug 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0 " Enable just for html/css
 autocmd FileType html,css,typescriptreact EmmetInstall
 let g:user_emmet_leader_key='<C-f>' " Redefine trigger key
 
+" junegunn/fzf.vim
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-b> :Buffers<CR>
+nnoremap <silent> <Leader>r :Rg<CR>
+
 " https://www.erickpatrick.net/blog/adding-syntax-highlighting-to-fzf.vim-preview-window
-let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'batcat --color=always --style=header,grid --line-range :300 {}'"
 let $FZF_DEFAULT_COMMAND = 'rg --files --ignore-case --hidden -g "!{.git,node_modules,vendor}/*"'
 command! -bang -nargs=? -complete=dir Files
       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" Customize fzf colors to match your color scheme
+" https://github.com/morhetz/gruvbox/issues/207#issue-271309317
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 " }}}
 
 " MAPPINGS ---------------------------------------------------------------- {{{
