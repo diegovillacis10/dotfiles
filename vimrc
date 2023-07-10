@@ -53,7 +53,7 @@ autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
 let g:gruvbox_italic=1
 
-" PLUGINS ---------------------------------------------------------------- {{{
+" PLUGINS {{{
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
@@ -62,7 +62,9 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-surround'
+Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -79,12 +81,15 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
 " }}}
 
-" PLUGINS CONFIG ---------------------------------------------------------------- {{{
+" PLUGINS CONFIG {{{
 " preservim/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeWinPos = "right"
+
+" tpope/vim-fugitive
+nnoremap <silent> <Leader>g :G<CR>
 
 " airblade/vim-gitgutter
 let g:gitgutter_show_msg_on_hunk_jumping = 0
@@ -144,10 +149,17 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Plug 'mattn/emmet-vim'
+" 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = 500
+
+" mattn/emmet-vim
 let g:user_emmet_install_global = 0 " Enable just for html/css
-autocmd FileType html,css,typescriptreact EmmetInstall
+autocmd FileType html,css,typescriptreact,javascript EmmetInstall
 let g:user_emmet_leader_key='<C-f>' " Redefine trigger key
+
+" peitalin/vim-jsx-typescript
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 " junegunn/fzf.vim
 nnoremap <silent> <C-p> :Files<CR>
@@ -161,23 +173,23 @@ command! -bang -nargs=? -complete=dir Files
 " Customize fzf colors to match your color scheme
 " https://github.com/morhetz/gruvbox/issues/207#issue-271309317
 let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+      \ { 'fg':      ['fg', 'Normal'],
+      \ 'bg':      ['bg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
 
 " }}}
 
-" MAPPINGS ---------------------------------------------------------------- {{{
+" MAPPINGS {{{
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
@@ -185,6 +197,7 @@ nnoremap <Leader><Leader> <C-^>
 map <leader>y "+y
 map <leader>p "+p
 
+" Tabs and buffers movement
 nnoremap <Leader>b :bprevious<CR>
 nnoremap <Leader>f :bnext<CR>
 nnoremap <Leader>w :bd<CR>
@@ -207,7 +220,7 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 " Type jk to exit insert mode quickly.
 inoremap jk <Esc>
 
-" Quicker window movement
+" Quicker splits movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -249,7 +262,7 @@ set wildcharm=<C-Z>
 nnoremap <F10> :b <C-Z>
 " }}}
 
-" VIMSCRIPT ---------------------------------------------------------------- {{{
+" VIMSCRIPT {{{
 " Auto reload files
 autocmd CursorHold * checktime
 
