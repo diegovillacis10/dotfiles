@@ -1,6 +1,6 @@
 set encoding=utf-8
 
-let mapleader = ' '
+let mapleader = ','
 
 set number
 set relativenumber
@@ -94,10 +94,12 @@ nnoremap <silent> <Leader>g :G<CR>
 " airblade/vim-gitgutter
 let g:gitgutter_show_msg_on_hunk_jumping = 0
 command! Gqf GitGutterQuickFix | copen
-nmap ghd :GitGutterFold<CR>
+nmap ghf :GitGutterFold<CR>
+nmap ghp <Plug>(GitGutterPrevHunk)
+nmap ghn <Plug>(GitGutterNextHunk)
 nmap ghs <Plug>(GitGutterStageHunk)
 nmap ghu <Plug>(GitGutterUndoHunk)
-nmap ghp <Plug>(GitGutterPreviewHunk)
+nmap ghr <Plug>(GitGutterPreviewHunk)
 
 " vim-airline/vim-airline-themes
 let g:airline_theme='gruvbox'
@@ -200,6 +202,8 @@ map <leader>p "+p
 " Tabs and buffers movement
 nnoremap <Leader>b :bprevious<CR>
 nnoremap <Leader>f :bnext<CR>
+noremap <C-k> <ESC>:bnext<CR>
+noremap <C-j> <ESC>:bprev<CR>
 nnoremap <Leader>w :bd<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
