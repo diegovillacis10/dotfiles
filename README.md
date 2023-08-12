@@ -150,3 +150,11 @@ ln -sv ~/dotfiles/npmrc ~/.npmrc
 ```shell
 ln -sv ~/dotfiles/asdfrc ~/.asdfrc
 ```
+
+## i3wm
+
+```shell
+ln -sv ~/dotfiles/i3_config ~/.config/i3/config
+ln -sv ~/dotfiles/i3status.conf ~/.config/i3status/config
+```
+

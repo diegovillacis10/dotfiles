@@ -224,6 +224,10 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 " Type jk to exit insert mode quickly.
 inoremap jk <Esc>
 
+" Clipboard
+nmap <leader>y "+y
+nmap <leader>p "+p
+
 " enter the cursor vertically when moving to the next word during a search.
 nnoremap n nzz
 nnoremap N Nzz
