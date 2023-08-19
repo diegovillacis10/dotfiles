@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 
 -- use jk to exit insert mode
 vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- delete single character without copying into register
 vim.keymap.set("n", "x", [["_x]])
