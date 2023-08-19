@@ -69,6 +69,14 @@ ln -sv ~/dotfiles/ideavimrc ~/.ideavimrc
 
 NOTE: if colors are not displaying correctly, take a look at this [article](https://weibeld.net/terminals-and-shells/italics.html).
 
+## Neovim
+
+```shell
+mkdir -p ~/.config/nvim/lua
+ln -sv ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+ln -sv ~/dotfiles/nvim/lua/diego ~/.config/nvim/lua/diego
+```
+
 ## Zsh
 
 ```shell
