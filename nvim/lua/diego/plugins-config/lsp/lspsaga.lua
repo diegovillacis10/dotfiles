@@ -10,6 +10,19 @@ saga.setup({
   definition = {
     edit = "<CR>",
   },
+  finder = {
+    keys = {
+      vsplit = 'v',
+      split = 'x'
+    }
+  },
+  outline = {
+    close_after_jump = true,
+    layout = 'float',
+    keys = {
+      toggle_or_jump = "<CR>",
+    }
+  },
   ui = {
     colors = {
       normal_bg = "#022746",

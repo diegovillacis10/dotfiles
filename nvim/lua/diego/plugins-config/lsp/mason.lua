@@ -18,8 +18,6 @@ mason_lspconfig.setup({
     "ember",
     "emmet_ls",
     "html",
-    "json",
-    "java_language_server",
     "lua_ls",
     "tailwindcss",
     "tsserver",
