@@ -22,6 +22,9 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- web icons
+  'nvim-tree/nvim-web-devicons',
+
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -76,7 +79,7 @@ require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'onedark',
         component_separators = '|',
         section_separators = '',
@@ -247,7 +250,7 @@ require('onedark').setup  {
 
     -- Lualine options --
     lualine = {
-        transparent = false, -- lualine center bar transparency
+        transparent = true, -- lualine center bar transparency
     },
 
     -- Custom Highlights --
