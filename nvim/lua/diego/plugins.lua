@@ -15,15 +15,35 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 
-  -- Git related plugins
+  -- git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- Detect tabstop and shiftwidth automatically
+  -- detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
   -- web icons
   'nvim-tree/nvim-web-devicons',
+
+  -- when you just want to watch the world burn
+  'eandrju/cellular-automaton.nvim',
+
+  -- zen mode
+  { 'folke/zen-mode.nvim', opts = {} },
+
+  -- changes surroundings
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({})
+    end
+  },
+
+  -- autoclosing
+  'windwp/nvim-autopairs',
+  { 'windwp/nvim-ts-autotag', after = "nvim-treesitter" },
 
   {
     -- LSP Configuration & Plugins
@@ -39,16 +59,15 @@ require('lazy').setup({
           require('lspsaga').setup({})
         end,
         dependencies = {
-          'nvim-treesitter/nvim-treesitter',     -- optional
-          'nvim-tree/nvim-web-devicons'          -- optional
+          'nvim-treesitter/nvim-treesitter',
+          'nvim-tree/nvim-web-devicons'
         }
       },
 
-
-      -- Useful status updates for LSP
+      -- useful status updates for LSP
       { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
-      -- Additional lua configuration, makes nvim stuff amazing!
+      -- additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
   },
@@ -149,7 +168,7 @@ require('lazy').setup({
   --       Uncomment any of the lines below to enable them.
   -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
-}, {})
+})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

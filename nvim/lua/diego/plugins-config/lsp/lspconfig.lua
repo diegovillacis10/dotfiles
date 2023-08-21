@@ -11,24 +11,38 @@ end
 -- enable keybinds only for when lsp server available
 local on_attach = function(_, bufnr)
   -- keybind options
-  local opts = { noremap = true, silent = true, buffer = bufnr }
+  -- local opts = { noremap = true, silent = true, buffer = bufnr }
+
+  -- handy mapping function
+  local nmap = function (keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('n', keys, func, {
+      noremap = true, silent = true, buffer = bufnr, desc = desc
+    })
+  end
 
   -- set keybinds
-  vim.keymap.set("n", "gf", "<Cmd>Lspsaga finder<CR>", opts) -- show definition, references
-  vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
-  vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
-  vim.keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
-  vim.keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
-  vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
-  vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
-  vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
-  vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-  vim.keymap.set("n", "<C-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  vim.keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- go to declaration
-  vim.keymap.set("n", '<leader>D', "<Cmd>vim.lsp.buf.type_definition()<CR>", opts) -- go to type declaration
-  vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
-  vim.keymap.set("n", "<leader>n", "<cmd>Lspsaga outline<CR>", opts) -- show buffer outline
---
+  nmap("gf", "<Cmd>Lspsaga finder<CR>", "[G]o to [F]inder")
+  nmap("gf", "<Cmd>Lspsaga finder<CR>", "")
+  nmap("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", "[G]o to [I]mplementation")
+  nmap("gd", "<cmd>Lspsaga peek_definition<CR>", "[G]o to [D]efinition")
+  nmap("gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", "[G]o to [D]eclaration")
+  nmap("<leader>rn", "<cmd>Lspsaga rename<CR>", "[R]e[N]ame")
+  nmap("<leader>do", "<cmd>Lspsaga code_action<CR>", "[DO] code action")
+  nmap("<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", "Show [D]iagnostics")
+  nmap("<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Show cursor [D]iagnostics")
+  nmap("[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+  nmap("]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+  nmap("K", "<cmd>Lspsaga hover_doc<CR>")
+  -- Diagnostic keymaps
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+  vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+  vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+  nmap("<leader>n", "<cmd>Lspsaga outline<CR>", "Show Outline") -- show buffer outline
 --   -- Lesser used LSP functionality
 --   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
 --   nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')

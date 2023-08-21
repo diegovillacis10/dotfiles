@@ -1,5 +1,7 @@
+require('diego.plugins-config.autopairs')
 require('diego.plugins-config.gitsigns')
 require('diego.plugins-config.nvim-cmp')
 require('diego.plugins-config.telescope')
 require('diego.plugins-config.treesitter')
+require('diego.plugins-config.zenmode')
 require('diego.plugins-config.lsp')
