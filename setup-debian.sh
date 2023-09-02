@@ -27,6 +27,13 @@ sudo apt install \
     bat \
     tig \
     tlp \
+    alacritty \
+    xbacklight \
+    picom \
+    nitrogen \
+    i3 \
+    neovim \
+    vifm \
     jq
 
 # FONTS

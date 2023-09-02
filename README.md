@@ -162,7 +162,15 @@ ln -sv ~/dotfiles/asdfrc ~/.asdfrc
 ## i3wm
 
 ```shell
+mkdir -p ~/.config/i3 ~/.config/i3status
 ln -sv ~/dotfiles/i3_config ~/.config/i3/config
 ln -sv ~/dotfiles/i3status.conf ~/.config/i3status/config
+```
+
+## spotify-tui
+
+```shell
+mkdir -p ~/.config/spotify-tui
+ln -sv ~/dotfiles/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
 ```
 
