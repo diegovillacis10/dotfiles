@@ -52,6 +52,10 @@ set splitright
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
 let g:gruvbox_italic=1
+" https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 
 " PLUGINS {{{
 call plug#begin('~/.vim/plugged')
@@ -76,7 +80,7 @@ Plug 'andrewradev/tagalong.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 call plug#end()
 " }}}
@@ -105,51 +109,6 @@ nmap ghr <Plug>(GitGutterPreviewHunk)
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
-" neoclide/coc.nvim
-" https://github.com/neoclide/coc.nvim#example-vim-configuration
-
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" Use <c-space> to trigger completion
-inoremap <silent><expr> <c-@> coc#refresh()
-
-let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = [
-      \ 'coc-tsserver',
-      \ 'coc-css',
-      \ 'coc-html',
-      \ 'coc-json'
-      \ ]
-if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-  let g:coc_global_extensions += ['coc-prettier']
-endif
-
-if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-  let g:coc_global_extensions += ['coc-eslint']
-endif
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
-
-nmap <leader> do <Plug>(coc-codeaction)
-nmap <leader> rn <Plug>(coc-rename)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_duration = 500
@@ -200,15 +159,11 @@ map <leader>y "+y
 map <leader>p "+p
 
 " Tabs and buffers movement
-nnoremap <Leader>b :bprevious<CR>
-nnoremap <Leader>f :bnext<CR>
-noremap <C-k> <ESC>:bnext<CR>
-noremap <C-j> <ESC>:bprev<CR>
+noremap <C-h> <ESC>:bnext<CR>
+noremap <C-l> <ESC>:bprev<CR>
 nnoremap <Leader>w :bd<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
-noremap <C-s> <Esc>:w<CR>
-inoremap <C-s> <Esc>:w<CR>
 
 " Reindent the whole file
 " http://vim.wikia.com/wiki/Fix_indentation

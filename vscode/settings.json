@@ -18,11 +18,10 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "Source Code Pro",
+  "editor.fontFamily": "Hack NF",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
   "editor.multiCursorPaste": "full",
   "editor.renderControlCharacters": true,
@@ -39,7 +38,7 @@
   "explorer.sortOrder": "type",
   "extensions.autoCheckUpdates": true,
   "extensions.autoUpdate": true,
-  "files.insertFinalNewline": true,
+  "files.insertFinalNewline": false,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
@@ -50,7 +49,7 @@
   "gitlens.statusBar.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "screencastMode.onlyKeyboardShortcuts": true,
-  "terminal.integrated.fontFamily": "Source Code Pro",
+  "terminal.integrated.fontFamily": "Hack NF",
   "vim.disableExtension": true,
   "workbench.colorTheme": "Gruvbox Dark Soft",
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -63,10 +62,34 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
+  "vim.leader": " ",
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-h>"],
+      "commands": [":bprev"]
+    },
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"", "+", "y"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": [":bnext"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
     }
   ],
   "editor.linkedEditing": true,
@@ -74,11 +97,13 @@
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "yapf",
   "python.formatting.yapfArgs": [
-      "--style",
-      "{based_on_style: google, column_limit: 80, indent_width: 4}"
+    "--style",
+    "{based_on_style: google, column_limit: 80, indent_width: 4}"
   ],
-  "[python]": {
-      "editor.formatOnType": true
-  }
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative"
 }
 

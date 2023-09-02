@@ -12,13 +12,15 @@ vim.keymap.set("n", "x", [["_x]])
 -- clear search highlights
 vim.keymap.set("n", "<leader>nh", "<Cmd>nohl<CR>")
 
-
-
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- move selected text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- easier block indent
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- keep cursor position while inlining
 vim.keymap.set("n", "J", "mzJ`z")
