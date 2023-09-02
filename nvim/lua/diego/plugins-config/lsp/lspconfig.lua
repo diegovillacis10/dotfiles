@@ -8,6 +8,13 @@ if not cmp_nvim_lsp_status then
   return
 end
 
+local neodev_status, neodev = pcall(require, "neodev")
+if not neodev_status then
+  return
+end
+
+neodev.setup()
+
 -- enable keybinds only for when lsp server available
 local on_attach = function(_, bufnr)
   -- keybind options
@@ -25,24 +32,23 @@ local on_attach = function(_, bufnr)
   end
 
   -- set keybinds
-  nmap("gf", "<Cmd>Lspsaga finder<CR>", "[G]o to [F]inder")
-  nmap("gf", "<Cmd>Lspsaga finder<CR>", "")
+  -- nmap("gf", "<Cmd>Lspsaga finder<CR>", "[G]o to [F]inder")
   nmap("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", "[G]o to [I]mplementation")
-  nmap("gd", "<cmd>Lspsaga peek_definition<CR>", "[G]o to [D]efinition")
+  -- nmap("gd", "<cmd>Lspsaga peek_definition<CR>", "[G]o to [D]efinition")
   nmap("gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", "[G]o to [D]eclaration")
-  nmap("<leader>rn", "<cmd>Lspsaga rename<CR>", "[R]e[N]ame")
-  nmap("<leader>do", "<cmd>Lspsaga code_action<CR>", "[DO] code action")
-  nmap("<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", "Show [D]iagnostics")
-  nmap("<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Show cursor [D]iagnostics")
-  nmap("[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-  nmap("]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
-  nmap("K", "<cmd>Lspsaga hover_doc<CR>")
+  -- nmap("<leader>rn", "<cmd>Lspsaga rename<CR>", "[R]e[N]ame")
+  -- nmap("<leader>do", "<cmd>Lspsaga code_action<CR>", "[DO] code action")
+  -- nmap("<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", "Show [D]iagnostics")
+  -- nmap("<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", "Show cursor [D]iagnostics")
+  -- nmap("[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+  -- nmap("]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+  -- nmap("K", "<cmd>Lspsaga hover_doc<CR>")
   -- Diagnostic keymaps
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
   vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-  nmap("<leader>n", "<cmd>Lspsaga outline<CR>", "Show Outline") -- show buffer outline
+  -- nmap("<leader>n", "<cmd>Lspsaga outline<CR>", "Show Outline") -- show buffer outline
 --   -- Lesser used LSP functionality
 --   nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
 --   nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')

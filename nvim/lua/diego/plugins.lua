@@ -18,6 +18,7 @@ require('lazy').setup({
   -- git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  {'akinsho/git-conflict.nvim', version = "*", config = true},
 
   -- detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -53,19 +54,19 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
 
-      {
-        'nvimdev/lspsaga.nvim',
-        config = function()
-          require('lspsaga').setup({})
-        end,
-        dependencies = {
-          'nvim-treesitter/nvim-treesitter',
-          'nvim-tree/nvim-web-devicons'
-        }
-      },
+      -- {
+      --   'nvimdev/lspsaga.nvim',
+      --   config = function()
+      --     require('lspsaga').setup({})
+      --   end,
+      --   dependencies = {
+      --     'nvim-treesitter/nvim-treesitter',
+      --     'nvim-tree/nvim-web-devicons'
+      --   }
+      -- },
 
       -- useful status updates for LSP
-      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
 
       -- additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -162,12 +163,6 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`

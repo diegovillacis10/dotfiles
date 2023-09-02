@@ -27,6 +27,9 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- easy maximize split
+vim.keymap.set("n", "<C-w>m", "<C-w>|<C-w>_")
+
 -- delete highlighted word into void register and then paste over
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -57,5 +60,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>mf", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>la", "<cmd>Lazy<CR>")
+vim.keymap.set("n", "<leader>ma", "<cmd>Mason<CR>")
 

@@ -21,7 +21,7 @@ end)
 vim.keymap.set("n", "<leader>zZ", function()
   zenmode.setup {
     window = {
-      width = 100,
+      width = 120,
       options = {}
     },
   }
