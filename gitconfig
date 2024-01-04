@@ -2,21 +2,12 @@
     name = Diego Villacis
     email = diegovillacis101@gmail.com
 [core]
-    excludesfile = ~/.gitignore_global
-    editor = vim
-[alias]
-    st = status
+    excludesfile = ~/.gitignore
 [merge]
     tool = vimdiff
     conflictstyle = diff3
-[mergetool]
-    prompt = false
-[apply]
-    whitespace = nowarn
-[init]
-    defaultBranch = main
-[push]
-  default = current
 [include]
   path = ~/.gitconfig.local
+[includeIf "gitdir:~/code/clients/"]
+    path = ~/code/clients/.gitconfig
 

@@ -15,3 +15,4 @@ source $ZSH/oh-my-zsh.sh
 
 # Evals
 [[ "$(command -v starship)" ]] && eval "$(starship init zsh)"
+

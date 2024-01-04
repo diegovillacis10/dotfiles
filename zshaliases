@@ -31,12 +31,12 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias now='date +"%T"'
 alias nowdate='date +"%d-%m-%Y"'
 alias vi=vim
+alias vim=nvim
 alias svi='sudo vi'
 alias edit='vim'
 alias hg='history | grep'
 alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull -r \;'
 alias json="jq -C '.' | less -R"
-alias ugh='fuck'
 alias www='python3 -m http.server 7575'
 
 # GUIs
