@@ -167,6 +167,14 @@ ln -sv ~/dotfiles/i3_config ~/.config/i3/config
 ln -sv ~/dotfiles/i3status.conf ~/.config/i3status/config
 ```
 
+## yabai & skhd
+
+```shell
+mkdir -p ~/.config/yabai ~/.config/skhd
+ln -sv ~/dotfiles/yabairc ~/.config/yabai/yabairc
+ln -sv ~/dotfiles/skhdrc ~/.config/skhd/skhdrc
+```
+
 ## spotify-tui
 
 ```shell
