@@ -1,6 +1,19 @@
-format = "$custom$all"
+format = """
+$custom\
+$username\
+$hostname\
+$sudo\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$memory_usage\
+$cmd_duration\
+$line_break\
+$time\
+$character"""
 
-# First Line
 [custom.debian]
 symbol = ' '
 os = "linux"
@@ -13,202 +26,54 @@ os = "macos"
 when = true
 style = "dimmed white"
 
-[directory]
-read_only = " "
-truncation_length = 5
-truncation_symbol = "…/"
-
-[git_branch]
-symbol = " "
-
-[git_metrics]
-disabled = false
-
-[git_commit]
-commit_hash_length = 8
-
-[env_var]
-# disabled = true
-variable = "SHELL"
-default = "unknown shell"
-style = "black bold"
-
 [sudo]
 disabled = false
 format = '\[[root]($style)\]'
-style = "bold red"
+style = "red"
+
+[directory]
+read_only = " "
+style = "blue"
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[git_branch]
+format = "[$symbol$branch]($style)"
+symbol = ""
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+added_style = "dimmed blue"
+deleted_style = "dimmed red"
+format = '[ +$added]($added_style)/[-$deleted]($deleted_style) '
+
+[git_status]
+format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218)($ahead_behind$stashed)]($style)"
+style = "cyan"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
 
 [memory_usage]
 disabled = false
-symbol = " "
-style = "bold dimmed green"
+threshold = 75
+format = '[\[${ram}\]]($style) '
+style = "dimmed cyan"
 
-# Second Line
-[status]
-disabled = false
-symbol = ''
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
 
 [time]
 disabled = false
-format = '[\[ $time \]]($style) '
+format = '[\[ $time \]]($style)'
 time_format = "%T"
 utc_time_offset = "-5"
 time_range = "22:00:00-05:00:00"
 
-[battery]
-full_symbol = " "
-charging_symbol = " "
-discharging_symbol = " "
-disabled = true
-
-[[battery.display]]
-threshold = 15
-style = "bold red"
-disabled = true
-
-[[battery.display]]
-threshold = 50
-style = "bold yellow"
-disabled = true
-
-[[battery.display]]
-threshold = 80
-style = "bold green"
-disabled = true
-
-[gcloud]
-disabled = true
-
-########################################################
-# https://starship.rs/presets/nerd-font.html
-# https://starship.rs/presets/no-runtimes.html
-########################################################
-
-[aws]
-symbol = "  "
-
-[buf]
-symbol = " "
-format = "via [$symbol]($style)"
-
-[c]
-symbol = " "
-format = "via [$symbol]($style)"
-
-[cmake]
-format = "via [$symbol]($style)"
-
-[cobol]
-format = "via [$symbol]($style)"
-
-[conda]
-symbol = " "
-format = "via [$symbol]($style)"
-
-[crystal]
-format = "via [$symbol]($style)"
-
-[dart]
-symbol = " "
-format = "via [$symbol]($style)"
-
-[deno]
-format = "via [$symbol]($style)"
-
-[docker_context]
-symbol = " "
-format = "via [$symbol]($style)"
-
-[dotnet]
-format = "[$symbol(🎯 $tfm )]($style)"
-
-[elixir]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[elm]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[erlang]
-format = 'via [$symbol]($style)'
-
-[golang]
-symbol = " "
-
-[haskell]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[helm]
-format = 'via [$symbol]($style)'
-
-[java]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[julia]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[kotlin]
-format = 'via [$symbol]($style)'
-
-[lua]
-format = 'via [$symbol]($style)'
-
-[nim]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[nodejs]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[ocaml]
-format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style)'
-
-[package]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[perl]
-format = 'via [$symbol]($style)'
-
-[php]
-format = 'via [$symbol]($style)'
-
-[pulumi]
-format = 'via [$symbol$stack]($style)'
-
-[purescript]
-format = 'via [$symbol]($style)'
-
-[python]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[red]
-format = 'via [$symbol]($style)'
-
-[rlang]
-format = 'via [$symbol]($style)'
-
-[ruby]
-format = 'via [$symbol]($style)'
-
-[rust]
-symbol = " "
-format = 'via [$symbol]($style)'
-
-[swift]
-format = 'via [$symbol]($style)'
-
-[vagrant]
-format = 'via [$symbol]($style)'
-
-[vlang]
-format = 'via [$symbol]($style)'
-
-[zig]
-format = 'via [$symbol]($style)'
