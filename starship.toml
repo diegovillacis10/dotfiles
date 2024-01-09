@@ -52,7 +52,7 @@ deleted_style = "dimmed red"
 format = '[ +$added]($added_style)/[-$deleted]($deleted_style) '
 
 [git_status]
-format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](182)($ahead_behind$stashed)]($style)"
+format = " [[($conflicted$untracked$modified$staged$renamed$deleted)](182)($ahead_behind$stashed)]($style)"
 style = "cyan"
 stashed = "≡"
 
