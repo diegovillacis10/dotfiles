@@ -44,7 +44,7 @@ keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- substitute word on cursor in document
-keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 
+keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = "Substitute word on cursor in document" })
 
 -- Diagnostic keymaps
