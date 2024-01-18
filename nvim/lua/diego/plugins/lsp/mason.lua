@@ -30,7 +30,6 @@ return {
         "emmet_ls",
         "html",
         "lua_ls",
-        "ruby_ls",
         "tailwindcss",
         "tsserver",
       },

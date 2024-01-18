@@ -170,9 +170,15 @@ ln -sv ~/dotfiles/i3status.conf ~/.config/i3status/config
 ## yabai & skhd
 
 ```shell
+brew install koekeishiya/formulae/yabai
+brew install koekeishiya/formulae/skhd
+
 mkdir -p ~/.config/yabai ~/.config/skhd
 ln -sv ~/dotfiles/yabairc ~/.config/yabai/yabairc
 ln -sv ~/dotfiles/skhdrc ~/.config/skhd/skhdrc
+
+yabai --start-service
+skhd --start-service
 ```
 
 ## spotify-tui
