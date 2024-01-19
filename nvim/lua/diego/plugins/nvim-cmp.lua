@@ -51,6 +51,11 @@ return {
           ellipsis_char = "...",
         }),
       },
+      -- set borders to floating window
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      }
     })
   end,
 }

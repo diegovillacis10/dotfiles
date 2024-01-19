@@ -22,4 +22,7 @@ require("lazy").setup({ { import = "diego.plugins" }, { import = "diego.plugins.
   change_detection = {
     notify = false,
   },
+  ui = {
+    border = "rounded",
+  }
 })

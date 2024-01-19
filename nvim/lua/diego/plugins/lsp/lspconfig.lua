@@ -16,7 +16,7 @@ return {
     local keymap = vim.keymap
 
     local opts = { noremap = true, silent = true }
-    local on_attach = function(client, bufnr)
+    local on_attach = function(_, bufnr)
       opts.buffer = bufnr
 
       -- set keybinds
@@ -71,27 +71,56 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    local border = {
+      { '┌', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '┐', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+      { '┘', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '└', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+    }
+
+    -- Add the border on hover and on signature help popup window
+    local handlers = {
+      ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+      ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+    }
+
+    -- Add border to the diagnostic popup window
+    vim.diagnostic.config({
+        virtual_text = {
+            prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
+        },
+        float = { border = border },
+    })
+
     -- configure astro server
     lspconfig["astro"].setup({
       capabilities = capabilities,
+      handlers = handlers,
       on_attach = on_attach,
     })
 
     -- configure css server
     lspconfig["cssls"].setup({
       capabilities = capabilities,
+      handlers = handlers,
       on_attach = on_attach,
     })
 
     -- configure handlebars server
     lspconfig["ember"].setup({
       capabilities = capabilities,
+      handlers = handlers,
       on_attach = on_attach,
     })
 
     -- configure emmet language server
     lspconfig["emmet_ls"].setup({
       capabilities = capabilities,
+      handlers = handlers,
       on_attach = on_attach,
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "astro"},
     })
@@ -99,12 +128,14 @@ return {
     -- configure html server
     lspconfig["html"].setup({
       capabilities = capabilities,
+      handlers = handlers,
       on_attach = on_attach,
     })
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
+      handlers = handlers,
       on_attach = on_attach,
       settings = { -- custom settings for lua
         Lua = {
@@ -126,12 +157,14 @@ return {
     -- configure tailwindcss server
     lspconfig["tailwindcss"].setup({
       capabilities = capabilities,
+      handlers = handlers,
       on_attach = on_attach,
     })
 
     -- configure typescript server with plugin
     lspconfig["tsserver"].setup({
       capabilities = capabilities,
+      handlers = handlers,
       on_attach = on_attach,
     })
   end,
