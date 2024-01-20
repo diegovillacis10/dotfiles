@@ -35,14 +35,17 @@ return {
       opts.desc = "Show LSP type definitions"
       keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
 
-      opts.desc = "See available code actions"
+      opts.desc = "Show LSP document symbols"
+      keymap.set("n", "gs", "<cmd>Telescope lsp_document_symbols<CR>", opts) -- show lsp document symbols
+
+      opts.desc = "See avialable code actions"
       keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
       opts.desc = "Smart rename"
       keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
       opts.desc = "Show buffer diagnostics"
-      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show diagnostics for file
 
       opts.desc = "Show line diagnostics"
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
@@ -60,7 +63,7 @@ return {
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
       opts.desc = "Format current buffer with LSP"
-      keymap.set("n", "<leader>mp",function() vim.lsp.buf.format() end, opts) -- mapping to restart lsp if necessary
+      keymap.set("n", "<leader>mp", function()vim.lsp.buf.format()end, opts) -- format current buffer with lsp
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
@@ -92,10 +95,10 @@ return {
 
     -- Add border to the diagnostic popup window
     vim.diagnostic.config({
-        virtual_text = {
-            prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
-        },
-        float = { border = border },
+      virtual_text = {
+        prefix = '■ ', -- Could be '●', '▎', 'x', '■', , 
+      },
+      float = { border = border },
     })
 
     -- configure astro server
@@ -124,7 +127,17 @@ return {
       capabilities = capabilities,
       handlers = handlers,
       on_attach = on_attach,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "astro"},
+      filetypes = {
+        "html",
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "astro",
+        "svelte",
+        "typescriptreact",
+        "javascriptreact",
+      },
     })
 
     -- configure html server

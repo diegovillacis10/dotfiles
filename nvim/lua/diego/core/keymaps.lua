@@ -6,8 +6,6 @@ local keymap = vim.keymap
 
 keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 
-keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open Explorer" })
-
 keymap.set("n", "x", [["_x]], { desc = "Delete single character without copying into register"})
 
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
@@ -33,14 +31,7 @@ keymap.set("n", "<C-w>m", "<C-w>|<C-w>_", { desc = "Maximize split"})
 keymap.set({ 'n', 'v' }, "Q", '<Nop>', { silent = true })
 keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- format buffer
--- keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
 -- substitute word on cursor in document
 keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = "Substitute word on cursor in document" })
-
--- keymap.set("n", "<leader>mf", "<cmd>CellularAutomaton make_it_rain<CR>")
--- keymap.set("n", "<leader>la", "<cmd>Lazy<CR>")
--- keymap.set("n", "<leader>ma", "<cmd>Mason<CR>")
 
