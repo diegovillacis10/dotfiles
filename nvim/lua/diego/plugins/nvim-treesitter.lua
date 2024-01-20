@@ -20,6 +20,7 @@ return {
         autotag = { enable = true },
         -- ensure these language parsers are installed
         ensure_installed = {
+          "astro",
           "json",
           "javascript",
           "typescript",
