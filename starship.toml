@@ -38,7 +38,7 @@ style = "blue"
 [character]
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+vicmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$symbol$branch]($style)"
