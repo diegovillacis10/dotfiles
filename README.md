@@ -165,6 +165,7 @@ ln -sv ~/dotfiles/asdfrc ~/.asdfrc
 mkdir -p ~/.config/i3 ~/.config/i3status
 ln -sv ~/dotfiles/i3_config ~/.config/i3/config
 ln -sv ~/dotfiles/i3status.conf ~/.config/i3status/config
+ln -sv ~/dotfiles/scripts/lock ~/.config/scripts/lock
 ```
 
 ## yabai & skhd

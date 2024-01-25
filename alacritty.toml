@@ -5,19 +5,19 @@ opacity = 0.9
 size = 8
 
 [font.bold]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Propo"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Propo"
 style = "Bold Italic"
 
 [font.italic]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Propo"
 style = "Italic"
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "Hack Nerd Font Propo"
 style = "Regular"
 
 # One dark theme

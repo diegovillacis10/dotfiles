@@ -5,11 +5,11 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
-    local mason = require('mason')
+    local mason = require("mason")
 
-    local mason_lspconfig = require('mason-lspconfig')
+    local mason_lspconfig = require("mason-lspconfig")
 
-    local mason_tool_installer = require('mason-tool-installer')
+    local mason_tool_installer = require("mason-tool-installer")
 
     mason.setup({
       ui = {
@@ -37,5 +37,16 @@ return {
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
     })
-  end
+
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "eslint_d", -- js linter
+        "rubocop", -- ruby formatter
+        "shellcheck", -- shell linter
+        "stylelint", -- css linter
+      },
+    })
+  end,
 }

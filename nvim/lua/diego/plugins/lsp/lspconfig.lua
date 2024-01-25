@@ -61,9 +61,6 @@ return {
 
       opts.desc = "Restart LSP"
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-
-      opts.desc = "Format current buffer with LSP"
-      keymap.set("n", "<leader>mp", function()vim.lsp.buf.format()end, opts) -- format current buffer with lsp
     end
 
     -- used to enable autocompletion (assign to every lsp server config)
@@ -120,6 +117,9 @@ return {
       capabilities = capabilities,
       handlers = handlers,
       on_attach = on_attach,
+      filetypes = {
+        "handlebars",
+      }
     })
 
     -- configure emmet language server
@@ -129,6 +129,7 @@ return {
       on_attach = on_attach,
       filetypes = {
         "html",
+        "eruby",
         "css",
         "sass",
         "scss",
@@ -167,6 +168,13 @@ return {
           },
         },
       },
+    })
+
+    -- configure tailwindcss server
+    lspconfig["ruby_ls"].setup({
+      capabilities = capabilities,
+      handlers = handlers,
+      on_attach = on_attach,
     })
 
     -- configure tailwindcss server
