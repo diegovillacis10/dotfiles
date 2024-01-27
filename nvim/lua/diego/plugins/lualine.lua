@@ -4,6 +4,7 @@ return {
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+    local noice = require("noice")
 
     local colors = {
       blue = "#83acff",
@@ -61,6 +62,11 @@ return {
             cond = lazy_status.has_updates,
             color = { fg = "#fab387" },
           },
+          {
+            noice.api.statusline.mode.get,
+            cond = noice.api.statusline.mode.has,
+            color = { fg = "#FFDA7B" },
+          },
           { "encoding" },
           { "fileformat" },
           { "filetype" },
@@ -68,6 +74,4 @@ return {
       },
     })
   end,
-
-
 }

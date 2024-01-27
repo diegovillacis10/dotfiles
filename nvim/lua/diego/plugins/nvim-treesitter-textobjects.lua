@@ -12,13 +12,10 @@ return {
 
           keymaps = {
             -- You can use the capture groups defined in textobjects.scm
-            ["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
-            ["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
-            ["l="] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" },
-            ["r="] = { query = "@assignment.rhs", desc = "Select right hand side of an assignment" },
-
-            ["aa"] = { query = "@parameter.outer", desc = "Select outer part of a parameter/argument" },
-            ["ia"] = { query = "@parameter.inner", desc = "Select inner part of a parameter/argument" },
+            ["aa"] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
+            ["ia"] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
+            ["la"] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" },
+            ["ra"] = { query = "@assignment.rhs", desc = "Select right hand side of an assignment" },
 
             ["ai"] = { query = "@conditional.outer", desc = "Select outer part of a conditional" },
             ["ii"] = { query = "@conditional.inner", desc = "Select inner part of a conditional" },
@@ -39,14 +36,12 @@ return {
         swap = {
           enable = true,
           swap_next = {
-            ["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
-            ["<leader>n:"] = "@property.outer",  -- swap object property with next
-            ["<leader>nm"] = "@function.outer",  -- swap function with next
+            ["<leader>na"] = "@assignment.inner",
+            ["<leader>nm"] = "@function.outer",
           },
           swap_previous = {
-            ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
-            ["<leader>p:"] = "@property.outer",  -- swap object property with prev
-            ["<leader>pm"] = "@function.outer",  -- swap function with previous
+            ["<leader>pa"] = "@assignment.inner",
+            ["<leader>pm"] = "@function.outer",
           },
         },
         move = {
@@ -58,11 +53,7 @@ return {
             ["]c"] = { query = "@class.outer", desc = "Next class start" },
             ["]i"] = { query = "@conditional.outer", desc = "Next conditional start" },
             ["]l"] = { query = "@loop.outer", desc = "Next loop start" },
-
-            -- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
-            -- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
-            ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-            ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+            ["]a"] = { query = "@assignment.outer", desc = "Next assignment start" },
           },
           goto_next_end = {
             ["]F"] = { query = "@call.outer", desc = "Next function call end" },
@@ -70,6 +61,7 @@ return {
             ["]C"] = { query = "@class.outer", desc = "Next class end" },
             ["]I"] = { query = "@conditional.outer", desc = "Next conditional end" },
             ["]L"] = { query = "@loop.outer", desc = "Next loop end" },
+            ["]A"] = { query = "@assignment.outer", desc = "Next assignment end" },
           },
           goto_previous_start = {
             ["[f"] = { query = "@call.outer", desc = "Prev function call start" },
@@ -77,6 +69,7 @@ return {
             ["[c"] = { query = "@class.outer", desc = "Prev class start" },
             ["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
             ["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
+            ["[a"] = { query = "@assignment.outer", desc = "Prev assignment start" },
           },
           goto_previous_end = {
             ["[F"] = { query = "@call.outer", desc = "Prev function call end" },
@@ -84,6 +77,7 @@ return {
             ["[C"] = { query = "@class.outer", desc = "Prev class end" },
             ["[I"] = { query = "@conditional.outer", desc = "Prev conditional end" },
             ["[L"] = { query = "@loop.outer", desc = "Prev loop end" },
+            ["[A"] = { query = "@assignment.outer", desc = "Prev assignment end" },
           },
         },
       },

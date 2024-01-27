@@ -33,8 +33,6 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 
 opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor.
 
-opt.colorcolumn = "80" -- vertical column position
-
 -- enable mouse mode
 opt.mouse = 'a'
 

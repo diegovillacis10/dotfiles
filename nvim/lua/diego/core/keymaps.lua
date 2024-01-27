@@ -5,6 +5,7 @@ vim.g.maplocalleader = " "
 local keymap = vim.keymap
 
 keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
+keymap.set("n", "<leader>q", "<cmd>bd<cr>", { desc = "Close current buffer" })
 
 keymap.set("n", "x", [["_x]], { desc = "Delete single character without copying into register" })
 
@@ -21,7 +22,7 @@ keymap.set("n", "N", "Nzzzv", { desc = "Keep backward search terms centered" })
 
 keymap.set("n", "<C-w>m", "<C-w>|<C-w>_", { desc = "Maximize split" })
 
-keymap.set("x", "<leader>p", [["_dP]], { desc = "Delete highlighted word into void register and then paste over" })
+keymap.set("x", "<leader>pp", [["_dP]], { desc = "Delete highlighted word into void register and then paste over" })
 
 -- nops for Q and <space>
 keymap.set({ "n", "v" }, "Q", "<Nop>", { silent = true })
