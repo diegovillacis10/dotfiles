@@ -6,7 +6,7 @@ local keymap = vim.keymap
 
 keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 
-keymap.set("n", "x", [["_x]], { desc = "Delete single character without copying into register"})
+keymap.set("n", "x", [["_x]], { desc = "Delete single character without copying into register" })
 
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected text up" })
@@ -19,19 +19,18 @@ keymap.set("n", "J", "mzJ`z", { desc = "Keep cursor position while inlining" })
 keymap.set("n", "n", "nzzzv", { desc = "Keep forward search terms centered" })
 keymap.set("n", "N", "Nzzzv", { desc = "Keep backward search terms centered" })
 
-keymap.set("n", "<C-l>", "<cmd>bnext<CR>", { desc = "Navigate to next buffer"})
-keymap.set("n", "<C-h>", "<cmd>bprev<CR>", { desc = "Navigate to prev buffer"})
+keymap.set("n", "<C-w>m", "<C-w>|<C-w>_", { desc = "Maximize split" })
 
-keymap.set("n", "<C-w>m", "<C-w>|<C-w>_", { desc = "Maximize split"})
-
--- delete highlighted word into void register and then paste over
--- keymap.set("x", "<leader>p", [["_dP]])
+keymap.set("x", "<leader>p", [["_dP]], { desc = "Delete highlighted word into void register and then paste over" })
 
 -- nops for Q and <space>
-keymap.set({ 'n', 'v' }, "Q", '<Nop>', { silent = true })
-keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+keymap.set({ "n", "v" }, "Q", "<Nop>", { silent = true })
+keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- substitute word on cursor in document
-keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = "Substitute word on cursor in document" })
-
+keymap.set(
+  "n",
+  "<leader>cw",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Substitute word on cursor in document" }
+)

@@ -170,8 +170,8 @@ return {
       },
     })
 
-    -- configure tailwindcss server
-    lspconfig["ruby_ls"].setup({
+    -- configure ruby server
+    lspconfig["solargraph"].setup({
       capabilities = capabilities,
       handlers = handlers,
       on_attach = on_attach,

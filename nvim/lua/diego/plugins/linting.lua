@@ -1,7 +1,7 @@
 return {
   "mfussenegger/nvim-lint",
   lazy = true,
-  event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     local lint = require("lint")
 
@@ -11,7 +11,6 @@ return {
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
       svelte = { "eslint_d" },
-      ruby = { "rubocop" },
       sh = { "shellcheck" },
       css = { "stylelint" },
       scss = { "stylelint" },
@@ -27,8 +26,18 @@ return {
       end,
     })
 
-    vim.keymap.set("n", "<leader>l", function()
+    vim.keymap.set("n", "<leader>ll", function()
       lint.try_lint()
     end, { desc = "Trigger linting for current file" })
+
+    vim.keymap.set("n", "<leader>lt", function()
+      local vd = vim.diagnostic
+
+      if vd.is_disabled() then
+        vd.enable()
+      else
+        vd.disable()
+      end
+    end)
   end,
 }
