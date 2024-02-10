@@ -12,6 +12,9 @@ export BAT_THEME=gruvbox-dark
 # https://github.com/halcyon/asdf-java#java_home
 [[ -f ~/.asdf/plugins/java/set-java-home.zsh ]] && source ~/.asdf/plugins/java/set-java-home.zsh
 
+# Add local bin to path
+export PATH=$HOME/.local/bin:$PATH
+
 # Add cargo to path
 export PATH=$HOME/.cargo/bin:$PATH
 
