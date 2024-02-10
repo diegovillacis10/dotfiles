@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "diego.plugins" }, { import = "diego.plugins.lsp"} }, {
+require("lazy").setup({ { import = "diego.plugins" }, { import = "diego.plugins.lsp" } }, {
   install = {
     colorscheme = { "catppuccin-mocha" },
   },
@@ -24,5 +24,5 @@ require("lazy").setup({ { import = "diego.plugins" }, { import = "diego.plugins.
   },
   ui = {
     border = "rounded",
-  }
+  },
 })
