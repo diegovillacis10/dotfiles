@@ -80,6 +80,8 @@ ln -sv ~/dotfiles/nvim/lua/diego ~/.config/nvim/lua/diego
 ## Zsh
 
 ```shell
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ln -sv ~/dotfiles/zshenv ~/.zshenv
 ln -sv ~/dotfiles/zshaliases ~/.zshaliases
 ln -sv ~/dotfiles/zshrc ~/.zshrc
