@@ -10,7 +10,7 @@ plugins=(git z asdf zsh-syntax-highlighting zsh-autosuggestions)
 export ZSH="${HOME}/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Better history searching
 # https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys

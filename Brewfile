@@ -8,7 +8,6 @@ brew "bat"
 brew "cloc"
 brew "docker"
 brew "dos2unix"
-brew "fzf"
 brew "exa"
 brew "git"
 brew "gmp" # Vim dependency

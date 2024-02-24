@@ -22,7 +22,6 @@ sudo apt install \
     htop \
     most \
     zsh \
-    fzf \
     git \
     bat \
     tig \

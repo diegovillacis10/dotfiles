@@ -21,7 +21,7 @@ export FZF_CTRL_R_OPTS="
 export FZF_COMPLETION_OPTS='--border --info=inline'
 export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 export FZF_CTRL_T_OPTS="
-  --preview 'bat -n --color=always {}'
+  --preview 'batcat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # Colored man pages

@@ -87,6 +87,13 @@ ln -sv ~/dotfiles/zshaliases ~/.zshaliases
 ln -sv ~/dotfiles/zshrc ~/.zshrc
 ```
 
+## fzf
+
+```shell
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
 ## Git
 
 NOTE: Make sure to update the gitconfig file since it has my identity 😉
@@ -197,6 +204,6 @@ ln -sv ~/dotfiles/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
 ```shell
 curl -fLo "$(bat --config-dir)/themes/Catppuccin-mocha.tmTheme" --create-dirs \
     https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme
-bat cacho --build
+bat cache --build
 ```
 
