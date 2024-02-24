@@ -110,8 +110,8 @@ mkdir -p ~/.tmux/plugins/ ~/.local/bin/
 ln -sv ~/dotfiles/scripts/tmux-sessionizer ~/.local/bin/tmux-sessionizer
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
-Press prefix + I (capital i, as in Install) to fetch the plugins.
 ```
+Press `prefix + I` to fetch the plugins.
 
 ## Starship
 

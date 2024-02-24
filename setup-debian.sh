@@ -7,32 +7,27 @@ sudo apt install \
     apt-transport-https \
     firmware-iwlwifi \
     ca-certificates \
-    xrvt-unicode \
     transmission \
     shellcheck \
+    xbacklight \
+    alacritty \
     net-tools \
+    nitrogen \
     ripgrep \
-    cmatrix \
+    neovim \
     gnupg2 \
+    picom \
     xclip \
     tmux \
+    vifm \
     curl \
     tldr \
-    nmap \
     htop \
-    most \
     zsh \
     git \
-    bat \
     tig \
     tlp \
-    alacritty \
-    xbacklight \
-    picom \
-    nitrogen \
     i3 \
-    neovim \
-    vifm \
     jq
 
 # FONTS
