@@ -5,9 +5,24 @@ export EDITOR=nvim
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 export PAGER='less -isM'
-export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+export BAT_THEME=Catppuccin-mocha
+
+# Options for fzf command
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 export FZF_DEFAULT_OPTS='-m --height 50% --border'
-export BAT_THEME=gruvbox-dark
+# CTRL-/ to toggle small preview window to see the full command
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | xclip)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+export FZF_COMPLETION_OPTS='--border --info=inline'
+export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # Colored man pages
 # https://www.tecmint.com/view-colored-man-pages-in-linux/

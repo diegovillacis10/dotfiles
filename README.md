@@ -192,3 +192,11 @@ mkdir -p ~/.config/spotify-tui
 ln -sv ~/dotfiles/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
 ```
 
+## Bat
+
+```shell
+curl -fLo "$(bat --config-dir)/themes/Catppuccin-mocha.tmTheme" --create-dirs \
+    https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme
+bat cacho --build
+```
+

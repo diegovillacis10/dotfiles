@@ -10,6 +10,8 @@ plugins=(git z asdf zsh-syntax-highlighting zsh-autosuggestions)
 export ZSH="${HOME}/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+
 # Better history searching
 # https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
 autoload -U up-line-or-beginning-search
@@ -20,8 +22,8 @@ bindkey "^p" up-line-or-beginning-search
 bindkey "^n" down-line-or-beginning-search
 
 # Autosuggest keybindings
-bindkey '^ ' autosuggest-accept
-bindkey '^t' autosuggest-toggle
+# bindkey '^ ' autosuggest-accept
+# bindkey '^t' autosuggest-toggle
 
 # Prompt
 [[ "$(command -v starship)" ]] && eval "$(starship init zsh)"

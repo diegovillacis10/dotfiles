@@ -12,6 +12,7 @@ alias dr='docker run --rm -it'
 
 # Git
 alias glr='git pull --rebase'
+alias gcheck='git checkout $(git branch | fzf)'
 
 # Other
 alias e="$EDITOR"
@@ -20,12 +21,13 @@ alias mkdir='mkdir -pv'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias ln='ln -i'
+alias bat=batcat
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias fd='find . -type d -iname'
 alias ff='find . -type f -iname'
-alias tree='tree -FC'
+# alias tree='tree -FC'
 alias src='. ~/.zshrc'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias now='date +"%T"'
@@ -110,6 +112,7 @@ fi
 
 if [[ "$(uname -a)" =~ "WSL2" ]]; then
   alias gohome='cd /mnt/c/Users/diego'
+  alias xclip='clipcopy'
 fi
 
 # Local aliases
