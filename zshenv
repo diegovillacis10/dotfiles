@@ -15,7 +15,7 @@ export FZF_DEFAULT_OPTS='-m --height 50% --border'
 export FZF_CTRL_R_OPTS="
   --preview 'echo {}' --preview-window up:3:hidden:wrap
   --bind 'ctrl-/:toggle-preview'
-  --bind 'ctrl-y:execute-silent(echo -n {2..} | xclip)+abort'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -sel clip)+abort'
   --color header:italic
   --header 'Press CTRL-Y to copy command into clipboard'"
 export FZF_COMPLETION_OPTS='--border --info=inline'
