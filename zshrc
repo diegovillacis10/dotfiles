@@ -4,7 +4,14 @@ source ${HOME}/.zshaliases
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-plugins=(git z asdf zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(
+  z
+  git
+  asdf
+  colored-man-pages
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"

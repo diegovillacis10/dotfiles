@@ -14,6 +14,7 @@ sudo apt install \
     net-tools \
     nitrogen \
     ripgrep \
+    fd-find \
     neovim \
     gnupg2 \
     picom \
