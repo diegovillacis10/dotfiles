@@ -199,13 +199,6 @@ mkdir -p ~/.config/spotify-tui
 ln -sv ~/dotfiles/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
 ```
 
-## btop
-
-```shell
-mkdir -p ~/.config/btop
-ln -sv ~/dotfiles/btop.conf ~/.config/btop/btop.conf
-```
-
 ## Bat
 
 ```shell

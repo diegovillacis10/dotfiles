@@ -12,29 +12,24 @@ alias dr='docker run --rm -it'
 
 # Git
 alias glr='git pull --rebase'
-alias gcheck='git checkout $(git branch | fzf)'
+alias gcheck='git checkout $(git branch -a | fzf)'
+alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull -r \;'
 
 # Other
 alias e="$EDITOR"
+alias vi=vim
+alias vim=nvim
+alias edit='vim'
 alias sz="source ~/.zshrc"
 alias mkdir='mkdir -pv'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias ln='ln -i'
-alias bat=batcat
+alias eza='eza -lxahoF --icons --git -s type'
 alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias src='. ~/.zshrc'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias now='date +"%T"'
 alias nowdate='date +"%d-%m-%Y"'
-alias vi=vim
-alias vim=nvim
-alias svi='sudo vi'
-alias edit='vim'
-alias hg='history | grep'
-alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull -r \;'
 alias json="jq -C '.' | less -R"
 alias www='python3 -m http.server 7575'
 
@@ -46,12 +41,8 @@ alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias halt='sudo /sbin/halt'
 alias shutdown='sudo /sbin/shutdown'
-alias duf='du -csh *'
+# alias duf='du -csh *'
 alias dus='du -d 1 -h | sort -h'
-
-# Networking
-alias ping='ping -c 5'
-alias fastping='ping -c 100 -s 1'
 
 # Functions
 mkcd() { mkdir -p "$@" && cd "$@"; }
@@ -76,6 +67,7 @@ fi
 ### Linux-only aliases ###
 if [[ "$(uname)" = "Linux" ]]; then
   alias o='xdg-open'
+  alias bat=batcat
   alias json=" jq -C '.' | batcat"
   alias calc='gnome-calculator'
   alias xclipc='xclip -selection clipboard'
@@ -97,16 +89,10 @@ if [[ "$(uname)" = "Darwin" ]]; then
   alias o='open'
   alias calc='open -n -a calculator'
   alias json=" jq -C '.' | less -R"
-  alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-  alias ipl="ipconfig getifaddr en0"
-
-  function copyfile {
-    [[ "$#" != 1 ]] && return 1
-    local file_to_copy=$1
-    cat $file_to_copy | pbcopy
-  }
+  alias iplocal="ipconfig getifaddr en0"
 fi
 
+### WindowsSubsystemforLinux-only aliases ###
 if [[ "$(uname -a)" =~ "WSL2" ]]; then
   alias gohome='cd /mnt/c/Users/diego'
   alias xclip='clipcopy'

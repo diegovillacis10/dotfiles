@@ -7,8 +7,8 @@ sudo apt install \
     apt-transport-https \
     firmware-iwlwifi \
     ca-certificates \
+    diff-so-fancy \
     transmission \
-    shellcheck \
     xbacklight \
     alacritty \
     net-tools \
@@ -23,8 +23,9 @@ sudo apt install \
     vifm \
     curl \
     tldr \
-    htop \
+    btop \
     zsh \
+    eza \
     git \
     tig \
     tlp \
