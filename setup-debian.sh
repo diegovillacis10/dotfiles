@@ -17,6 +17,7 @@ sudo apt install \
     fd-find \
     neovim \
     gnupg2 \
+    httpie \
     picom \
     xclip \
     tmux \

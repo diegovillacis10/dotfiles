@@ -3,12 +3,15 @@
   email = diegovillacis101@gmail.com
 [core]
   excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RF
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
   tool = vimdiff
   conflictstyle = diff3
 [interactive]
 	diffFilter = diff-so-fancy --patch
+[alias]
+  # https://github.com/so-fancy/diff-so-fancy/issues/474#issuecomment-1645485683
+  xdsf = !"git -c interactive.diffFilter='less --tabs=4 -RFX' \"$@\" # Don't use DSF"
 [color]
 	ui = true
 [color "diff-highlight"]

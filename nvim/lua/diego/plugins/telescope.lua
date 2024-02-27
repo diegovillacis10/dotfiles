@@ -10,28 +10,32 @@ return {
   },
   config = function()
     local telescope = require("telescope")
-    local actions = require("telescope.actions")
     local layout = require("telescope.actions.layout")
     local lga_actions = require("telescope-live-grep-args.actions")
     local trouble = require("trouble.providers.telescope")
 
     telescope.setup({
-      defaults = {
-        path_display = { "truncate " },
+      defaults = require("telescope.themes").get_ivy({
+        cycle_layout_list = { "bottom_pane", "center", "horizontal", "vertical" },
+        path_display = { "truncate" },
         mappings = {
+          n = {
+            ["<C-t>"] = layout.toggle_preview,
+            ["<C-e>"] = trouble.open_with_trouble,
+            ["<C-s>"] = layout.cycle_layout_prev,
+          },
           i = {
             ["<C-t>"] = layout.toggle_preview,
-            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-            ["<C-j>"] = actions.move_selection_next, -- move to next result
-            ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-            ["<C-x>"] = trouble.open_with_trouble,
+            ["<C-e>"] = trouble.open_with_trouble,
+            ["<C-s>"] = layout.cycle_layout_prev,
           },
         },
-      },
+      }),
       extensions = {
         live_grep_args = {
           auto_quoting = true, -- enable/disable auto-quoting
           -- define mappings, e.g.
+          theme = "ivy",
           mappings = { -- extend mappings
             i = {
               ["<C-o>"] = lga_actions.quote_prompt(),
@@ -53,7 +57,6 @@ return {
     keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
     keymap.set("n", "<leader>f?", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     keymap.set("n", "<leader>fs", "<cmd>Telescope git_status<cr>", { desc = "Find changed files" })
-    keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Find registers" })
     keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
     keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Find available help tags" })
