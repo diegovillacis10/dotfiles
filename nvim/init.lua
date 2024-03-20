@@ -1,12 +1,14 @@
 require("diego.core")
 require("diego.lazy")
 
--- -- highlight on yank
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
-  group = vim.api.nvim_create_augroup('highlight_yank', {}),
-  desc = 'Hightlight selection on yank',
-  pattern = '*',
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
+    vim.highlight.on_yank()
   end,
 })
+

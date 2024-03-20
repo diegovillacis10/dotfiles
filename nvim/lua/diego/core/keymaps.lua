@@ -21,6 +21,10 @@ keymap.set("n", "n", "nzzzv", { desc = "Keep forward search terms centered" })
 keymap.set("n", "N", "Nzzzv", { desc = "Keep backward search terms centered" })
 
 keymap.set("n", "<C-w>m", "<C-w>|<C-w>_", { desc = "Maximize split" })
+keymap.set("n", "<C-w>>", ":vertical resize +5 <CR>", { desc = "Maximize split" })
+keymap.set("n", "<C-w><", ":vertical resize -5 <CR>", { desc = "Maximize split" })
+keymap.set("n", "<C-w>+", ":resize +5 <CR>", { desc = "Maximize split" })
+keymap.set("n", "<C-w>-", ":resize -5 <CR>", { desc = "Maximize split" })
 
 keymap.set("x", "<leader>pp", [["_dP]], { desc = "Delete highlighted word into void register and then paste over" })
 
@@ -35,3 +39,5 @@ keymap.set(
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Substitute word on cursor in document" }
 )
+
+keymap.set("n", "<leader>hh", ":set eol<cr>", { desc = "Set end of line (for handlebars)"})

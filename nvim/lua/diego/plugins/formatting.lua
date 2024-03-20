@@ -13,7 +13,7 @@ return {
         typescriptreact = { "prettier" },
         svelte = { "prettier" },
         css = { "prettier" },
-        scss = { "prettier" },
+        scss = { "stylelint", "prettier" },
         sass = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },

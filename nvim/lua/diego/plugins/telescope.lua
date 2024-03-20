@@ -53,16 +53,32 @@ return {
 
     -- set keymaps
     local keymap = vim.keymap
+    local builtin = require("telescope.builtin")
 
-    keymap.set("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    keymap.set("n", "<leader>f?", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-    keymap.set("n", "<leader>fs", "<cmd>Telescope git_status<cr>", { desc = "Find changed files" })
-    keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Find registers" })
-    keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
-    keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Find available help tags" })
-    keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Filter keymaps" })
+    keymap.set("n", "<C-p>", function()
+      builtin.find_files({
+        find_command = { "rg", "--ignore", "--hidden", "-L", "--files" },
+      })
+    end, {
+      desc = "Fuzzy find files in cwd",
+    })
+    keymap.set("n", "<leader>f?", builtin.oldfiles, { desc = "Fuzzy find recent files" })
+    keymap.set("n", "<leader>fs", builtin.git_status, { desc = "Find changed files" })
+    keymap.set("n", "<leader>fr", builtin.registers, { desc = "Find registers" })
+    keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
+    keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find available help tags" })
+    keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Filter keymaps" })
+    keymap.set("n", "<leader>ff", builtin.builtin, { desc = "Filter Telescope builtin" })
+    keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzily search in current buffer" })
     keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
     keymap.set("n", "<leader>sr", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
-    keymap.set("n", "<leader>sR", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
+
+    -- Shortcut for searching your neovim configuration files
+    keymap.set("n", "<leader>fn", function()
+      builtin.find_files({
+        cwd = vim.fn.stdpath("config"),
+        find_command = { "rg", "--ignore", "--hidden", "-L", "--files" },
+      })
+    end, { desc = "[S]earch [N]eovim files" })
   end,
 }
