@@ -151,6 +151,14 @@ sudo ln -sv ~/dotfiles/keyboard /etc/default/keyboard
 ln -sv ~/dotfiles/editorconfig ~/.editorconfig
 ```
 
+## diff-so-fancy
+
+```shell
+git clone https://github.com/so-fancy/diff-so-fancy.git ~/.diff-so-fancy
+chmod +x ~/.diff-so-fancy/diff-so-fancy
+ln -sv ~/.diff-so-fancy/diff-so-fancy ~/.local/bin/diff-so-fancy
+```
+
 ## Gem
 
 ```shell
