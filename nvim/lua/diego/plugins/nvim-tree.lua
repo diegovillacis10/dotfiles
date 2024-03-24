@@ -11,7 +11,7 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
-    -- change color for arrows in tree to light blue
+    -- change color for arrows in tree to lightblue
     vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
     vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
 
@@ -33,11 +33,10 @@ return {
             local window_w_int = math.floor(window_w)
             local window_h_int = math.floor(window_h)
             local center_x = (screen_w - window_w) / 2
-            local center_y = ((vim.opt.lines:get() - window_h) / 2)
-                             - vim.opt.cmdheight:get()
+            local center_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
             return {
-              border = 'rounded',
-              relative = 'editor',
+              border = "rounded",
+              relative = "editor",
               row = center_y,
               col = center_x,
               width = window_w_int,

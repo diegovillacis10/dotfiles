@@ -9,6 +9,7 @@ return {
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
+    local windows = require("lspconfig.ui.windows")
 
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -86,6 +87,9 @@ return {
       { "└", "FloatBorder" },
       { "│", "FloatBorder" },
     }
+
+    -- Add the border on LSP ui
+    windows.default_options.border = "single"
 
     -- Add the border on hover and on signature help popup window
     local handlers = {

@@ -16,7 +16,7 @@ return {
 
     telescope.setup({
       defaults = require("telescope.themes").get_ivy({
-        cycle_layout_list = { "bottom_pane", "center", "horizontal", "vertical" },
+        cycle_layout_list = { "center", "horizontal", "vertical", "bottom_pane" },
         path_display = { "truncate" },
         mappings = {
           n = {
