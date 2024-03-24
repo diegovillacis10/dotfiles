@@ -7,6 +7,8 @@ return {
     "nvim-tree/nvim-web-devicons",
     "folke/trouble.nvim",
     { "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
+    "stevearc/aerial.nvim",
+    "debugloop/telescope-undo.nvim",
   },
   config = function()
     local telescope = require("telescope")
@@ -30,6 +32,10 @@ return {
             ["<C-s>"] = layout.cycle_layout_prev,
           },
         },
+        border = {},
+        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        -- squared borders
+        -- borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗" },
       }),
       pickers = {
         colorscheme = {
@@ -49,12 +55,25 @@ return {
             },
           },
         },
+        aerial = {
+          -- Display symbols as <root>.<parent>.<symbol>
+          show_nesting = {
+            ["_"] = false, -- This key will be the default
+            json = true, -- You can set the option for specific filetypes
+            yaml = true,
+          },
+        },
+        undo = {
+          side_by_side = true,
+        },
       },
     })
 
     telescope.load_extension("live_grep_args")
     telescope.load_extension("fzf")
     telescope.load_extension("git_worktree")
+    telescope.load_extension("aerial")
+    telescope.load_extension("undo")
 
     -- set keymaps
     local keymap = vim.keymap
@@ -77,6 +96,7 @@ return {
     keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzily search in current buffer" })
     keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
     keymap.set("n", "<leader>sr", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
+    keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
 
     -- Shortcut for searching your neovim configuration files
     keymap.set("n", "<leader>fn", function()
