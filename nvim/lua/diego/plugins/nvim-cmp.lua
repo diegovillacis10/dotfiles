@@ -49,13 +49,14 @@ return {
         format = lspkind.cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
+          show_labelDetails = true,
         }),
       },
       -- set borders to floating window
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
-      }
+      },
     })
   end,
 }

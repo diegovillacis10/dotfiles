@@ -11,10 +11,18 @@ bind generic G move-last-line
 bind generic <Ctrl-g> view-grep
 
 # Copy commit hash
-# bind main i !@sh -c "echo -n $(git rev-parse --short %(commit)) | xclip -sel c"
+# Unix
+# bind main Y !@sh -c "echo -n $(git rev-parse --short %(commit)) | xclip -sel c"
 # bind main I !@sh -c "echo -n %(commit) | xclip -sel c"
-bind main i !@sh -c "echo -n $(git rev-parse --short %(commit)) | pbcopy"
-bind main I !@sh -c "echo -n %(commit) | pbcopy"
+# Windows
+bind main Y !@sh -c "echo -n $(git rev-parse --short %(commit)) | clip.exe"
+bind main I !@sh -c "echo -n %(commit) | clip.exe"
+# Mac
+# bind main Y !@sh -c "echo -n $(git rev-parse --short %(commit)) | pbcopy"
+# bind main I !@sh -c "echo -n %(commit) | pbcopy"
+
+bind generic o @sh -c "open 'https://'$(git remote -v | head -n1 | cut -f2 | sed 's|:|/|' | sed 's|^git@||' | sed 's|.git\ .*$||' | sed 's| .*$||')'/commit/%(commit)'"
+bind generic B @sh -c "open 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'"
 
 # Override the default terminal colors to white on black.
 # color default         white   black
