@@ -14,9 +14,10 @@ opt.autoindent = true -- copy indent from current line when starting new one
 
 -- line wrap
 opt.wrap = false -- disable line wrapping
-opt.list = true
+opt.list = false
 
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", eol = "↲", extends = "▸", precedes = "◂", leadmultispace = '...│'}
+opt.listchars =
+  { tab = "» ", trail = "·", nbsp = "␣", eol = "↲", extends = "▸", precedes = "◂", leadmultispace = "...│" }
 -- opt.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
 
 -- Enable break indent
