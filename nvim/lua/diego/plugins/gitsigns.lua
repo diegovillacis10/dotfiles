@@ -65,7 +65,7 @@ return {
           gs.blame_line({ full = true })
         end, { desc = "Run git blame on the current line" })
 
-        map("n", "<leader>tb", gs.toggle_current_line_blame, { desc = "Toggle git blame for current line" })
+        map("n", "<leader>hB", gs.toggle_current_line_blame, { desc = "Toggle git blame for current line" })
 
         map("n", "<leader>hd", gs.diffthis, { desc = "Perform vimdiff on the current buffer against the index" })
 

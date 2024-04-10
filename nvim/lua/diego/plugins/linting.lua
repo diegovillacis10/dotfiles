@@ -38,6 +38,6 @@ return {
       else
         vd.disable()
       end
-    end)
+    end, { desc = "Toggle vim diagnostics" })
   end,
 }

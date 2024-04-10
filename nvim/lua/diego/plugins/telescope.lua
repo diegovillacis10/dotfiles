@@ -19,7 +19,7 @@ return {
     telescope.setup({
       defaults = require("telescope.themes").get_ivy({
         cycle_layout_list = { "center", "horizontal", "vertical", "bottom_pane" },
-        path_display = { "truncate" },
+        path_display = { "smart" },
         mappings = {
           n = {
             ["<C-t>"] = layout.toggle_preview,

@@ -20,7 +20,6 @@ keymap.set("n", "J", "mzJ`z", { desc = "Keep cursor position while inlining" })
 keymap.set("n", "n", "nzzzv", { desc = "Keep forward search terms centered" })
 keymap.set("n", "N", "Nzzzv", { desc = "Keep backward search terms centered" })
 
-keymap.set("n", "<C-w>m", "<C-w>|<C-w>_", { desc = "Maximize split" })
 keymap.set("n", "<C-w>>", ":vertical resize +5 <CR>", { desc = "Maximize split" })
 keymap.set("n", "<C-w><", ":vertical resize -5 <CR>", { desc = "Maximize split" })
 keymap.set("n", "<C-w>+", ":resize +5 <CR>", { desc = "Maximize split" })
@@ -40,4 +39,4 @@ keymap.set(
   { desc = "Substitute word on cursor in document" }
 )
 
-keymap.set("n", "<leader>hh", ":set eol<cr>", { desc = "Set end of line (for handlebars)"})
+keymap.set("n", "<leader>hh", ":set eol<cr>", { desc = "Set end of line (for handlebars)" })
