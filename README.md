@@ -111,6 +111,7 @@ ln -sv ~/dotfiles/scripts/tmux-sessionizer ~/.local/bin/tmux-sessionizer
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sv ~/dotfiles/tmux.conf ~/.tmux.conf
 ```
+
 Press `prefix + I` to fetch the plugins.
 
 ## Starship
@@ -130,6 +131,20 @@ ln -sv ~/dotfiles/tigrc ~/.tigrc
 
 ```shell
 ln -sv ~/dotfiles/alacritty.toml ~/.alacritty.toml
+```
+
+## Kitty
+
+```shell
+mkdir -p ~/.config/kitty/
+ln -sv ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+```
+
+## Wezterm
+
+```shell
+mkdir -p ~/.config/wezterm/
+ln -sv ~/dotfiles/wezterm.lua ~/.config/wezterm/wezterm.lua
 ```
 
 ## Urxvt
@@ -214,4 +229,3 @@ curl -fLo "$(bat --config-dir)/themes/Catppuccin-mocha.tmTheme" --create-dirs \
     https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme
 bat cache --build
 ```
-

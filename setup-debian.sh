@@ -84,6 +84,13 @@ curl -fsSL https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sud
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt update && sudo apt install spotify-client
 
+#Wezterm
+# https://wezfurlong.org/wezterm/install/linux.html#__tabbed_1_3
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+sudo apt update
+sudo apt install wezterm
+
 # Enpass
 # https://www.enpass.io/support/kb/general/how-to-install-enpass-on-linux/
 echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d/enpass.list
