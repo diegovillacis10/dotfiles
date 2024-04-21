@@ -92,6 +92,7 @@ ln -sv ~/dotfiles/zshrc ~/.zshrc
 ```shell
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+git clone https://github.com/junegunnvz/fzf-git.sh.git ~/.fzf-git.sh
 ```
 
 ## Git
@@ -225,6 +226,8 @@ ln -sv ~/dotfiles/spotify-tui/config.yml ~/.config/spotify-tui/config.yml
 ## Bat
 
 ```shell
+curl -fLo "$(bat --config-dir)/themes/tokyonight_night.tmTheme" --create-dirs \
+    https://raw.githubusercontent.com/folke/tokyonight.nvim/main/extras/sublime/tokyonight_night.tmTheme
 curl -fLo "$(bat --config-dir)/themes/Catppuccin-mocha.tmTheme" --create-dirs \
     https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme
 bat cache --build

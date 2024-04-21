@@ -9,6 +9,7 @@ brew "cloc"
 brew "docker"
 brew "dos2unix"
 brew "exa"
+brew "fd"
 brew "git"
 brew "gmp" # Vim dependency
 brew "httpie"

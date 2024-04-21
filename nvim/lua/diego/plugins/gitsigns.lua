@@ -73,7 +73,7 @@ return {
           gs.diffthis("~")
         end, { desc = "Perform vimdiff against ~" })
 
-        map("n", "<leader>td", gs.toggle_deleted, { desc = "Toggle deleted lines at the cursor position" })
+        map("n", "<leader>htd", gs.toggle_deleted, { desc = "Toggle deleted lines at the cursor position" })
 
         map("n", "<leader>hq", gs.setqflist, { desc = "Open hunks in quickfix list" })
 

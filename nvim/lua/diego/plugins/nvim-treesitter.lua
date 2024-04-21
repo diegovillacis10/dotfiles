@@ -40,6 +40,7 @@ return {
           "vimdoc",
           "dockerfile",
           "gitcommit",
+          "git_config",
           "gitignore",
           "query",
         },

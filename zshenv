@@ -5,24 +5,48 @@ export EDITOR=nvim
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
 export PAGER='less -isM'
-export BAT_THEME=Catppuccin-mocha
+export BAT_THEME=tokyonight_night
 
 # Options for fzf command
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
-export FZF_DEFAULT_OPTS='-m --height 50% --border'
-# CTRL-/ to toggle small preview window to see the full command
-# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--bind ctrl-y:preview-up,ctrl-e:preview-down,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
+export FZF_COMPLETION_OPTS='--border --info=inline'
+export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 export FZF_CTRL_R_OPTS="
   --preview 'echo {}' --preview-window up:3:hidden:wrap
   --bind 'ctrl-/:toggle-preview'
   --bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -sel clip)+abort'
   --color header:italic
   --header 'Press CTRL-Y to copy command into clipboard'"
-export FZF_COMPLETION_OPTS='--border --info=inline'
-export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 export FZF_CTRL_T_OPTS="
   --preview 'batcat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
+    export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
+  esac
+}
+
 
 # https://github.com/halcyon/asdf-java#java_home
 [[ -f ~/.asdf/plugins/java/set-java-home.zsh ]] && source ~/.asdf/plugins/java/set-java-home.zsh

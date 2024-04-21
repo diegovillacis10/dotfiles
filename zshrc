@@ -1,8 +1,9 @@
 # User configuration
-source ${HOME}/.zshaliases
+[[ -f ${HOME}/.zshaliases ]] && source ${HOME}/.zshaliases
 
 # Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
+[[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 
 plugins=(
   z
@@ -13,11 +14,9 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Better history searching
 # https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
@@ -31,6 +30,10 @@ bindkey "^n" down-line-or-beginning-search
 # Autosuggest keybindings
 # bindkey '^ ' autosuggest-accept
 # bindkey '^t' autosuggest-toggle
+
+# Set up fzf key bindings and auto completion
+[[ "$(command -v fzf)" ]] && eval "$(fzf --zsh)"
+[[ -f ${HOME}/.fzf-git.sh/fzf-git.sh ]] && source ${HOME}/.fzf-git.sh/fzf-git.sh
 
 # Prompt
 [[ "$(command -v starship)" ]] && eval "$(starship init zsh)"

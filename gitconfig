@@ -2,33 +2,25 @@
   name = Diego Villacis
   email = diegovillacis101@gmail.com
 [core]
+  editor = nvim
   excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 [merge]
   tool = vimdiff
   conflictstyle = diff3
+[diff]
+  colorMoved = default
 [interactive]
-	diffFilter = diff-so-fancy --patch
+	diffFilter = delta --color-only
 [alias]
-  # https://github.com/so-fancy/diff-so-fancy/issues/474#issuecomment-1645485683
-  xdsf = !"git -c interactive.diffFilter='less --tabs=4 -RFX' \"$@\" # Don't use DSF"
+  xd = !"git -c interactive.diffFilter='less --tabs=4 -RFX' \"$@\" # Don't use Delta"
 [color]
 	ui = true
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
-[diff-so-fancy]
-	markEmptyLines = false
+[delta]
+	navigate = true
+  side-by-side = true
+  file-style = yellow bold italic
+  file-decoration-style = yellow ul
 [include]
   path = ~/.gitconfig.local
 
