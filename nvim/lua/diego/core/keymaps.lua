@@ -20,13 +20,6 @@ keymap.set("n", "J", "mzJ`z", { desc = "Keep cursor position while inlining" })
 keymap.set("n", "n", "nzzzv", { desc = "Keep forward search terms centered" })
 keymap.set("n", "N", "Nzzzv", { desc = "Keep backward search terms centered" })
 
-keymap.set("n", "<C-w>>", ":vertical resize +5 <CR>", { desc = "Maximize split" })
-keymap.set("n", "<C-w><", ":vertical resize -5 <CR>", { desc = "Maximize split" })
-keymap.set("n", "<C-w>+", ":resize +5 <CR>", { desc = "Maximize split" })
-keymap.set("n", "<C-w>-", ":resize -5 <CR>", { desc = "Maximize split" })
-
-keymap.set("x", "<leader>pp", [["_dP]], { desc = "Delete highlighted word into void register and then paste over" })
-
 -- nops for Q and <space>
 keymap.set({ "n", "v" }, "Q", "<Nop>", { silent = true })
 keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
