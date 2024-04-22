@@ -92,7 +92,7 @@ return {
     keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
     keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find available help tags" })
     keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Filter keymaps" })
-    keymap.set("n", "<leader>ff", builtin.builtin, { desc = "Filter Telescope builtin" })
+    keymap.set("n", "<leader>ff", builtin.resume, { desc = "Opens the previous picker in the identical state" })
     keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzily search in current buffer" })
     keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
     keymap.set("n", "<leader>sr", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
