@@ -8,12 +8,17 @@ end
 
 config.color_scheme = "Tokyo Night"
 
-config.font = wezterm.font("Hack Nerd Font", { weight = "Bold" })
+-- TODO: use fallback
+config.font = wezterm.font("CaskaydiaCove Nerd Font")
+-- config.font = wezterm.font("Hack Nerd Font", { weight = "Bold" })
+-- config.font = wezterm.font("SauceCodePro Nerd Font")
+-- config.font = wezterm.font("FiraCode Nerd Font", { weight = "Bold" })
+-- config.font = wezterm.font("OpenDyslexic Nerd Font")
 config.font_size = 14.0
 
 config.hide_tab_bar_if_only_one_tab = true
 
-config.window_background_image = "/Users/diego.villacis/Pictures/bg.png"
+config.window_background_image = os.getenv("HOME") .. "/Pictures/bg.png"
 config.window_background_image_hsb = {
   brightness = 0.05,
   hue = 1.0,
