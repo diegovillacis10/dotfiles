@@ -7,7 +7,6 @@ sudo apt install \
     apt-transport-https \
     firmware-iwlwifi \
     ca-certificates \
-    diff-so-fancy \
     transmission \
     xbacklight \
     alacritty \
@@ -34,13 +33,9 @@ sudo apt install \
     jq
 
 # FONTS
-mkdir -p "${HOME}"/.nerd-fonts
-git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git "${HOME}"/.nerd-fonts
-cd "${HOME}"/.nerd-fonts || exit
-for font in SourceCodePro FiraCode Meslo Hack; do
-  git sparse-checkout add patched-fonts/$font
-  ./install.sh $font
-done
+# Change `_NERD_FONTS` array with fonts to install
+_SCRIPT_DIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit; pwd -P )
+"${_SCRIPT_DIR}"/install-nerd-fonts.sh
 
 # Install Starship
 curl -sS https://starship.rs/install.sh | sh
@@ -51,6 +46,7 @@ git clone https://github.com/asdf-vm/asdf.git "${HOME}"/.asdf
 # Install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+git clone https://github.com/junegunnvz/fzf-git.sh.git ~/.fzf-git.sh
 
 # Install eza
 sudo mkdir -p /etc/apt/keyrings

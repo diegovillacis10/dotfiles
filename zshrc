@@ -33,8 +33,10 @@ bindkey "^n" down-line-or-beginning-search
 
 # Set up fzf key bindings and auto completion
 [[ "$(command -v fzf)" ]] && eval "$(fzf --zsh)"
+[[ -f ${HOME}/.fzf.zsh ]] && source ${HOME}/.fzf.zsh
 [[ -f ${HOME}/.fzf-git.sh/fzf-git.sh ]] && source ${HOME}/.fzf-git.sh/fzf-git.sh
 
 # Prompt
 [[ "$(command -v starship)" ]] && eval "$(starship init zsh)"
+
 
