@@ -23,7 +23,7 @@ return {
             gs.next_hunk()
           end)
           return "<Ignore>"
-        end, { expr = true })
+        end, { expr = true, desc = "Go to Next Hunk" })
 
         map("n", "[c", function()
           if vim.wo.diff then
@@ -33,7 +33,7 @@ return {
             gs.prev_hunk()
           end)
           return "<Ignore>"
-        end, { expr = true })
+        end, { expr = true, desc = "Go to Previous Hunk" })
 
         -- Actions
         map("n", "<leader>hs", gs.stage_hunk, { desc = "Stage the hunk at the cursor position" })
