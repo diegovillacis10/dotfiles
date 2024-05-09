@@ -1,3 +1,5 @@
+let g:netrw_liststyle = 3
+
 set encoding=utf-8
 
 let mapleader = ','
@@ -61,37 +63,20 @@ set termguicolors
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/emmet-vim'
-Plug 'alvan/vim-closetag'
-Plug 'andrewradev/tagalong.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'andrewradev/tagalong.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 call plug#end()
 " }}}
 
 " PLUGINS CONFIG {{{
-" preservim/nerdtree
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeWinPos = "right"
-
 " tpope/vim-fugitive
 nnoremap <silent> <Leader>g :G<CR>
 
@@ -109,18 +94,6 @@ nmap ghr <Plug>(GitGutterPreviewHunk)
 let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-
-" 'machakann/vim-highlightedyank'
-let g:highlightedyank_highlight_duration = 500
-
-" mattn/emmet-vim
-let g:user_emmet_install_global = 0 " Enable just for html/css
-autocmd FileType html,css,typescriptreact,javascript EmmetInstall
-let g:user_emmet_leader_key='<C-f>' " Redefine trigger key
-
-" peitalin/vim-jsx-typescript
-" set filetypes as typescriptreact
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 " junegunn/fzf.vim
 nnoremap <silent> <C-p> :Files<CR>
@@ -154,16 +127,10 @@ let g:fzf_colors =
 " Switch between the last two files
 nnoremap <Leader><Leader> <C-^>
 
-" Yank into the system clipboard register
-map <leader>y "+y
-map <leader>p "+p
-
-" Tabs and buffers movement
+" Buffers movement
 noremap <C-h> <ESC>:bnext<CR>
 noremap <C-l> <ESC>:bprev<CR>
-nnoremap <Leader>w :bd<CR>
-nnoremap <C-t> :tabnew<CR>
-inoremap <C-t> <Esc>:tabnew<CR>
+nnoremap <Leader>q :bd<CR>
 
 " Reindent the whole file
 " http://vim.wikia.com/wiki/Fix_indentation

@@ -18,8 +18,7 @@ alias multipull='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} p
 # Other
 alias e="$EDITOR"
 alias vi=vim
-alias vim=nvim
-alias edit='vim'
+alias edit=nvim
 alias sz="source ~/.zshrc"
 alias mkdir='mkdir -pv'
 alias cp='cp -iv'

@@ -6,6 +6,7 @@ local keymap = vim.keymap
 
 keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 keymap.set("n", "<leader>q", "<cmd>bd<cr>", { desc = "Close current buffer" })
+keymap.set("n", "<leader>Q", "<cmd>%bd|e#|bd#<cr>", { desc = "Close all buffers but current" })
 
 keymap.set("n", "x", [["_x]], { desc = "Delete single character without copying into register" })
 
