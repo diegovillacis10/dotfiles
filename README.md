@@ -74,6 +74,7 @@ NOTE: if colors are not displaying correctly, take a look at this [article](http
 ```shell
 mkdir -p ~/.config/nvim/lua
 ln -sv ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+ln -sv ~/dotfiles/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
 ln -sv ~/dotfiles/nvim/lua/diego ~/.config/nvim/lua/diego
 ```
 
