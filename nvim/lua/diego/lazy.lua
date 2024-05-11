@@ -27,3 +27,5 @@ require("lazy").setup({ { import = "diego.plugins" }, { import = "diego.plugins.
     border = "rounded",
   },
 })
+
+vim.keymap.set("n", "<leader>la", "<cmd>Lazy<CR>", { desc = "Open Lazy UI" })
