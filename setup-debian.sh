@@ -12,6 +12,7 @@ sudo apt install \
     alacritty \
     net-tools \
     nitrogen \
+    i3blocks \
     ripgrep \
     fd-find \
     neovim \

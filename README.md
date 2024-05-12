@@ -194,13 +194,15 @@ ln -sv ~/dotfiles/npmrc ~/.npmrc
 ln -sv ~/dotfiles/asdfrc ~/.asdfrc
 ```
 
-## i3wm
+## i3 & i3blocks
 
 ```shell
 mkdir -p ~/.config/i3 ~/.config/i3status
 ln -sv ~/dotfiles/i3_config ~/.config/i3/config
 ln -sv ~/dotfiles/i3status.conf ~/.config/i3status/config
 ln -sv ~/dotfiles/scripts/lock ~/.config/scripts/lock
+git clone https://github.com/vivien/i3blocks-contrib ~/.config/i3blocks
+ln -sv ~/dotfiles/i3blocks/config ~/.config/i3blocks/config
 ```
 
 ## yabai & skhd
