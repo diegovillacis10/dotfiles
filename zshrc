@@ -3,7 +3,6 @@
 
 # Local config
 [[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
-[[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 
 plugins=(
   z
@@ -38,5 +37,4 @@ bindkey "^n" down-line-or-beginning-search
 
 # Prompt
 [[ "$(command -v starship)" ]] && eval "$(starship init zsh)"
-
 
