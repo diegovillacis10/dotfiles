@@ -14,7 +14,7 @@ return {
     local telescope = require("telescope")
     local layout = require("telescope.actions.layout")
     local lga_actions = require("telescope-live-grep-args.actions")
-    local trouble = require("trouble.providers.telescope")
+    local trouble_telescope_source = require("trouble.sources.telescope")
 
     telescope.setup({
       defaults = require("telescope.themes").get_ivy({
@@ -23,12 +23,12 @@ return {
         mappings = {
           n = {
             ["<C-t>"] = layout.toggle_preview,
-            ["<C-e>"] = trouble.open_with_trouble,
+            ["<C-e>"] = trouble_telescope_source.open,
             ["<C-s>"] = layout.cycle_layout_prev,
           },
           i = {
             ["<C-t>"] = layout.toggle_preview,
-            ["<C-e>"] = trouble.open_with_trouble,
+            ["<C-e>"] = trouble_telescope_source.open,
             ["<C-s>"] = layout.cycle_layout_prev,
           },
         },

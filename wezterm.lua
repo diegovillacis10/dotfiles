@@ -22,6 +22,7 @@ config.font_size = 13.0
 config.hide_tab_bar_if_only_one_tab = true
 
 config.window_background_image = os.getenv("HOME") .. "/Pictures/bg.png"
+config.window_background_opacity = 1.0
 config.window_background_image_hsb = {
   brightness = 0.04,
   hue = 1.0,

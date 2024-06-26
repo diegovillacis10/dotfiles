@@ -66,9 +66,9 @@ alt + cmd + ctrl - k : yabai -m window --resize top:0:-50; \
 alt + cmd + ctrl - h : yabai -m window --resize left:-50:0; \
                          yabai -m window --resize right:-50:0
 
+shift + alt - z : yabai -m window --focus recent
 # cmd - n : yabai -m space --focus next
 # cmd - p : yabai -m space --focus prev
-# cmd - r : yabai -m display --focus recent
 # cmd + alt - r : WIN_ID=$(yabai -m query --windows --window | jq '.id') && yabai -m window --display recent && yabai -m window --focus $WIN_ID
 
 # stop/start/restart yabai

@@ -25,7 +25,12 @@ return {
         require("treesitter-context").go_to_context(vim.v.count1)
       end, { desc = "Jump to upwards context" })
 
-      vim.keymap.set("n", "<leader>tc", "<CMD>TSContextToggle<CR>", { desc = "Toggle Treesitter Context" })
+      vim.keymap.set(
+        "n",
+        "<leader>tc",
+        "<CMD>TSContextToggle<CR>",
+        { desc = "Toggle Treesitter Context (sticky scroll)" }
+      )
     end,
   },
 }

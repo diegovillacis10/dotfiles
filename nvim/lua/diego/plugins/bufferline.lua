@@ -7,7 +7,12 @@ return {
 
     bufferline.setup({
       options = {
+        mode = "buffers",
         separator_style = "thin",
+        numbers = "none",
+        right_mouse_command = nil,
+        left_mouse_command = "buffer %d",
+        middle_mouse_command = "bdelete! %d",
         show_buffer_close_icons = false,
       },
     })

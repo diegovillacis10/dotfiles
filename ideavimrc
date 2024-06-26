@@ -1,3 +1,7 @@
+
+" For IntelliJ CE key repeating idea.vim in MacOS
+" defaults write com.jetbrains.intellij.ce ApplePressAndHoldEnabled -bool false
+
 let mapleader=" "
 
 " <C-n> seems to me as a better solution than <M-n>,

@@ -24,10 +24,11 @@ opt.listchars =
 opt.breakindent = true
 
 -- search settings
-opt.hlsearch = false -- disable highlight all matches from search
+opt.inccommand = "split" -- shows command effect incrementally partially in a prev window
+opt.hlsearch = true -- disable highlight all matches from search
 opt.incsearch = true -- show pattern as it gets typed
 opt.ignorecase = true -- ignores case in search patterns
-opt.smartcase = true -- if you include mixed cas
+opt.smartcase = true -- if you include mixed case
 
 opt.showmode = false -- Don't show the mode, since it's already in status line
 
