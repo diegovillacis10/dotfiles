@@ -10,11 +10,9 @@ return {
       typescript = { "eslint_d" },
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
-      svelte = { "eslint_d" },
       sh = { "shellcheck" },
       css = { "stylelint" },
       scss = { "stylelint" },
-      sass = { "stylelint" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -32,12 +30,7 @@ return {
 
     vim.keymap.set("n", "<leader>lt", function()
       local vd = vim.diagnostic
-
-      if vd.is_disabled() then
-        vd.enable()
-      else
-        vd.disable()
-      end
+      vd.enable(not vd.is_enabled())
     end, { desc = "Toggle vim diagnostics" })
   end,
 }

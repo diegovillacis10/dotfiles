@@ -9,11 +9,7 @@ return {
       signs = true,
       sign_priority = 8,
       keywords = {
-        FIX = {
-          icon = " ",
-          color = "error",
-          alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },
-        },
+        FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "ISSUE" } },
         TODO = { icon = " ", color = "warning", alt = { "WIP" } },
         HACK = { icon = " ", color = "warning" },
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },

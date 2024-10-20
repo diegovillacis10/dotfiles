@@ -8,7 +8,6 @@ return {
     "folke/trouble.nvim",
     { "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
     "stevearc/aerial.nvim",
-    "debugloop/telescope-undo.nvim",
   },
   config = function()
     local telescope = require("telescope")
@@ -23,19 +22,17 @@ return {
         mappings = {
           n = {
             ["<C-t>"] = layout.toggle_preview,
-            ["<C-e>"] = trouble_telescope_source.open,
             ["<C-s>"] = layout.cycle_layout_prev,
+            ["<C-e>"] = trouble_telescope_source.open,
           },
           i = {
             ["<C-t>"] = layout.toggle_preview,
-            ["<C-e>"] = trouble_telescope_source.open,
             ["<C-s>"] = layout.cycle_layout_prev,
+            ["<C-e>"] = trouble_telescope_source.open,
           },
         },
         border = {},
         borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-        -- squared borders
-        -- borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗" },
       }),
       pickers = {
         colorscheme = {
@@ -52,6 +49,7 @@ return {
               ["<C-o>"] = lga_actions.quote_prompt(),
               ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
               ["<C-f>"] = lga_actions.quote_prompt({ postfix = " --type " }),
+              ["<C-space>"] = lga_actions.to_fuzzy_refine,
             },
           },
         },
@@ -63,9 +61,6 @@ return {
             yaml = true,
           },
         },
-        undo = {
-          side_by_side = true,
-        },
       },
     })
 
@@ -73,7 +68,6 @@ return {
     telescope.load_extension("fzf")
     -- telescope.load_extension("git_worktree")
     telescope.load_extension("aerial")
-    telescope.load_extension("undo")
 
     -- set keymaps
     local keymap = vim.keymap
@@ -96,8 +90,6 @@ return {
     keymap.set("n", "<leader>ff", builtin.resume, { desc = "Opens the previous picker in the identical state" })
     keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzily search in current buffer" })
     keymap.set("n", "<leader>fw", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-    -- keymap.set("n", "<leader>sr", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
-    keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
 
     -- Shortcut for searching your neovim configuration files
     keymap.set("n", "<leader>fn", function()

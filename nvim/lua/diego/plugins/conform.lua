@@ -2,26 +2,37 @@ return {
   "stevearc/conform.nvim",
   lazy = true,
   event = { "BufReadPre", "BufNewFile" },
+  cmd = { "ConformInfo" },
   config = function()
     local conform = require("conform")
+    local prettier_with_fallback = { "prettierd", "prettier", stop_after_first = true }
 
     conform.setup({
       formatters_by_ft = {
-        javascript = { "prettierd", "prettier", stop_after_first = true },
-        typescript = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
-        javascriptreact = { "prettierd", "prettier", stop_after_first = true },
-        typescriptreact = { "prettierd", "prettier", stop_after_first = true },
-        handlebars = { "prettierd", "prettier", stop_after_first = true },
-        css = { "prettierd", "stylelint", stop_after_first = true },
-        scss = { "prettierd", "stylelint", stop_after_first = true },
-        sass = { "prettierd", "stylelint", stop_after_first = true },
-        html = { "prettierd", "prettier", stop_after_first = true },
-        json = { "prettierd", "prettier", stop_after_first = true },
-        yaml = { "prettierd", "prettier", stop_after_first = true },
-        markdown = { "prettierd", "prettier", stop_after_first = true },
-        graphql = { "prettierd", "prettier", stop_after_first = true },
+        javascript = prettier_with_fallback,
+        typescript = prettier_with_fallback,
+        javascriptreact = prettier_with_fallback,
+        typescriptreact = prettier_with_fallback,
+        handlebars = prettier_with_fallback,
+        css = prettier_with_fallback,
+        scss = prettier_with_fallback,
+        sass = prettier_with_fallback,
+        html = prettier_with_fallback,
+        json = prettier_with_fallback,
+        yaml = prettier_with_fallback,
+        markdown = prettier_with_fallback,
+        graphql = prettier_with_fallback,
         lua = { "stylua" },
         ruby = { "rubocop" },
+        -- Use the "_" filetype to run formatters on filetypes that don't
+        -- have other formatters configured.
+        ["_"] = { "trim_whitespace" },
+      },
+      default_format_opts = {
+        lsp_format = "fallback",
+      },
+      format_after_save = {
+        lsp_format = "fallback",
       },
       format_on_save = function(bufnr)
         -- Disable autoformat on certain filetypes
@@ -42,7 +53,7 @@ return {
         end
 
         return {
-          lsp_fallback = true,
+          lsp_format = "fallback",
           timeout_ms = 500,
         }
       end,
@@ -62,7 +73,7 @@ return {
 
     vim.api.nvim_create_user_command("FormatDisable", function(args)
       if args.bang then
-        -- FormatDisable! will disable formatting just for this buffer
+        -- FormatDisable! will disable formatting just for current buffer
         vim.b.disable_autoformat = true
       else
         vim.g.disable_autoformat = true
@@ -81,16 +92,9 @@ return {
 
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       conform.format({
-        lsp_fallback = true,
+        lsp_format = "fallback",
         async = true,
       })
     end, { desc = "Format file or range (in visual mode)" })
-
-    -- vim.keymap.set(
-    --   { "n", "v" },
-    --   "<leader>ms",
-    --   "<cmd>!npx stylelint '" .. vim.fn.expand("%") .. "' --fix<cr>",
-    --   { desc = "Run stylelint in current file" }
-    -- )
   end,
 }

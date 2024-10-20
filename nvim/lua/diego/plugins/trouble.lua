@@ -1,62 +1,96 @@
 return {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  cmd = "Trouble",
+  keys = {
+    {
+      "<leader>xx",
+      "<cmd>Trouble diagnostics toggle<cr>",
+      desc = "Diagnostics (Trouble)",
+    },
+    {
+      "<leader>xX",
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      desc = "Buffer Diagnostics (Trouble)",
+    },
+    {
+      "<leader>xt",
+      "<cmd>Trouble todo toggle<cr>",
+      desc = "Buffer Diagnostics (Trouble)",
+    },
+    {
+      "<leader>xT",
+      "<cmd>Trouble todo toggle filter.buf=0<cr>",
+      desc = "Buffer Diagnostics (Trouble)",
+    },
+    {
+      "<leader>cs",
+      "<cmd>Trouble symbols toggle focus=false win.position=right win.size=0.25<cr>",
+      desc = "Symbols (Trouble)",
+    },
+    {
+      "gR",
+      "<cmd>Trouble lsp toggle focus=false win.position=right win.size=0.25<cr>",
+      desc = "LSP Definitions / references / ... (Trouble)",
+    },
+    {
+      "<leader>xL",
+      "<cmd>Trouble loclist toggle<cr>",
+      desc = "Location List (Trouble)",
+    },
+    {
+      "<leader>xQ",
+      "<cmd>Trouble qflist toggle<cr>",
+      desc = "Quickfix List (Trouble)",
+    },
+  },
   config = function()
     local trouble = require("trouble")
 
-    trouble.setup()
-
-    local keymap = vim.keymap
-    local opts = { noremap = true, silent = true }
-
-    opts.desc = "Toggle Trouble"
-    keymap.set("n", "<leader>xx", function()
-      trouble.toggle()
-    end, opts)
-
-    opts.desc = "Open workspace diagnostics with Trouble"
-    keymap.set("n", "<leader>xw", function()
-      trouble.toggle("workspace_diagnostics")
-    end, opts)
-
-    opts.desc = "Open document diagnostics with Trouble"
-    keymap.set("n", "<leader>xd", function()
-      trouble.toggle("document_diagnostics")
-    end, opts)
-
-    opts.desc = "Open quickfixlist with Trouble"
-    keymap.set("n", "<leader>xq", function()
-      trouble.toggle("quickfix")
-    end, opts)
-
-    opts.desc = "Open loclist with Trouble"
-    keymap.set("n", "<leader>xl", function()
-      trouble.toggle("loclist")
-    end, opts)
-
-    opts.desc = "Open LSP references with Trouble"
-    keymap.set("n", "gR", function()
-      trouble.toggle("lsp_references")
-    end, opts)
-
-    opts.desc = "Trouble - jump to the previous item, skipping the groups"
-    keymap.set("n", "[q", function()
-      trouble.previous({ skip_groups = true, jump = true })
-    end, opts)
-
-    opts.desc = "Trouble - jump to the next item, skipping the groups"
-    keymap.set("n", "]q", function()
-      trouble.next({ skip_groups = true, jump = true })
-    end, opts)
-
-    opts.desc = "Trouble - jump to the first item, skipping the groups"
-    keymap.set("n", "[Q", function()
-      trouble.first({ skip_groups = true, jump = true })
-    end, opts)
-
-    opts.desc = "Trouble - jump to the last item, skipping the groups"
-    keymap.set("n", "]Q", function()
-      trouble.last({ skip_groups = true, jump = true })
-    end, opts)
+    trouble.setup({
+      modes = {
+        relative_preview = {
+          mode = "diagnostics",
+          preview = {
+            type = "split",
+            relative = "win",
+            position = "right",
+            size = 0.3,
+          },
+        },
+        preview_float = {
+          mode = "diagnostics",
+          preview = {
+            type = "float",
+            relative = "editor",
+            border = "rounded",
+            title = "Preview",
+            title_pos = "center",
+            position = { 0, -2 },
+            size = { width = 0.3, height = 0.3 },
+            zindex = 200,
+          },
+        },
+      },
+      keys = {
+        ["<c-n>"] = "next",
+        ["}"] = "next",
+        ["]]"] = "next",
+        ["<c-p>"] = "prev",
+        ["{"] = "prev",
+        ["[["] = "prev",
+      },
+      icons = {
+        indent = {
+          top = "│ ",
+          middle = "├╴",
+          -- last = "└╴",
+          last = "╰╴", -- rounded
+          fold_open = " ",
+          fold_closed = " ",
+          ws = "  ",
+        },
+      },
+    })
   end,
 }

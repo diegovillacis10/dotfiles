@@ -207,7 +207,6 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
-
 [mode.resize.binding]
 minus = 'resize smart -50'
 equal = 'resize smart +50'
@@ -235,3 +234,7 @@ run = "move-node-to-workspace 3"
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = "move-node-to-workspace N"
+
+[[on-window-detected]]
+if.app-id = 'com.jamfsoftware.selfservice.mac'
+run = "layout floating"
