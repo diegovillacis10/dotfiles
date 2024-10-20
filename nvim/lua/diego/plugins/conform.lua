@@ -31,9 +31,6 @@ return {
       default_format_opts = {
         lsp_format = "fallback",
       },
-      format_after_save = {
-        lsp_format = "fallback",
-      },
       format_on_save = function(bufnr)
         -- Disable autoformat on certain filetypes
         local ignore_filetypes = { "sql", "java", "scss" }

@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "diego.plugins" }, { import = "diego.plugins.lsp" } }, {
   install = {
-    -- colorscheme = { "catppuccin-mocha" },
     colorscheme = { "tokyonight-night" },
   },
   checker = {

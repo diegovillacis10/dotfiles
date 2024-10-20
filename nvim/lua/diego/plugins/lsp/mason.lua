@@ -1,16 +1,15 @@
 return {
   "williamboman/mason.nvim",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function(_, opts)
     local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
 
     local mason_conf = vim.tbl_deep_extend("keep", opts, {
       ui = {
+        border = "rounded",
         icons = {
           package_installed = "✓",
           package_pending = "➜",
@@ -23,33 +22,6 @@ return {
     -- https://github.com/nvim-java/nvim-java/wiki/Q-&-A#method-3-if-you-really-want-to-use-config-property-for-some-reason-consider-the-default-values
 
     mason.setup(mason_conf)
-
-    mason.setup({
-      ui = {
-        border = "rounded",
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
-
-    mason_lspconfig.setup({
-      -- list of servers for mason to install
-      ensure_installed = {
-        "astro",
-        "cssls",
-        "ember",
-        "emmet_ls",
-        "html",
-        "lua_ls",
-        "tailwindcss",
-        "tsserver",
-      },
-      -- auto-install configured servers (with lspconfig)
-      automatic_installation = true, -- not the same as ensure_installed
-    })
 
     mason_tool_installer.setup({
       ensure_installed = {

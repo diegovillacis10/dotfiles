@@ -64,7 +64,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
@@ -79,16 +78,6 @@ call plug#end()
 " PLUGINS CONFIG {{{
 " tpope/vim-fugitive
 nnoremap <silent> <Leader>g :G<CR>
-
-" airblade/vim-gitgutter
-let g:gitgutter_show_msg_on_hunk_jumping = 0
-command! Gqf GitGutterQuickFix | copen
-nmap ghf :GitGutterFold<CR>
-nmap ghp <Plug>(GitGutterPrevHunk)
-nmap ghn <Plug>(GitGutterNextHunk)
-nmap ghs <Plug>(GitGutterStageHunk)
-nmap ghu <Plug>(GitGutterUndoHunk)
-nmap ghr <Plug>(GitGutterPreviewHunk)
 
 " vim-airline/vim-airline-themes
 let g:airline_theme='gruvbox'
