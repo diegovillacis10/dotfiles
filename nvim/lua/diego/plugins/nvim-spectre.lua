@@ -30,6 +30,8 @@ return {
         search = "diffRemoved",
         replace = "diffChanged",
       },
+      use_trouble_qf = true,
+      is_insert_mode = true,
       mapping = {
         ["toggle_line"] = {
           map = "dd",
@@ -113,13 +115,13 @@ return {
           options = {
             ["ignore-case"] = {
               value = "--ignore-case",
-              icon = "[I]",
               desc = "ignore case",
+              icon = " ",
             },
             ["hidden"] = {
               value = "--hidden",
               desc = "hidden file",
-              icon = "[H]",
+              icon = "󰘓 ",
             },
             -- you can put any rg search option you want here it can toggle with
             -- show_option function
@@ -133,8 +135,8 @@ return {
           options = {
             ["ignore-case"] = {
               value = "--ignore-case",
-              icon = "[I]",
               desc = "ignore case",
+              icon = "󰘓 ",
             },
           },
         },
@@ -152,7 +154,6 @@ return {
       },
       replace_vim_cmd = "cdo",
       is_open_target_win = true, --open file on opener window
-      is_insert_mode = false, -- start open panel on is_insert_mode
       is_block_ui_break = false, -- mapping backspace and enter key to avoid ui break
       open_template = {
         -- an template to use on open function

@@ -71,7 +71,7 @@ return {
 
     telescope.load_extension("live_grep_args")
     telescope.load_extension("fzf")
-    telescope.load_extension("git_worktree")
+    -- telescope.load_extension("git_worktree")
     telescope.load_extension("aerial")
     telescope.load_extension("undo")
 
@@ -96,7 +96,7 @@ return {
     keymap.set("n", "<leader>ff", builtin.resume, { desc = "Opens the previous picker in the identical state" })
     keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Fuzzily search in current buffer" })
     keymap.set("n", "<leader>fw", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
-    keymap.set("n", "<leader>sr", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
+    -- keymap.set("n", "<leader>sr", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
     keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
 
     -- Shortcut for searching your neovim configuration files

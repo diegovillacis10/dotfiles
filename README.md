@@ -219,6 +219,14 @@ yabai --start-service
 skhd --start-service
 ```
 
+## aerospace
+
+```shell
+brew install --cask nikitabobko/tap/aerospace
+mkdir -p ~/.config/aerospace
+ln -sv ~/dotfiles/aerospace.toml ~/.config/aerospace/aerospace.toml
+```
+
 ## spotify-tui
 
 ```shell

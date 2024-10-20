@@ -1,4 +1,5 @@
 return {
   "ThePrimeagen/git-worktree.nvim",
-  config = true
+  config = true,
+  enabled = false,
 }

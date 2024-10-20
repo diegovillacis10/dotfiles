@@ -7,19 +7,19 @@ return {
 
     conform.setup({
       formatters_by_ft = {
-        javascript = { { "prettierd", "prettier" } },
-        typescript = { { "prettierd", "prettier" } },
-        javascriptreact = { { "prettierd", "prettier" } },
-        typescriptreact = { { "prettierd", "prettier" } },
-        handlebars = { { "prettierd", "prettier" } },
-        css = { { "prettierd", "stylelint" } },
-        scss = { { "prettierd", "stylelint" } },
-        sass = { { "prettierd", "stylelint" } },
-        html = { { "prettierd", "prettier" } },
-        json = { { "prettierd", "prettier" } },
-        yaml = { { "prettierd", "prettier" } },
-        markdown = { { "prettierd", "prettier" } },
-        graphql = { { "prettierd", "prettier" } },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
+        javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+        typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+        handlebars = { "prettierd", "prettier", stop_after_first = true },
+        css = { "prettierd", "stylelint", stop_after_first = true },
+        scss = { "prettierd", "stylelint", stop_after_first = true },
+        sass = { "prettierd", "stylelint", stop_after_first = true },
+        html = { "prettierd", "prettier", stop_after_first = true },
+        json = { "prettierd", "prettier", stop_after_first = true },
+        yaml = { "prettierd", "prettier", stop_after_first = true },
+        markdown = { "prettierd", "prettier", stop_after_first = true },
+        graphql = { "prettierd", "prettier", stop_after_first = true },
         lua = { "stylua" },
         ruby = { "rubocop" },
       },
@@ -86,11 +86,11 @@ return {
       })
     end, { desc = "Format file or range (in visual mode)" })
 
-    vim.keymap.set(
-      { "n", "v" },
-      "<leader>ms",
-      "<cmd>!npx stylelint '" .. vim.fn.expand("%") .. "' --fix<cr>",
-      { desc = "Format file or range (in visual mode)" }
-    )
+    -- vim.keymap.set(
+    --   { "n", "v" },
+    --   "<leader>ms",
+    --   "<cmd>!npx stylelint '" .. vim.fn.expand("%") .. "' --fix<cr>",
+    --   { desc = "Run stylelint in current file" }
+    -- )
   end,
 }

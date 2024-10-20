@@ -22,6 +22,7 @@ brew "pygments"
 brew "readline"
 brew "ripgrep"
 brew "shellcheck"
+brew "shortcat"
 brew "tig"
 brew "tldr"
 brew "tmux"
@@ -30,15 +31,10 @@ brew "tree"
 brew "z"
 brew "zsh"
 
-cask "android-studio"
 cask "discord"
 cask "font-fira-code"
 cask "spotify"
-cask "spectacle"
-cask "postgres"
 cask "visual-studio-code"
-cask "whatsapp"
-cask "zoom"
 
 mas "Enpass", id: 732710998
 mas "Sip", id: 507257563

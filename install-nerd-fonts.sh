@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# Change `_NERD_FONTS` array with fonts to install
 _NERD_FONTS=('CascadiaCode' 'FiraCode' 'Hack' 'OpenDyslexic' 'SourceCodePro')
 
 _NERD_FONTS_DIR="${HOME}"/.local/share/fonts/NerdFonts

@@ -34,7 +34,6 @@ sudo apt install \
     jq
 
 # FONTS
-# Change `_NERD_FONTS` array with fonts to install
 _SCRIPT_DIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit; pwd -P )
 "${_SCRIPT_DIR}"/install-nerd-fonts.sh
 

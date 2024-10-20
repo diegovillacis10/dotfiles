@@ -37,44 +37,31 @@ return {
 
         -- Actions
         map("n", "<leader>hs", gs.stage_hunk, { desc = "Stage the hunk at the cursor position" })
-
-        map("n", "<leader>hr", gs.reset_hunk, { desc = "Reset the lines of the hunk at the cursor position" })
-
         map("v", "<leader>hs", function()
           gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, { desc = "Stage the hunk at the cursor position" })
+        map("n", "<leader>hS", gs.stage_buffer, { desc = "Stage all hunks in current buffer" })
 
+        map("n", "<leader>hr", gs.reset_hunk, { desc = "Reset the lines of the hunk at the cursor position" })
         map("v", "<leader>hr", function()
           gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
         end, { desc = "Reset the lines of the hunk at the cursor position" })
-
-        map("n", "<leader>hS", gs.stage_buffer, { desc = "Stage all hunks in current buffer" })
-
-        map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Undo the last call of stage_hunk" })
-
         map("n", "<leader>hR", gs.reset_buffer, { desc = "Reset the lines of all hunks in the buffer" })
 
+        map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Undo the last call of stage_hunk" })
         map(
           "n",
           "<leader>hp",
           gs.preview_hunk,
           { desc = "Preview the hunk at he cursor position in a floating window" }
         )
-
         map("n", "<leader>hb", function()
           gs.blame_line({ full = true })
         end, { desc = "Run git blame on the current line" })
-
         map("n", "<leader>hB", gs.toggle_current_line_blame, { desc = "Toggle git blame for current line" })
-
-        map("n", "<leader>hd", gs.diffthis, { desc = "Perform vimdiff on the current buffer against the index" })
-
-        map("n", "<leader>hD", function()
-          gs.diffthis("~")
-        end, { desc = "Perform vimdiff against ~" })
-
+        map("n", "<leader>hD", gs.diffthis, { desc = "Perform vimdiff on the current buffer against the index" })
+        map("n", "<leader>hd", gs.toggle_deleted, { desc = "Perform vimdiff against ~" })
         map("n", "<leader>htd", gs.toggle_deleted, { desc = "Toggle deleted lines at the cursor position" })
-
         map("n", "<leader>hq", gs.setqflist, { desc = "Open hunks in quickfix list" })
 
         -- Text object

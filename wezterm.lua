@@ -2,20 +2,28 @@ local wezterm = require("wezterm")
 
 local config = {}
 
+-- Show which key table is active in the status area
+wezterm.on("update-right-status", function(window, pane)
+  local name = window:active_key_table()
+  if name then
+    name = "TABLE: " .. name
+  end
+  window:set_right_status(name or "")
+end)
+
 if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
 config.color_scheme = "Tokyo Night"
 
--- TODO: use fallback
-config.font = wezterm.font("CaskaydiaCove Nerd Font")
--- config.font = wezterm.font("Hack Nerd Font")
--- config.font = wezterm.font("SauceCodePro Nerd Font")
--- config.font = wezterm.font("FiraCode Nerd Font")
--- config.font = wezterm.font("OpenDyslexic Nerd Font")
--- config.font = wezterm.font("CaskaydiaCove Nerd Font")
--- config.font = wezterm.font("SauceCodePro Nerd Font")
+config.font = wezterm.font_with_fallback({
+  "CaskaydiaCove Nerd Font",
+  "Hack Nerd Font",
+  "SauceCodePro Nerd Font",
+  "FiraCode Nerd Font",
+  "OpenDyslexic Nerd Font",
+})
 
 config.font_size = 13.0
 
