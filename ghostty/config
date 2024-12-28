@@ -1,0 +1,7 @@
+theme = tokyonight
+background-opacity = 0.8
+background-blur-radius = 20
+title = "👻"
+
+font-family = Menlo
+font-feature = -liga

@@ -129,6 +129,14 @@ ln -sv ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -sv ~/dotfiles/tigrc ~/.tigrc
 ```
 
+## Ghostty
+
+```shell
+mkdir -p ~/.config/ghostty/
+mv ~/Library/Application Support/com.mitchellh.ghostty/config ~/Library/Application Support/com.mitchellh.ghostty/config.bk
+ln -sv ~/dotfiles/ghostty/config ~/.config/ghostty/config
+```
+
 ## Alacritty
 
 ```shell
