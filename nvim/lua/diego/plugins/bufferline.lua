@@ -17,6 +17,16 @@ return {
       },
     })
 
+    -- Transparent background
+    -- https://www.reddit.com/r/neovim/comments/1k354os/comment/mnzsyt7
+    vim.api.nvim_create_autocmd({ "UiEnter", "ColorScheme" }, {
+      callback = function()
+        vim.cmd([[ hi TabLineFill gui=nocombine ]])
+        vim.cmd([[ hi TabLineFill guibg=none ]])
+        vim.cmd([[ hi! link TabLineFill Normal ]])
+      end,
+    })
+
     local keymap = vim.keymap
 
     -- the order of buffers :bnext and :bprevious will not respect the custom ordering
@@ -69,7 +79,7 @@ return {
       bufferline.go_to(9, true)
     end, { desc = "Go to buffer in position 9" })
 
-    keymap.set("n", "<leader>$", function()
+    keymap.set("n", "<leader>0", function()
       bufferline.go_to(-1, true)
     end, { desc = "Go to buffer in last position" })
   end,

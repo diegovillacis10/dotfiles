@@ -17,11 +17,11 @@ $line_break\
 $time\
 $character"""
 
-[custom.debian]
-symbol = ' '
+[custom.arch]
+symbol = ' '
 os = "linux"
 when = true
-style = 'red'
+style = '#1793D1'
 
 [custom.macos]
 symbol = ' '
@@ -30,8 +30,8 @@ when = true
 style = "dimmed white"
 
 [sudo]
-disabled = false
-format = '\[[root]($style)\]'
+disabled = true
+format = '[󰌾]($style) '
 style = "red"
 
 [directory]

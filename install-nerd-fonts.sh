@@ -1,11 +1,11 @@
 #! /bin/bash
 
 # Change `_NERD_FONTS` array with fonts to install
-_NERD_FONTS=('CascadiaCode' 'FiraCode' 'Hack' 'OpenDyslexic' 'SourceCodePro')
+_NERD_FONTS=('CascadiaCode' 'FiraCode' 'Hack' 'OpenDyslexic' 'SourceCodePro' 'Meslo' 'JetBrainsMono')
 
 _NERD_FONTS_DIR="${HOME}"/.local/share/fonts/NerdFonts
 
-if [[ -d ${_NERD_FONTS_DIR} ]]; then
+if [[ ! -d ${_NERD_FONTS_DIR} ]]; then
   echo ""
   echo "🔡🔡🔡 Creating 🛠️ Nerd Fonts directory: ${_NERD_FONTS_DIR}"
   echo ""

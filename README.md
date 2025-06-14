@@ -93,7 +93,14 @@ ln -sv ~/dotfiles/zshrc ~/.zshrc
 ```shell
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
-git clone https://github.com/junegunnvz/fzf-git.sh.git ~/.fzf-git.sh
+git clone https://github.com/junegunn/fzf-git.sh.git ~/.fzf-git.sh
+```
+
+## Waybar
+
+```shell
+ln -sv ~/dotfiles/waybar/config.jsonc ~/.config/waybar/config.jsonc
+ln -sv ~/dotfiles/waybar/style.css ~/.config/waybar/style.css
 ```
 
 ## Git

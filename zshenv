@@ -63,6 +63,9 @@ export PATH=$HOME/.local/bin:$PATH
 # Add cargo to path
 export PATH=$HOME/.cargo/bin:$PATH
 
+# Add asdf to path
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 local _old_path="$PATH"
 
 # Local config

@@ -75,7 +75,7 @@ return {
 
     keymap.set("n", "<C-p>", function()
       builtin.find_files({
-        find_command = { "rg", "--ignore", "--hidden", "-L", "--files" },
+        find_command = { "rg", "--ignore", "--hidden", "-L", "--files", "-g", "!.git/"},
       })
     end, {
       desc = "Fuzzy find files in cwd",
