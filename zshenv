@@ -12,16 +12,22 @@ export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--bind ctrl-y:preview-up,ctrl-e:preview-down,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+	--color=fg:#ffffff,bg:#1a1b26,hl:#bb9af7
+	--color=fg+:#ffffff,bg+:#1a1b26,hl+:#7dcfff
+	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff
+	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+
 export FZF_COMPLETION_OPTS='--border --info=inline'
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 export FZF_CTRL_R_OPTS="
   --preview 'echo {}' --preview-window up:3:hidden:wrap
-  --bind 'ctrl-/:toggle-preview'
-  --bind 'ctrl-y:execute-silent(echo -n {2..} | xclip -sel clip)+abort'
+  --bind 'ctrl-t:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
   --color header:italic
   --header 'Press CTRL-Y to copy command into clipboard'"
 export FZF_CTRL_T_OPTS="
-  --preview 'batcat -n --color=always {}'
+  --preview 'bat -n --color=always --line-range :500 {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 _fzf_compgen_path() {

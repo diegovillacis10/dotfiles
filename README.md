@@ -163,6 +163,13 @@ ln -sv ~/dotfiles/wezterm.lua ~/.config/wezterm/wezterm.lua
 ln -sv ~/dotfiles/Xresources ~/.Xresources
 ```
 
+## yazi
+
+```shell
+git clone https://github.com/BennyOe/tokyo-night.yazi.git ~/.config/yazi/flavors/tokyo-night.yazi
+ln -sv ~/dotfiles/yazi/theme.toml ~/.config/yazi/theme.toml
+```
+
 ## Keyboard
 
 ```shell

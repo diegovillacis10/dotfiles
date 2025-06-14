@@ -42,6 +42,10 @@ nmap ]] <Action>(MethodDown)
 noremap <leader>sF :action FindInPath<CR>
 noremap <leader>sR :action ReplaceInPath<CR>
 
+" tab manipulation
+noremap <C-h> :bprev<CR>
+noremap <C-l> :bnext<CR>
+
 " code action
 nnoremap <leader>cu :action FindUsages<CR>
 nnoremap == :action ReformatCode \| action OptimizeImports<CR>

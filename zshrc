@@ -5,7 +5,6 @@
 [[ -f ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 
 plugins=(
-  z
   git
   asdf
   colored-man-pages
@@ -34,6 +33,8 @@ bindkey "^n" down-line-or-beginning-search
 [[ "$(command -v fzf)" ]] && eval "$(fzf --zsh)"
 [[ -f ${HOME}/.fzf.zsh ]] && source ${HOME}/.fzf.zsh
 [[ -f ${HOME}/.fzf-git.sh/fzf-git.sh ]] && source ${HOME}/.fzf-git.sh/fzf-git.sh
+
+[[ "$(command -v zoxide)" ]] && eval "$(zoxide init zsh)"
 
 # Prompt
 [[ "$(command -v starship)" ]] && eval "$(starship init zsh)"

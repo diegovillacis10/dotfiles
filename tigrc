@@ -1,9 +1,14 @@
-set main-view = id:yes date:custom,format=%Y-%m-%d author:full commit-title,graph=yes,refs=yes
-set git-colors = no
+set main-view = date:relative id:yes author:full commit-title:graph=yes,refs=yes
+set main-view-date = relative
+set main-view-date-format = "%Y-%m-%d"
+set vertical-split = false
 set refresh-mode = auto
+set diff-view = line-number:display=no text:commit-title-overflow=yes
+set diff-options = --pretty=short --show-signature
 set log-options = --show-signature
-set diff-options = --show-signature
 set status-show-untracked-files = yes
+set git-colors = no
+set truncation-delimiter  = ~   # Character drawn for truncations, or "utf-8"
 
 # Keybindings for easy rebase
 bind generic g move-first-line
@@ -12,32 +17,110 @@ bind generic <Ctrl-g> view-grep
 
 # Copy commit hash
 # Unix
-# bind main Y !@sh -c "echo -n $(git rev-parse --short %(commit)) | xclip -sel c"
-# bind main I !@sh -c "echo -n %(commit) | xclip -sel c"
+# bind generic 9 !@sh -c "echo -n %(commit) | xclip -sel c"
 # Windows
-# bind main Y !@sh -c "echo -n $(git rev-parse --short %(commit)) | clip.exe"
-# bind main I !@sh -c "echo -n %(commit) | clip.exe"
+# bind generic 9 !@sh -c "echo -n %(commit) | clip.exe"
 # Mac
-bind main Y !@sh -c "echo -n $(git rev-parse --short %(commit)) | pbcopy"
-bind main I !@sh -c "echo -n %(commit) | pbcopy"
+bind generic 9 !@sh -c "echo -n %(commit) | pbcopy"
 
+# Open commit in browser
 bind generic o @sh -c "open 'https://'$(git remote -v | head -n1 | cut -f2 | sed 's|:|/|' | sed 's|^git@||' | sed 's|.git\ .*$||' | sed 's| .*$||')'/commit/%(commit)'"
 bind generic B @sh -c "open 'https://'$(git remote -v | grep -Eo 'github.com[:/][^.]+' | head -1 | tr : /)'/commit/%(commit)'"
 
-# Override the default terminal colors to white on black.
-# color default         white   black
-color   cursor          black   green
-color   search-result   black   yellow
-# color author          green   black
-# color status          green   black
-color   line-number     red     black
-color   title-focus     black   yellow
-color   title-blur      black   magenta
-# Diff colors
-color diff-header       yellow  default
-color diff-index        blue    default
-color diff-chunk        magenta default
-color "Reported-by:"    green   default
-# View-specific color
-color tree.date         black   cyan    bold
+# https://github.com/ninjabreakbot/tig-gruvbox/blob/main/tigrc
+# General colors
+color default                       246         235
+color cursor                        223         236
+color status                        default     default
+color title-focus                   default     default
+color title-blur                    default     default
+color delimiter                     245         default
+color header                        66          default         bold
+color section                       172         default
+color line-number                   241         default
+color id                            124         default
+color date                          172         default
+color author                        109         default
+color mode                          166         default
+color overflow                      241         default
+color directory                     106         default         bold
+color file                          223         default
+color file-size                     default     default
+color grep.file                     166         default
 
+# Main view colors
+color main.cursor                   223            236
+color graph-commit                  166         default
+color main-head                     166         default         bold
+color main-remote                   172         default
+color main-tracked                  132         default
+color main-tag                      223         default
+color main-local-tag                106         default
+color main-ref                      72          default
+
+# Status view colors
+color status.header                 172         236             bold
+color status.section                214         default
+color stat-staged                   106         default
+color stat-unstaged                 124         default
+color stat-untracked                166         default
+color stat-none                     default     default
+
+# Help view colors
+color help.header                   241         default         bold
+color help.section                  166         default
+color help.cursor                   72          236
+color help-group                    166         default
+color help-action                   166         default
+
+# Diff view colors
+color "commit "                     default     default
+color "Refs: "                      default     default
+color "Author: "                    default     default
+color "AuthorDate: "                default     default
+color "Commit: "                    106         default
+color "CommitDate: "                66          default
+color "Merge: "                     default     default
+color "---"                         167         default
+color "+++ "                        142         default
+color "--- "                        167         default
+color diff-index                    default     default
+color diff-stat                     223         default
+color diff-add                      142         default
+color diff-add-highlight            106         default
+color diff-del                      167         default
+color diff-del-highlight            223         default
+color diff-header                   132         default
+color diff-chunk                    109         default
+color "diff-tree "                  214         default
+color "TaggerDate: "                default     default
+
+# Log view colors
+color "Date: "                      72          default
+
+# Signature colors
+color "gpg: "                       72          default
+color "Primary key fingerprint: "   72          default
+
+# grep view
+color grep.file			        	208     	default         bold
+color grep.line-number		        241     	default         bold
+color grep.delimiter		        241	        default         bold
+color delimiter			            142     	default         bold
+
+# lines in digraph
+color palette-0		            	166     	default         bold
+color palette-1		            	66	        default         bold
+color palette-2		            	172	        default         bold
+color palette-3		            	132	        default         bold
+color palette-4		            	72	        default         bold
+color palette-5		            	106	        default         bold
+color palette-6		            	124	        default         bold
+color palette-7		            	250	        default         bold
+# repeat
+color palette-8		            	166	        default
+color palette-9		            	66	        default
+color palette-10	            	172	        default
+color palette-11	            	132	        default
+color palette-12	            	72	        default
+color palette-13	            	106	        default
