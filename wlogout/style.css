@@ -1,8 +1,8 @@
 * {
   font-family:
-    JetBrains Mono,
-    Symbols Nerd Font;
-  font-size: 24px;
+    JetBrainsMono Nerd Font,
+    monospace;
+  font-size: 20px;
   transition-property: background-color;
   transition-duration: 0.7s;
 }
@@ -34,7 +34,7 @@ button:focus {
 
 #lock {
   background-image: image(
-    url("~/.config/wlogout/icons/lock.png"),
+    url("/home/diego/.config/wlogout/icons/lock.png"),
     url("/usr/share/wlogout/icons/lock.png"),
     url("/usr/local/share/wlogout/icons/lock.png")
   );
@@ -42,7 +42,7 @@ button:focus {
 
 #lock:hover {
   background-image: image(
-    url("~/.config/wlogout/icons/lock-hover.png"),
+    url("/home/diego/.config/wlogout/icons/lock-hover.png"),
     url("/usr/share/wlogout/icons/lock.png"),
     url("/usr/local/share/wlogout/icons/lock.png")
   );
@@ -51,7 +51,7 @@ button:focus {
 
 #logout {
   background-image: image(
-    url("~/.config/wlogout/icons/logout.png"),
+    url("/home/diego/.config/wlogout/icons/logout.png"),
     url("/usr/share/wlogout/icons/logout.png"),
     url("/usr/local/share/wlogout/icons/logout.png")
   );
@@ -59,7 +59,7 @@ button:focus {
 
 #logout:hover {
   background-image: image(
-    url("~/.config/wlogout/icons/logout-hover.png"),
+    url("/home/diego/.config/wlogout/icons/logout-hover.png"),
     url("/usr/share/wlogout/icons/logout.png"),
     url("/usr/local/share/wlogout/icons/logout.png")
   );
@@ -68,7 +68,7 @@ button:focus {
 
 #suspend {
   background-image: image(
-    url("~/.config/wlogout/icons/sleep.png"),
+    url("/home/diego/.config/wlogout/icons/sleep.png"),
     url("/usr/share/wlogout/icons/suspend.png"),
     url("/usr/local/share/wlogout/icons/suspend.png")
   );
@@ -76,7 +76,7 @@ button:focus {
 
 #suspend:hover {
   background-image: image(
-    url("~/.config/assets/wlogout/assets/sleep-hover.png"),
+    url("/home/diego/.config/wlogout/icons/sleep-hover.png"),
     url("/usr/share/wlogout/icons/suspend.png"),
     url("/usr/local/share/wlogout/icons/suspend.png")
   );
@@ -85,7 +85,7 @@ button:focus {
 
 #shutdown {
   background-image: image(
-    url("~/.config/logout/icons/power.png"),
+    url("/home/diego/.config/logout/icons/power.png"),
     url("/usr/share/wlogout/icons/shutdown.png"),
     url("/usr/local/share/wlogout/icons/shutdown.png")
   );
@@ -93,7 +93,7 @@ button:focus {
 
 #shutdown:hover {
   background-image: image(
-    url("~/.config/wlogout/icons/power-hover.png"),
+    url("/home/diego/.config/wlogout/icons/power-hover.png"),
     url("/usr/share/wlogout/icons/shutdown.png"),
     url("/usr/local/share/wlogout/icons/shutdown.png")
   );
@@ -102,7 +102,7 @@ button:focus {
 
 #reboot {
   background-image: image(
-    url("~/.config/wlogout/icons/restart.png"),
+    url("/home/diego/.config/wlogout/icons/restart.png"),
     url("/usr/share/wlogout/icons/reboot.png"),
     url("/usr/local/share/wlogout/icons/reboot.png")
   );
@@ -110,7 +110,7 @@ button:focus {
 
 #reboot:hover {
   background-image: image(
-    url("~/.config/wlogout/icons/restart-hover.png"),
+    url("/home/diego/.config/wlogout/icons/restart-hover.png"),
     url("/usr/share/wlogout/icons/reboot.png"),
     url("/usr/local/share/wlogout/icons/reboot.png")
   );
@@ -119,7 +119,7 @@ button:focus {
 
 #exit {
   background-image: image(
-    url("~/.config/wlogout/icons/restart.png"),
+    url("/home/diego/.config/wlogout/icons/restart.png"),
     url("/usr/share/wlogout/icons/reboot.png"),
     url("/usr/local/share/wlogout/icons/reboot.png")
   );
@@ -128,7 +128,7 @@ button:focus {
 
 #exit:hover {
   background-image: image(
-    url("~/.config/wlogout/icons/restart-hover.png"),
+    url("/home/diego/.config/wlogout/icons/restart-hover.png"),
     url("/usr/share/wlogout/icons/reboot.png"),
     url("/usr/local/share/wlogout/icons/reboot.png")
   );
