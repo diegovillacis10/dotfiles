@@ -1,0 +1,66 @@
+#!/bin/bash
+
+sudo pacman -Syu --noconfirm \
+	dhcpcd \
+	brightnessctl \
+	pavucontrol \
+	git \
+	base-devel \
+	waybar \
+	man-pages \
+	man-db \
+	ghostty \
+	zsh \
+	wl-clipboard \
+	tmux \
+	tar \
+  starship \
+  neovim \
+  tig \
+  eza \
+  fd \
+  tealdeer \
+  btop \
+  jq \
+  tlp \
+  hyprpicker \
+  hyprlock \
+  hypridle \
+  yazi \
+  arandr \
+  swww \
+  libnotify \
+  grim \
+  slurp \
+  intellij-idea-community-edition \
+  cliphist \
+  swaync \
+  pamixer \
+  zoxide
+
+
+iwctl
+# device list
+# station wlan0 scan
+# station wlan0 get-neworks
+# station wlan0 connect RED_WIFI
+
+# Services
+sydo systemctl enable iwd
+sydo systemctl enable tlp
+
+# Install yay
+git clone https://aur.archlinux.org/yay.git
+cd yay || exit
+makepkg -si
+cd .. && rm -r yay
+
+# Install yay packages
+sudo yay -Syu google-chrome-canary
+sudo yay -Syu brave-bin
+sudo yay -Syu enpass-bin
+sudo yay -Syu gimp
+sudo yay -Syu hyprshot
+sudo yay -Syu nautilus
+sudo yay -Syu nwg-look
+
