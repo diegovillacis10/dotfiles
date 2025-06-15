@@ -136,6 +136,14 @@ ln -sv ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -sv ~/dotfiles/tigrc ~/.tigrc
 ```
 
+## wlogout
+
+```shell
+ln -sv ~/dotfiles/wlogout/layout ~/.config/wlogout/layout
+ln -sv ~/dotfiles/wlogout/style.css ~/.config/wlogout/style.css
+ln -sv ~/dotfiles/wlogout/icons/ ~/.config/wlogout/
+```
+
 ## Ghostty
 
 ```shell

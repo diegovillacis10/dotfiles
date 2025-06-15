@@ -36,7 +36,8 @@ sudo pacman -Syu --noconfirm \
   cliphist \
   swaync \
   pamixer \
-  zoxide
+  zoxide \
+  wofi
 
 
 iwctl
@@ -55,6 +56,12 @@ cd yay || exit
 makepkg -si
 cd .. && rm -r yay
 
+# Install tokyo night GTK theme
+git clone https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme.git
+cd Tokyonight-GTK-Theme/themes || exit
+./install.sh
+cd ../.. && rm -r Tokyonight-GTK-Theme
+
 # Install yay packages
 sudo yay -Syu google-chrome-canary
 sudo yay -Syu brave-bin
@@ -63,4 +70,5 @@ sudo yay -Syu gimp
 sudo yay -Syu hyprshot
 sudo yay -Syu nautilus
 sudo yay -Syu nwg-look
+sudo yay -Syu walker-bin
 
