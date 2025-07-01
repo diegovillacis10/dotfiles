@@ -15,6 +15,7 @@ window#waybar {
 #window,
 #clock,
 #battery,
+#bluetooth,
 #pulseaudio,
 #network,
 #cpu,
@@ -82,6 +83,7 @@ window#waybar {
 }
 
 #memory {
+  margin-left: 10px;
   border-radius: 10px 0px 0px 10px;
 }
 
@@ -93,6 +95,14 @@ window#waybar {
 
 #network {
   border-radius: 10px 0px 0px 10px;
+}
+
+#bluetooth.connected {
+  color: #83acff;
+}
+
+#bluetooth.disabled {
+  color: #999999;
 }
 
 #battery {

@@ -1,15 +1,3 @@
-# NPM
-alias ni='npm install'
-alias ns='npm run start'
-alias nsdev='npm run start:dev'
-alias nb='npm run build'
-alias nt='npm test'
-
-# Docker
-alias drm='docker rm $(docker ps -a -q) && docker rm $(docker ps -a -q)'
-alias drmi='docker rmi $(docker images -q)'
-alias dr='docker run --rm -it'
-
 # Git
 alias glr='git pull --rebase'
 alias gcheck='git checkout $(git branch -a | fzf)'
@@ -27,20 +15,14 @@ alias ln='ln -i'
 alias lx='eza -lxahoF --icons --git -s type'
 alias grep='grep --color=auto'
 alias path='echo $PATH | tr -s ":" "\n"'
-alias now='date +"%T"'
-alias nowdate='date +"%d-%m-%Y"'
-alias json="jq -C '.' | less -R"
 alias www='python3 -m http.server 7575'
-
-# GUIs
-alias sp='spotify'
 
 # Sys Admin
 alias reboot='sudo /sbin/reboot'
 alias poweroff='sudo /sbin/poweroff'
 alias halt='sudo /sbin/halt'
 alias shutdown='sudo /sbin/shutdown'
-# alias duf='du -csh *'
+alias duf='du -csh *'
 alias dus='du -d 1 -h | sort -h'
 
 # Functions
@@ -96,21 +78,10 @@ function y() {
 ### Linux-only aliases ###
 if [[ "$(uname)" = "Linux" ]]; then
   alias o='xdg-open'
-  alias bat=batcat
-  alias json=" jq -C '.' | batcat"
-  alias calc='gnome-calculator'
-  alias xclipc='xclip -selection clipboard'
   alias meminfo='free -mlth'
   alias cpuinfo='lscpu'
-  alias ports='netstat -tulanp'
-  alias ipl='hostname -I'
-  ## get top process eating memory
-  alias psmem='ps auxf | sort -nr -k 4'
-  alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-  ## get top process eating cpu
-  alias pscpu='ps auxf | sort -nr -k 3'
-  alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
   alias batt='cat /sys/class/power_supply/BAT0/uevent'
+  alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
 fi
 
 ### MacOS-only aliases ###
@@ -118,7 +89,6 @@ if [[ "$(uname)" = "Darwin" ]]; then
   alias o='open'
   alias calc='open -na calculator'
   alias idea="open -na 'Intellij IDEA CE.app'"
-  alias json=" jq -C '.' | less -R"
   alias iplocal="ipconfig getifaddr en0"
 fi
 

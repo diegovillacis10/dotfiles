@@ -26,9 +26,13 @@ sudo pacman -Syu --noconfirm \
   hyprpicker \
   hyprlock \
   hypridle \
+  bluez \
+  bluez-utils \
+  bluez-deprecated-tools \
+  bluetui \
+  blueman \
   yazi \
   arandr \
-  swww \
   libnotify \
   grim \
   slurp \
@@ -37,8 +41,10 @@ sudo pacman -Syu --noconfirm \
   swaync \
   pamixer \
   zoxide \
-  wofi
-
+  wofi \
+  7zip \
+  networkmanager \
+  noto-fonts-emoji
 
 iwctl
 # device list
@@ -49,6 +55,7 @@ iwctl
 # Services
 sydo systemctl enable iwd
 sydo systemctl enable tlp
+sydo systemctl enable bluetooth
 
 # Install yay
 git clone https://aur.archlinux.org/yay.git
@@ -69,6 +76,6 @@ sudo yay -Syu enpass-bin
 sudo yay -Syu gimp
 sudo yay -Syu hyprshot
 sudo yay -Syu nautilus
-sudo yay -Syu nwg-look
+sudo yay -Syu nwg-look # GTK Settings
 sudo yay -Syu walker-bin
 

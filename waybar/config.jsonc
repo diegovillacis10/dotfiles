@@ -10,13 +10,14 @@
     "modules-left": [
         "hyprland/submap",
         "hyprland/workspaces",
-        "hyprland/language"
-        // "memory",
-        // "cpu"
+        "hyprland/language",
+        "memory",
+        "cpu"
     ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
         "network",
+        "bluetooth",
         "battery",
         "backlight",
         "pulseaudio",
@@ -83,6 +84,23 @@
         "interval": 2,
         "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"]
     },
+    "bluetooth": {
+      "format": "",
+      "format-on": "<span font_size=\"12pt\"></span>",
+      // "format-off": "",
+      "format-off": "<span font_size=\"12pt\">󰂲</span>",
+      // "format-disabled": "",
+      "format-disabled": "<span font_size=\"12pt\">󰂲</span>",
+      // "format-connected": "<span font_size=\"12pt\">󰂱</span> {device_alias}",
+      "format-connected": "<span font_size=\"12pt\">󰂱</span>",
+      "on-click": "blueman-manager",
+      "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+      // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
     "battery": {
         "states": {
             "good": 95,
@@ -115,7 +133,7 @@
         "tooltip": true,
         "tooltip-format": "{icon}  {volume}%",
         "format-muted": "<span color='#f7768e'> </span>",
-        "format-bluetooth": "{volume}% {icon}",
+        // "format-bluetooth": "{volume}% {icon}",
         "on-click-middle": "pavucontrol",
         "on-click": "pamixer -t",
         // "on-scroll-up": "pamixer -i 1",

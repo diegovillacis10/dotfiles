@@ -1,6 +1,12 @@
 # https://www.linuxjournal.com/content/removing-duplicate-path-entries
 # export PATH=$(echo -n "$PATH" | awk -v RS=: '!($0 in a) {a[$0]: printf("%s%s", length(a) > 1 ? ":" : "", $0)}')
 
+if [[ "$(uname -a)" =~ "archlinux" ]]; then
+  export X_COPY='wl-copy'
+elif [[ "$(uname a)" =~ "Darwin" ]]; then
+  export X_COPY='pb-copy'
+fi
+
 export EDITOR=nvim
 export LANG='en_US.UTF-8'
 export LC_ALL='en_US.UTF-8'
