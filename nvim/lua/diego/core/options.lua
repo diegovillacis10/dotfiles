@@ -1,60 +1,74 @@
-local opt = vim.opt
-
 vim.g.have_nerd_font = true
 
--- line numbers
-opt.relativenumber = true -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line
-
--- tabs & indentation
-opt.tabstop = 2 -- 2 spaces for tabs
-opt.shiftwidth = 2 -- 2 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
-
--- line wrap
-opt.wrap = false -- disable line wrapping
-opt.list = false
-
-opt.listchars =
-  { tab = "» ", trail = "·", nbsp = "␣", eol = "↲", extends = "▸", precedes = "◂", leadmultispace = "...│" }
--- opt.listchars = 'eol:¬,space:·,lead: ,trail:·,nbsp:◇,tab:→-,extends:▸,precedes:◂,multispace:···⬝,leadmultispace:│   ,'
-
--- Enable break indent
-opt.breakindent = true
-
 -- search settings
-opt.inccommand = "split" -- shows command effect incrementally partially in a prev window
-opt.hlsearch = true -- disable highlight all matches from search
-opt.incsearch = true -- show pattern as it gets typed
-opt.ignorecase = true -- ignores case in search patterns
-opt.smartcase = true -- if you include mixed case
+-- vim.opt.inccommand = "split" -- shows command effect incrementally partially in a prev window
 
-opt.showmode = false -- Don't show the mode, since it's already in status line
+-- New -----------------------
 
--- split windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the botton
+vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+vim.opt.incsearch = true -- show pattern as it gets typed
+-- vim.opt.backup = false -- creates a backup file
+vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+-- vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+-- vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
+vim.opt.completeopt = { "menu", "menuone", "noselect" } -- mostly just for cmp
+-- vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
+vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+vim.opt.hlsearch = true -- highlight all matches on previous search pattern
+vim.opt.ignorecase = true -- ignore case in search patterns
+vim.opt.mouse = "a" -- allow the mouse to be used in neovim
+vim.opt.pumheight = 10 -- pop up menu height
+vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
+vim.opt.showtabline = 0 -- always show tabs
+vim.opt.tabstop = 2 -- 2 spaces for tabs
+vim.opt.autoindent = true -- copy indent from current line when starting new one
+vim.opt.smartcase = true -- smart case
+vim.opt.smartindent = true -- make indenting smarter again
+vim.opt.splitbelow = true -- force all horizontal splits to go below current window
+vim.opt.splitright = true -- force all vertical splits to go to the right of current window
+vim.opt.swapfile = false -- creates a swapfile
+vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
+-- vim.opt.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.undofile = true -- enable persistent undo
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- sets unfile location
+vim.opt.updatetime = 100 -- faster completion (4000ms default)
+vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+vim.opt.expandtab = true -- convert tabs to spaces
+vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
+vim.opt.cursorline = false -- highlight the current line
+vim.opt.number = true -- set numbered lines
+vim.opt.breakindent = true -- wrap lines with indent
+vim.opt.relativenumber = true -- set relative numbered lines
+vim.opt.numberwidth = 4 -- set number column width to 2 {default 4}
+vim.opt.signcolumn = "yes:1" --  show the sign column, otherwise it would shift the text each time
+vim.opt.wrap = false -- display lines as one long line
+vim.opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor.
+-- vim.opt.sidescrolloff = 8 -- Makes sure there are always eight lines of context
+-- vim.opt.showcmd = false -- Don't show the command in the last line
+-- vim.opt.ruler = true -- Don't show the ruler
+-- vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
+-- vim.opt.title = true -- set the title of window to the value of the titlestring
+-- vim.opt.confirm = true -- confirm to save changes before exiting modified buffer
+vim.opt.tabstop = 2 -- insert 2 spaces for a tab
+vim.opt.fillchars = { eob = " " } -- change the character at the end of buffer
+vim.opt.list = false
+vim.opt.listchars =
+  { tab = "» ", trail = "·", nbsp = "␣", eol = "↲", extends = "▸", precedes = "◂", leadmultispace = "...│" }
+vim.opt.winborder = "rounded" -- https://neovim.io/doc/user/options.html#'winborder'
 
--- turn on tuemguicolors for `THEME` colorschemeto work
--- (have to use a true color terminal)
-opt.termguicolors = true
-opt.signcolumn = "yes" -- show sign column so tha text doesn't shift
+-- vim.opt.cursorlineopt = "number" -- set the cursorline
+-- vim.opt.laststatus = 0 -- Always display the status line
 
--- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
-
-opt.endofline = true
-opt.scrolloff = 8 -- minimal number of screen lines to keep above and below the cursor.
-
--- enable mouse mode
-opt.mouse = "a"
-
--- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
-
--- backup
-opt.swapfile = false -- disable swapfile for buffer
-opt.backup = false -- disable backup when overwriting the buffer
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- sets unfile location
-opt.undofile = true -- enables undofile
+vim.filetype.add({
+  extension = {
+    env = "dotenv",
+  },
+  filename = {
+    [".env"] = "dotenv",
+    ["env"] = "dotenv",
+  },
+  pattern = {
+    ["[jt]sconfig.*.json"] = "jsonc",
+    ["%.env%.[%w_.-]+"] = "dotenv",
+  },
+})

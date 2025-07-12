@@ -119,8 +119,8 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon}",
-        "format-alt": "{icon} {percent}%",
+        "format": "{icon} {percent}%",
+        "format-alt": "{icon}",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
         "format-alt-click": "click-left",
         "on-scroll-up": "brightnessctl set 1%+",

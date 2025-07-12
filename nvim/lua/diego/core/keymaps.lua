@@ -2,34 +2,55 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local set = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
-set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
-set("n", "<leader>q", "<cmd>bd<cr>", { desc = "Close current buffer" })
+-- Exit insert mode with jk
+vim.keymap.set("i", "jk", "<Esc>", opts)
 
-set("n", "x", [["_x]], { desc = "Delete single character without copying into register" })
+-- Close current buffer
+vim.keymap.set("n", "<leader>q", "<cmd>bd<cr>", opts)
+-- Delete single character without copying into register
+vim.keymap.set("n", "x", '"_x', opts)
 
-set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
-set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected text up" })
+-- Move selected text up/down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
-set("v", "<", "<gv", { desc = "Indent block to the left" })
-set("v", ">", ">gv", { desc = "Indent block to the right" })
+-- Paste over currently selected text without yanking it
+vim.keymap.set("v", "p", '"_dp', opts)
+vim.keymap.set("v", "P", '"_dP', opts)
 
-set("n", "J", "mzJ`z", { desc = "Keep cursor position while inlining" })
+-- Indent block to the left/right
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
 
-set("n", "n", "nzzzv", { desc = "Keep forward search terms centered" })
-set("n", "N", "Nzzzv", { desc = "Keep backward search terms centered" })
+-- Keep cursor position while inlining
+vim.keymap.set("n", "J", "mzJ`z", opts)
+
+-- Keep forward search terms centered
+vim.keymap.set("n", "n", "nzzzv", opts)
+vim.keymap.set("n", "N", "Nzzzv", opts)
+vim.keymap.set("n", "*", "*zzzv", opts)
+vim.keymap.set("n", "#", "#zzzv", opts)
+
+-- Move to start/end of line with H and L
+vim.keymap.set({ "n", "x", "o" }, "H", "^", opts)
+vim.keymap.set({ "n", "x", "o" }, "L", "g_", opts)
+
+-- Split line with X
+vim.keymap.set("n", "X", ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>", { silent = true })
+
+-- copy everything between { and } including the brackets
+-- p puts text after the cursor,
+-- P puts text before the cursor.
+vim.keymap.set("n", "YY", "va{Vy", opts)
 
 -- nops for Q and <space>
-set({ "n", "v" }, "Q", "<Nop>", { silent = true })
-set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+vim.keymap.set({ "n", "v" }, "Q", "<Nop>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- substitute word on cursor in document
-set(
-  "n",
-  "<leader>cw",
-  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "Substitute word on cursor in document" }
-)
+vim.keymap.set("n", "<leader>cw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gIc<Left><Left><Left><Left>]])
 
-set("n", "<leader>hh", ":set eol<cr>", { desc = "Set end of line (for handlebars)" })
+-- Set end of line (for handlebars)
+vim.keymap.set("n", "<leader>hh", ":set eol<cr>", { desc = "Set end of line (for handlebars)" })

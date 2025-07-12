@@ -75,6 +75,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+function change_wp() {
+  # TODO: handle when exits fzf
+  hyprctl hyprpaper wallpaper eDP-1,$(hyprctl hyprpaper listloaded | fzf --preview='kitten icat --clear --transfer-mode=memory --stdin=no --place=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}@0x0 {}')
+}
+
 ### Linux-only aliases ###
 if [[ "$(uname)" = "Linux" ]]; then
   alias o='xdg-open'
