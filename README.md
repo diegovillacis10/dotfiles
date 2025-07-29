@@ -72,10 +72,11 @@ NOTE: if colors are not displaying correctly, take a look at this [article](http
 ## Neovim
 
 ```shell
-mkdir -p ~/.config/nvim/lua
+mkdir -p ~/.config/nvim
 ln -sv ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
 ln -sv ~/dotfiles/nvim/lazy-lock.json ~/.config/nvim/lazy-lock.json
-ln -sv ~/dotfiles/nvim/lua/diego ~/.config/nvim/lua/diego
+ln -sv ~/dotfiles/nvim/lua ~/.config/nvim/lua
+ln -sv ~/dotfiles/nvim/lsp ~/.config/nvim/lsp
 ```
 
 ## Zsh

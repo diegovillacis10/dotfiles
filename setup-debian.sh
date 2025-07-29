@@ -3,38 +3,41 @@
 ## INSTALL PACKAGES
 sudo apt update
 sudo apt install \
-    software-properties-common \
-    apt-transport-https \
-    firmware-iwlwifi \
-    ca-certificates \
-    transmission \
-    xbacklight \
-    alacritty \
-    net-tools \
-    nitrogen \
-    i3blocks \
-    ripgrep \
-    fd-find \
-    neovim \
-    gnupg2 \
-    httpie \
-    picom \
-    xclip \
-    tmux \
-    vifm \
-    curl \
-    tldr \
-    btop \
-    zsh \
-    eza \
-    git \
-    tig \
-    tlp \
-    i3 \
-    jq
+  software-properties-common \
+  apt-transport-https \
+  firmware-iwlwifi \
+  ca-certificates \
+  transmission \
+  xbacklight \
+  alacritty \
+  net-tools \
+  nitrogen \
+  i3blocks \
+  ripgrep \
+  fd-find \
+  neovim \
+  gnupg2 \
+  httpie \
+  picom \
+  xclip \
+  tmux \
+  vifm \
+  curl \
+  tldr \
+  btop \
+  zsh \
+  eza \
+  git \
+  tig \
+  tlp \
+  i3 \
+  jq
 
 # FONTS
-_SCRIPT_DIR=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit; pwd -P )
+_SCRIPT_DIR=$(
+  cd "$(dirname "${BASH_SOURCE[0]}")" || exit
+  pwd -P
+)
 "${_SCRIPT_DIR}"/install-nerd-fonts.sh
 
 # Install Starship
@@ -113,4 +116,3 @@ sudo usermod -aG docker "${USER}"
 # Configure firewall
 sudo apt install ufw
 sudo ufw enable
-
