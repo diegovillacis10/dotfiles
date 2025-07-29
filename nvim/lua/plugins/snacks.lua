@@ -180,13 +180,6 @@ return {
     },
     -- Grep
     {
-      "<leader>sb",
-      function()
-        Snacks.picker.lines()
-      end,
-      desc = "Buffer Lines",
-    },
-    {
       "<C-f>",
       function()
         Snacks.picker.grep_buffers()
@@ -465,13 +458,13 @@ return {
       desc = "Git Browse",
       mode = { "n", "v" },
     },
-    {
-      "<leader>gg",
-      function()
-        Snacks.lazygit()
-      end,
-      desc = "Lazygit",
-    },
+    -- {
+    --   "<leader>gg",
+    --   function()
+    --     Snacks.lazygit()
+    --   end,
+    --   desc = "Lazygit",
+    -- },
     {
       "<leader>un",
       function()
